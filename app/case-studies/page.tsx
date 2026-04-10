@@ -1,0 +1,165 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case Studies — Abhishek Manikandan",
+  description:
+    "Academic and consulting case studies including the STAHL IIoT rental model feasibility study.",
+};
+
+const caseStudies = [
+  {
+    label: "Academic Project",
+    tag: "Business Analysis & Consulting",
+    university: "University of Strathclyde",
+    programme: "MSc Business Analysis and Consulting · 2025",
+    title: "STAHL – IIoT Rental Model Feasibility Study",
+    subtitle: "10-year financial and strategic feasibility study for an IIoT-enabled rental transition",
+    description:
+      "Led a 10-year financial and strategic feasibility study for STAHL, a heavy equipment manufacturer evaluating a transition from traditional sales to an IIoT-enabled rental model. Delivered a full consulting report and executive presentation covering financial modelling, stakeholder analysis, and a 5-phase transformation roadmap.",
+    highlights: [
+      "Built a DCF financial model across small, medium, and large fleet scenarios",
+      "Applied CATWOE framework to map stakeholders and transformation boundaries",
+      "Identified that positive cash flow is achievable by Year 6–7 (base case, 65% utilisation)",
+      "Recommended phased CapEx deployment: 40/30/20/10% across 5 years",
+      "Projected EBITDA improvement from –12% to 37% by 2030; IRR of 9.8%",
+      "Modelled IIoT-driven predictive maintenance reducing downtime by up to 15%",
+    ],
+    results: [
+      { metric: "9.8%", label: "Projected IRR" },
+      { metric: "37%", label: "EBITDA at maturity (2030)" },
+      { metric: "~7 yrs", label: "Payback period" },
+      { metric: "$23M+", label: "Projected revenue by 2030" },
+    ],
+    skills: [
+      "DCF Analysis",
+      "CATWOE",
+      "Scenario Analysis",
+      "Financial Modelling",
+      "IIoT Strategy",
+      "Stakeholder Mapping",
+      "Excel",
+    ],
+  },
+];
+
+export default function CaseStudies() {
+  return (
+    <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
+      <div className="mb-16">
+        <p className="mb-3 text-xs font-semibold tracking-widest text-amber-400 uppercase">
+          Portfolio
+        </p>
+        <h1 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
+          Case Studies
+        </h1>
+        <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
+          In-depth consulting and analytical projects — covering the problem,
+          methodology, and outcomes.
+        </p>
+      </div>
+
+      <div className="space-y-10">
+        {caseStudies.map((cs, i) => (
+          <article
+            key={i}
+            className="rounded-2xl border border-amber-500/20 bg-zinc-900 p-8 transition-colors hover:border-amber-500/40 lg:p-10"
+          >
+            {/* Header */}
+            <div className="mb-8">
+              <div className="mb-4 flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-zinc-600 bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-300">
+                  {cs.label}
+                </span>
+                <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400">
+                  {cs.tag}
+                </span>
+              </div>
+
+              <h2 className="text-2xl font-bold text-zinc-50 sm:text-3xl">
+                {cs.title}
+              </h2>
+              <p className="mt-2 text-zinc-400">{cs.subtitle}</p>
+
+              <div className="mt-4 flex flex-col gap-1">
+                <p className="text-sm font-semibold text-zinc-200">
+                  {cs.university}
+                </p>
+                <p className="text-xs text-zinc-500">{cs.programme}</p>
+              </div>
+            </div>
+
+            <div className="grid gap-10 lg:grid-cols-2">
+              {/* Left: Overview + Approach */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                    Overview
+                  </h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    {cs.description}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                    Key Contributions
+                  </h3>
+                  <ul className="space-y-3">
+                    {cs.highlights.map((h, j) => (
+                      <li key={j} className="flex gap-3 text-sm text-zinc-400">
+                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-800 text-[10px] font-bold text-zinc-500">
+                          {j + 1}
+                        </span>
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Right: Metrics + Skills */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="mb-4 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                    Key Metrics
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {cs.results.map((r, j) => (
+                      <div
+                        key={j}
+                        className="rounded-xl border border-zinc-800 bg-zinc-950 p-4"
+                      >
+                        <p className="text-2xl font-bold text-amber-400">
+                          {r.metric}
+                        </p>
+                        <p className="mt-1 text-xs leading-snug text-zinc-500">
+                          {r.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                    Tools & Methods
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {cs.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-amber-800 bg-amber-950/50 px-3 py-1 text-xs font-medium text-amber-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}

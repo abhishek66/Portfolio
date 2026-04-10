@@ -92,30 +92,6 @@ const workExperiences: WorkEntry[] = [
 const projects: ProjectEntry[] = [
   {
     type: "project",
-    company: "MSc Business Analysis and Consulting — Group A",
-    title: "STAHL – IIoT Rental Model Feasibility Study",
-    subtitle: "Business Analysis & Consulting · 2025",
-    description:
-      "Led a 10-year financial and strategic feasibility study for STAHL, a heavy equipment manufacturer evaluating a transition from traditional sales to an IIoT-enabled rental model. Delivered a full consulting report and executive presentation covering financial modelling, stakeholder analysis, and a 5-phase transformation roadmap.",
-    highlights: [
-      "Built a DCF financial model across small, medium, and large fleet scenarios",
-      "Applied CATWOE framework to map stakeholders and transformation boundaries",
-      "Identified that positive cash flow is achievable by Year 6–7 (base case, 65% utilisation)",
-      "Recommended phased CapEx deployment: 40/30/20/10% across 5 years",
-      "Projected EBITDA improvement from –12% to 37% by 2030; IRR of 9.8%",
-      "Modelled IIoT-driven predictive maintenance reducing downtime by up to 15%",
-    ],
-    results: [
-      { metric: "9.8%", label: "projected IRR" },
-      { metric: "37%", label: "EBITDA at maturity (2030)" },
-      { metric: "~7 yrs", label: "payback period" },
-      { metric: "$23M+", label: "projected revenue by 2030" },
-    ],
-    skills: ["DCF Analysis", "CATWOE", "Scenario Analysis", "Financial Modelling", "IIoT Strategy", "Stakeholder Mapping", "Excel"],
-    accent: "amber",
-  },
-  {
-    type: "project",
     company: "AppsForBharat",
     title: "Building the ARC Platform",
     subtitle: "Astrology, Religion & Content vertical — from concept to launch",
