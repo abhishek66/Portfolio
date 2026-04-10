@@ -11,6 +11,7 @@ const caseStudies = [
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
+    client: "Deloitte",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "Improving Workforce Strategy for a Modern Police Force",
@@ -46,6 +47,7 @@ const caseStudies = [
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
+    client: "NHS England",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2026",
     title: "NHS England A&E Crisis — Machine Learning Analytics Report",
@@ -82,6 +84,7 @@ const caseStudies = [
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
+    client: "WB Alloys Group",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2026",
     title: "WB Alloys Group — Enterprise Risk Management Framework",
@@ -119,6 +122,7 @@ const caseStudies = [
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
+    client: "StormID",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "StormID – AI Workflow Optimisation for a Scottish Local Authority",
@@ -187,6 +191,7 @@ const caseStudies = [
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
+    client: "STAHL",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "STAHL – IIoT Rental Model Feasibility Study",
@@ -243,7 +248,7 @@ export default function CaseStudies() {
           >
             {/* Header */}
             <div className="mb-8">
-              <div className="mb-4 flex flex-wrap items-center gap-3">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
                 <span className="rounded-full border border-zinc-600 bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-300">
                   {cs.label}
                 </span>
@@ -251,6 +256,28 @@ export default function CaseStudies() {
                   {cs.tag}
                 </span>
               </div>
+
+              {"client" in cs && cs.client && (
+                <div className="mb-4 flex items-center gap-1.5">
+                  <svg
+                    className="h-3.5 w-3.5 flex-shrink-0 text-zinc-500"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"
+                    />
+                  </svg>
+                  <span className="text-xs font-medium text-zinc-500">
+                    {cs.client}
+                  </span>
+                </div>
+              )}
 
               <h2 className="text-2xl font-bold text-zinc-50 sm:text-3xl">
                 {cs.title}
