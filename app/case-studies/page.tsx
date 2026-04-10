@@ -3,10 +3,43 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Case Studies | Abhishek Manikandan",
   description:
-    "Academic and consulting case studies including the STAHL IIoT rental model feasibility study.",
+    "Academic and consulting case studies including AI workflow optimisation for a Scottish Local Authority and the STAHL IIoT rental model feasibility study.",
 };
 
 const caseStudies = [
+  {
+    label: "Academic Project",
+    tag: "Business Analysis & Consulting",
+    university: "University of Strathclyde",
+    programme: "MSc Business Analysis and Consulting · 2025",
+    title: "StormID – AI Workflow Optimisation for a Scottish Local Authority",
+    subtitle: "Evaluating how AI can improve service delivery across 10 council workflows",
+    description:
+      "Assessed 10 operational workflows for a Scottish Local Authority to identify where AI integration would deliver the highest ROI and efficiency gains. Using Lean Six Sigma and Business Process Analysis, the team ranked all workflows via a weighted AI Scoring Framework (scored across 6 criteria, out of 50), and recommended a phased 9-month implementation plan focused on the two highest-value targets.",
+    highlights: [
+      "Developed a custom AI Scoring Framework across 6 weighted criteria applied to all 10 workflows",
+      "Identified Workflow 7 (Freedom of Information Requests) as top priority, weighted score 40/50",
+      "Identified Workflow 8 (Financial Assistance Applications) as second priority, score 33.5/50",
+      "Mapped AI components (Convert, Classify, Generate, Validate, Summarise) to each step of both workflows",
+      "Designed a 2-phase 9-month implementation roadmap: PoC on Workflow 8, then parallel rollout of Workflow 7",
+      "Assessed risks across legal/GDPR compliance, ethics, financial sustainability, and operational governance",
+    ],
+    results: [
+      { metric: "68%", label: "Staff time reduction expected (Workflow 8)" },
+      { metric: "57%", label: "Staff time reduction expected (Workflow 7)" },
+      { metric: "16,680", label: "Annual applications processed (Workflow 8)" },
+      { metric: "460 hrs", label: "Monthly staff hours saved (Workflow 7)" },
+    ],
+    skills: [
+      "Lean Six Sigma",
+      "Business Process Analysis",
+      "AI Scoring Framework",
+      "Workflow Modelling",
+      "ROI Analysis",
+      "Stakeholder Mapping",
+      "Process Flowcharting",
+    ],
+  },
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
