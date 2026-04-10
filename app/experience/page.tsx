@@ -3,11 +3,38 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Experience — Abhishek Manikandan",
   description:
-    "Product management experience across Prodsmiths, AppsForBharat, and Kapture CX.",
+    "Product management experience across Prodsmiths, AppsForBharat, and Kapture CX, plus featured case studies.",
 };
 
-const experiences = [
+type WorkEntry = {
+  type: "work";
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  description: string;
+  highlights: string[];
+  skills: string[];
+  accent: string;
+};
+
+type ProjectEntry = {
+  type: "project";
+  company: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  highlights: string[];
+  results: { metric: string; label: string }[];
+  skills: string[];
+  accent: string;
+};
+
+type Entry = WorkEntry | ProjectEntry;
+
+const workExperiences: WorkEntry[] = [
   {
+    type: "work",
     company: "Prodsmiths",
     role: "Associate Product Manager",
     period: "2024 — Present",
@@ -25,6 +52,7 @@ const experiences = [
     accent: "indigo",
   },
   {
+    type: "work",
     company: "AppsForBharat",
     role: "Product Manager",
     period: "2023 — 2024",
@@ -42,6 +70,7 @@ const experiences = [
     accent: "violet",
   },
   {
+    type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
     period: "2022 — 2023",
@@ -60,21 +89,130 @@ const experiences = [
   },
 ];
 
-const accentMap: Record<string, { badge: string; dot: string; line: string }> = {
+const projects: ProjectEntry[] = [
+  {
+    type: "project",
+    company: "MSc Business Analysis and Consulting — Group A",
+    title: "STAHL – IIoT Rental Model Feasibility Study",
+    subtitle: "Business Analysis & Consulting · 2025",
+    description:
+      "Led a 10-year financial and strategic feasibility study for STAHL, a heavy equipment manufacturer evaluating a transition from traditional sales to an IIoT-enabled rental model. Delivered a full consulting report and executive presentation covering financial modelling, stakeholder analysis, and a 5-phase transformation roadmap.",
+    highlights: [
+      "Built a DCF financial model across small, medium, and large fleet scenarios",
+      "Applied CATWOE framework to map stakeholders and transformation boundaries",
+      "Identified that positive cash flow is achievable by Year 6–7 (base case, 65% utilisation)",
+      "Recommended phased CapEx deployment: 40/30/20/10% across 5 years",
+      "Projected EBITDA improvement from –12% to 37% by 2030; IRR of 9.8%",
+      "Modelled IIoT-driven predictive maintenance reducing downtime by up to 15%",
+    ],
+    results: [
+      { metric: "9.8%", label: "projected IRR" },
+      { metric: "37%", label: "EBITDA at maturity (2030)" },
+      { metric: "~7 yrs", label: "payback period" },
+      { metric: "$23M+", label: "projected revenue by 2030" },
+    ],
+    skills: ["DCF Analysis", "CATWOE", "Scenario Analysis", "Financial Modelling", "IIoT Strategy", "Stakeholder Mapping", "Excel"],
+    accent: "amber",
+  },
+  {
+    type: "project",
+    company: "AppsForBharat",
+    title: "Building the ARC Platform",
+    subtitle: "Astrology, Religion & Content vertical — from concept to launch",
+    description:
+      "AppsForBharat had a strong core in devotional content, but lacked a structured offering around astrology and personalised religious content — two high-intent, high-engagement categories growing rapidly in India's digital market.",
+    highlights: [
+      "Ran 30+ user interviews across target demographics to validate demand and understand content consumption habits",
+      "Mapped the competitive landscape across 10 apps to identify white-space opportunities",
+      "Defined the MVP scope around three pillars: daily horoscopes, live puja booking, and personalised content feeds",
+      "Partnered with content, design, and engineering to ship MVP in 8 weeks",
+      "Set up instrumentation with Amplitude to track content engagement, funnel completion, and D1/D7 retention",
+    ],
+    results: [
+      { metric: "40%", label: "increase in session duration post-launch" },
+      { metric: "2.3×", label: "higher D7 retention vs. app average" },
+      { metric: "8 weeks", label: "MVP to launch timeline" },
+      { metric: "15%", label: "of MAU adopted the feature within 30 days" },
+    ],
+    skills: ["Product Discovery", "User Research", "Figma", "SQL", "Amplitude", "A/B Testing"],
+    accent: "indigo",
+  },
+  {
+    type: "project",
+    company: "AppsForBharat",
+    title: "Subscription & In-App Monetisation Strategy",
+    subtitle: "Growing revenue 40% through a tiered subscription model",
+    description:
+      "The app had strong engagement but was heavily reliant on ad revenue, creating a poor user experience and fragile business model. The goal was to introduce sustainable, user-centric monetisation without hurting retention.",
+    highlights: [
+      "Audited existing user journeys to identify high-value moments where users were willing to pay",
+      "Benchmarked subscription models across comparable devotional and content apps",
+      "Designed a three-tier subscription model (Free, Bhakt+, Bhakt Pro) with distinct value propositions per tier",
+      "A/B tested pricing, paywall placement, and offer copy across cohorts of 50,000+ users",
+      "Coordinated with engineering on payment gateway integration (Razorpay) and receipt validation",
+    ],
+    results: [
+      { metric: "40%", label: "revenue growth within two quarters" },
+      { metric: "12%", label: "free-to-paid conversion rate" },
+      { metric: "3.2%", label: "subscription churn (below 5% target)" },
+      { metric: "4.1×", label: "LTV improvement over ad-only users" },
+    ],
+    skills: ["Monetisation", "A/B Testing", "SQL", "Pricing Strategy", "Razorpay"],
+    accent: "violet",
+  },
+  {
+    type: "project",
+    company: "Kapture CX",
+    title: "Customer Support Automation for Enterprise CRM",
+    subtitle: "Reducing resolution time by 30% through intelligent workflow design",
+    description:
+      "Enterprise clients on the Kapture CX platform were experiencing high ticket resolution times due to manual routing, inconsistent SLA tracking, and a lack of first-response automation — leading to customer churn risk.",
+    highlights: [
+      "Conducted deep-dive sessions with 8 enterprise clients to map existing support workflows and identify friction points",
+      "Designed a standardised automation framework covering auto-routing, SLA escalation rules, and first-response templates",
+      "Worked with the product team to configure platform capabilities for each client's unique workflow",
+      "Built a monitoring dashboard (Metabase) to track ticket volumes, resolution times, and SLA adherence in real-time",
+      "Ran training sessions for client support leads on the new automation stack",
+    ],
+    results: [
+      { metric: "30%", label: "reduction in average ticket resolution time" },
+      { metric: "15+", label: "enterprise clients successfully onboarded" },
+      { metric: "95%", label: "SLA adherence rate (up from 72%)" },
+      { metric: "4.6/5", label: "average client satisfaction score post-implementation" },
+    ],
+    skills: ["CRM", "Workflow Design", "Data Analysis", "Jira", "Metabase"],
+    accent: "teal",
+  },
+];
+
+const accentMap: Record<string, { badge: string; dot: string; projectBorder: string; metric: string; skill: string }> = {
+  amber: {
+    badge: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+    dot: "bg-amber-500 ring-amber-500/30",
+    projectBorder: "border-amber-500/20 hover:border-amber-500/40",
+    metric: "text-amber-400",
+    skill: "border-amber-800 bg-amber-950/50 text-amber-300",
+  },
   indigo: {
     badge: "border-indigo-500/30 bg-indigo-500/10 text-indigo-400",
     dot: "bg-indigo-500 ring-indigo-500/30",
-    line: "from-indigo-500/30",
+    projectBorder: "border-indigo-500/20 hover:border-indigo-500/40",
+    metric: "text-indigo-400",
+    skill: "border-indigo-800 bg-indigo-950/50 text-indigo-300",
   },
   violet: {
     badge: "border-violet-500/30 bg-violet-500/10 text-violet-400",
     dot: "bg-violet-500 ring-violet-500/30",
-    line: "from-violet-500/30",
+    projectBorder: "border-violet-500/20 hover:border-violet-500/40",
+    metric: "text-violet-400",
+    skill: "border-violet-800 bg-violet-950/50 text-violet-300",
   },
   teal: {
     badge: "border-teal-500/30 bg-teal-500/10 text-teal-400",
     dot: "bg-teal-500 ring-teal-500/30",
-    line: "from-teal-500/30",
+    projectBorder: "border-teal-500/20 hover:border-teal-500/40",
+    metric: "text-teal-400",
+    skill: "border-teal-800 bg-teal-950/50 text-teal-300",
   },
 };
 
@@ -94,24 +232,21 @@ export default function Experience() {
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
+      {/* Work Timeline */}
+      <div className="relative mb-24">
         <div className="absolute left-4 top-0 h-full w-px bg-zinc-800 sm:left-6" />
 
         <div className="space-y-16">
-          {experiences.map((exp, i) => {
+          {workExperiences.map((exp, i) => {
             const accent = accentMap[exp.accent];
             return (
               <div key={i} className="relative flex gap-8 sm:gap-12">
-                {/* Timeline dot */}
                 <div className="relative flex-shrink-0">
                   <div
                     className={`mt-1.5 h-3 w-3 rounded-full ring-4 ring-zinc-950 ${accent.dot}`}
                   />
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 pb-2">
                   <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
                     <div>
@@ -156,6 +291,112 @@ export default function Experience() {
             );
           })}
         </div>
+      </div>
+
+      {/* Projects section divider */}
+      <div id="projects" className="mb-12 flex items-center gap-4">
+        <div className="h-px flex-1 bg-zinc-800" />
+        <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+          Featured Projects
+        </p>
+        <div className="h-px flex-1 bg-zinc-800" />
+      </div>
+
+      {/* Project cards */}
+      <div className="space-y-8">
+        {projects.map((cs, i) => {
+          const accent = accentMap[cs.accent];
+          return (
+            <article
+              key={i}
+              className={`rounded-2xl border bg-zinc-900 p-8 transition-colors ${accent.projectBorder} lg:p-10`}
+            >
+              {/* Header */}
+              <div className="mb-6">
+                <div className="mb-3 flex flex-wrap items-center gap-3">
+                  <span className="rounded-full border border-zinc-600 bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-300">
+                    Academic Project
+                  </span>
+                  <span className="text-xs text-zinc-500">{cs.company}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-zinc-50 sm:text-3xl">
+                  {cs.title}
+                </h2>
+                <p className="mt-2 text-zinc-400">{cs.subtitle}</p>
+              </div>
+
+              <div className="grid gap-10 lg:grid-cols-2">
+                {/* Left: Problem + Approach */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                      The Problem
+                    </h3>
+                    <p className="text-sm text-zinc-400 leading-relaxed">
+                      {cs.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                      My Approach
+                    </h3>
+                    <ul className="space-y-3">
+                      {cs.highlights.map((step, j) => (
+                        <li key={j} className="flex gap-3 text-sm text-zinc-400">
+                          <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-800 text-[10px] font-bold text-zinc-500">
+                            {j + 1}
+                          </span>
+                          {step}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Right: Results + Skills */}
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="mb-4 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                      Results
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      {cs.results.map((r, j) => (
+                        <div
+                          key={j}
+                          className="rounded-xl border border-zinc-800 bg-zinc-950 p-4"
+                        >
+                          <p className={`text-2xl font-bold ${accent.metric}`}>
+                            {r.metric}
+                          </p>
+                          <p className="mt-1 text-xs leading-snug text-zinc-500">
+                            {r.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                      Skills & Tools
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {cs.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className={`rounded-full border px-3 py-1 text-xs font-medium ${accent.skill}`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </div>
   );

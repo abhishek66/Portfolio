@@ -43,10 +43,10 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/case-studies"
+              href="/experience"
               className="rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition-all hover:bg-indigo-500 hover:shadow-indigo-800/40"
             >
-              View Case Studies
+              View My Work
             </Link>
             <Link
               href="/contact"
