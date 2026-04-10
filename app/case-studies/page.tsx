@@ -7,39 +7,7 @@ export const metadata: Metadata = {
 };
 
 const caseStudies = [
-  {
-    label: "Academic Project",
-    tag: "Business Analysis & Consulting",
-    university: "University of Strathclyde",
-    programme: "MSc Business Analysis and Consulting · 2025",
-    title: "StormID – AI Workflow Optimisation for a Scottish Local Authority",
-    subtitle: "Evaluating how AI can improve service delivery across 10 council workflows",
-    description:
-      "Assessed 10 operational workflows for a Scottish Local Authority to identify where AI integration would deliver the highest ROI and efficiency gains. Using Lean Six Sigma and Business Process Analysis, the team ranked all workflows via a weighted AI Scoring Framework (scored across 6 criteria, out of 50), and recommended a phased 9-month implementation plan focused on the two highest-value targets.",
-    highlights: [
-      "Developed a custom AI Scoring Framework across 6 weighted criteria applied to all 10 workflows",
-      "Identified Workflow 7 (Freedom of Information Requests) as top priority, weighted score 40/50",
-      "Identified Workflow 8 (Financial Assistance Applications) as second priority, score 33.5/50",
-      "Mapped AI components (Convert, Classify, Generate, Validate, Summarise) to each step of both workflows",
-      "Designed a 2-phase 9-month implementation roadmap: PoC on Workflow 8, then parallel rollout of Workflow 7",
-      "Assessed risks across legal/GDPR compliance, ethics, financial sustainability, and operational governance",
-    ],
-    results: [
-      { metric: "68%", label: "Staff time reduction expected (Workflow 8)" },
-      { metric: "57%", label: "Staff time reduction expected (Workflow 7)" },
-      { metric: "16,680", label: "Annual applications processed (Workflow 8)" },
-      { metric: "460 hrs", label: "Monthly staff hours saved (Workflow 7)" },
-    ],
-    skills: [
-      "Lean Six Sigma",
-      "Business Process Analysis",
-      "AI Scoring Framework",
-      "Workflow Modelling",
-      "ROI Analysis",
-      "Stakeholder Mapping",
-      "Process Flowcharting",
-    ],
-  },
+  // 1. Police Force
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
@@ -74,39 +42,7 @@ const caseStudies = [
       "MS Excel",
     ],
   },
-  {
-    label: "Academic Project",
-    tag: "Business Analysis & Consulting",
-    university: "University of Strathclyde",
-    programme: "MSc Business Analysis and Consulting · 2026",
-    title: "Cradle-to-Gate Life Cycle Assessment of a Residential Building",
-    subtitle: "Embodied carbon analysis and low-carbon procurement strategy for a residential build",
-    description:
-      "Conducted a cradle-to-gate (A1–A3) Life Cycle Assessment of a residential building using material quantities from an Egyptian design as a real-world reference, analysed under UK construction assumptions and ICE Database emission factors. Identified concrete as the primary carbon hotspot and used Multi-Criteria Decision Analysis (MCDA) to recommend a phased low-carbon procurement strategy aligned with UK Net Zero 2050 targets.",
-    highlights: [
-      "Calculated embodied carbon emissions for three key materials — concrete (17,374 kgCO₂e), red bricks (7,239 kgCO₂e), and rebar steel (2,353 kgCO₂e) — using ICE Database V4.1",
-      "Identified concrete as the primary emission hotspot despite its lower per-kg intensity, due to its dominant volume (168,684 kg)",
-      "Applied MCDA across 6 material options scored on GHG, cost, and feasibility, recommending recycled steel (10/10) and low-carbon concrete (8/10)",
-      "Designed a 4-phase, 9-month intervention roadmap from carbon baseline establishment to standardised low-carbon procurement",
-      "Demonstrated projected CO₂ savings of 29.8% and a 26.9% reduction in global warming potential via low-carbon material switching",
-      "Aligned recommendations with the UK Net Zero 2050 target and the Paris Agreement",
-    ],
-    results: [
-      { metric: "29.8%", label: "Projected CO₂ savings from low-carbon materials" },
-      { metric: "17,374 kg", label: "Concrete's total embodied carbon (primary hotspot)" },
-      { metric: "3", label: "Materials assessed cradle-to-gate (concrete, steel, brick)" },
-      { metric: "9 Months", label: "Phased intervention roadmap duration" },
-    ],
-    skills: [
-      "Life Cycle Assessment (LCA)",
-      "MCDA",
-      "ICE Database",
-      "Embodied Carbon Analysis",
-      "Sustainability Strategy",
-      "Carbon Hotspot Mapping",
-      "Scenario Analysis",
-    ],
-  },
+  // 2. NHS A&E
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
@@ -142,6 +78,7 @@ const caseStudies = [
       "Excel",
     ],
   },
+  // 3. WB Alloys
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
@@ -178,6 +115,75 @@ const caseStudies = [
       "AI Agent Design",
     ],
   },
+  // 4. StormID
+  {
+    label: "Academic Project",
+    tag: "Business Analysis & Consulting",
+    university: "University of Strathclyde",
+    programme: "MSc Business Analysis and Consulting · 2025",
+    title: "StormID – AI Workflow Optimisation for a Scottish Local Authority",
+    subtitle: "Evaluating how AI can improve service delivery across 10 council workflows",
+    description:
+      "Assessed 10 operational workflows for a Scottish Local Authority to identify where AI integration would deliver the highest ROI and efficiency gains. Using Lean Six Sigma and Business Process Analysis, the team ranked all workflows via a weighted AI Scoring Framework (scored across 6 criteria, out of 50), and recommended a phased 9-month implementation plan focused on the two highest-value targets.",
+    highlights: [
+      "Developed a custom AI Scoring Framework across 6 weighted criteria applied to all 10 workflows",
+      "Identified Workflow 7 (Freedom of Information Requests) as top priority, weighted score 40/50",
+      "Identified Workflow 8 (Financial Assistance Applications) as second priority, score 33.5/50",
+      "Mapped AI components (Convert, Classify, Generate, Validate, Summarise) to each step of both workflows",
+      "Designed a 2-phase 9-month implementation roadmap: PoC on Workflow 8, then parallel rollout of Workflow 7",
+      "Assessed risks across legal/GDPR compliance, ethics, financial sustainability, and operational governance",
+    ],
+    results: [
+      { metric: "68%", label: "Staff time reduction expected (Workflow 8)" },
+      { metric: "57%", label: "Staff time reduction expected (Workflow 7)" },
+      { metric: "16,680", label: "Annual applications processed (Workflow 8)" },
+      { metric: "460 hrs", label: "Monthly staff hours saved (Workflow 7)" },
+    ],
+    skills: [
+      "Lean Six Sigma",
+      "Business Process Analysis",
+      "AI Scoring Framework",
+      "Workflow Modelling",
+      "ROI Analysis",
+      "Stakeholder Mapping",
+      "Process Flowcharting",
+    ],
+  },
+  // 5. LCA
+  {
+    label: "Academic Project",
+    tag: "Business Analysis & Consulting",
+    university: "University of Strathclyde",
+    programme: "MSc Business Analysis and Consulting · 2026",
+    title: "Cradle-to-Gate Life Cycle Assessment of a Residential Building",
+    subtitle: "Embodied carbon analysis and low-carbon procurement strategy for a residential build",
+    description:
+      "Conducted a cradle-to-gate (A1–A3) Life Cycle Assessment of a residential building using material quantities from an Egyptian design as a real-world reference, analysed under UK construction assumptions and ICE Database emission factors. Identified concrete as the primary carbon hotspot and used Multi-Criteria Decision Analysis (MCDA) to recommend a phased low-carbon procurement strategy aligned with UK Net Zero 2050 targets.",
+    highlights: [
+      "Calculated embodied carbon emissions for three key materials — concrete (17,374 kgCO₂e), red bricks (7,239 kgCO₂e), and rebar steel (2,353 kgCO₂e) — using ICE Database V4.1",
+      "Identified concrete as the primary emission hotspot despite its lower per-kg intensity, due to its dominant volume (168,684 kg)",
+      "Applied MCDA across 6 material options scored on GHG, cost, and feasibility, recommending recycled steel (10/10) and low-carbon concrete (8/10)",
+      "Designed a 4-phase, 9-month intervention roadmap from carbon baseline establishment to standardised low-carbon procurement",
+      "Demonstrated projected CO₂ savings of 29.8% and a 26.9% reduction in global warming potential via low-carbon material switching",
+      "Aligned recommendations with the UK Net Zero 2050 target and the Paris Agreement",
+    ],
+    results: [
+      { metric: "29.8%", label: "Projected CO₂ savings from low-carbon materials" },
+      { metric: "17,374 kg", label: "Concrete's total embodied carbon (primary hotspot)" },
+      { metric: "3", label: "Materials assessed cradle-to-gate (concrete, steel, brick)" },
+      { metric: "9 Months", label: "Phased intervention roadmap duration" },
+    ],
+    skills: [
+      "Life Cycle Assessment (LCA)",
+      "MCDA",
+      "ICE Database",
+      "Embodied Carbon Analysis",
+      "Sustainability Strategy",
+      "Carbon Hotspot Mapping",
+      "Scenario Analysis",
+    ],
+  },
+  // 6. STAHL
   {
     label: "Academic Project",
     tag: "Business Analysis & Consulting",
