@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Experience — Abhishek Manikandan",
+  title: "Experience | Abhishek Manikandan",
   description:
     "Product management experience across Prodsmiths, AppsForBharat, and Kapture CX, plus featured case studies.",
 };
@@ -37,7 +37,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Prodsmiths",
     role: "Associate Product Manager",
-    period: "2024 — Present",
+    period: "2024 - Present",
     location: "Remote",
     description:
       "Working on 0-to-1 product development for early-stage startups and products within the Prodsmiths ecosystem. Drive the end-to-end product lifecycle from discovery through launch.",
@@ -55,14 +55,14 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "AppsForBharat",
     role: "Product Manager",
-    period: "2023 — 2024",
+    period: "2023 - 2024",
     location: "Bangalore, India",
     description:
       "Led product initiatives for a devotional super-app serving millions of users across India. Owned key surfaces including content discovery, monetisation, and personalisation.",
     highlights: [
       "Owned the monetisation roadmap, introducing subscription tiers and in-app purchases that grew revenue by 40%",
       "Redesigned the content discovery experience, improving D7 retention by 18% through personalised recommendations",
-      "Led the 0-to-1 build of the ARC (Astrology, Religion & Content) platform — a new vertical within the app",
+      "Led the 0-to-1 build of the ARC (Astrology, Religion & Content) platform, a new vertical within the app",
       "Managed a cross-functional team of 12 across engineering, design, content, and data",
       "Defined and maintained the product roadmap across two quarterly planning cycles",
     ],
@@ -73,7 +73,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
-    period: "2022 — 2023",
+    period: "2022 - 2023",
     location: "Bangalore, India",
     description:
       "Managed enterprise CRM implementations and customer support automation workflows for key accounts. Acted as a bridge between customers and the product team to drive platform improvements.",
@@ -94,9 +94,9 @@ const projects: ProjectEntry[] = [
     type: "project",
     company: "AppsForBharat",
     title: "Building the ARC Platform",
-    subtitle: "Astrology, Religion & Content vertical — from concept to launch",
+    subtitle: "Astrology, Religion & Content vertical, from concept to launch",
     description:
-      "AppsForBharat had a strong core in devotional content, but lacked a structured offering around astrology and personalised religious content — two high-intent, high-engagement categories growing rapidly in India's digital market.",
+      "AppsForBharat had a strong core in devotional content, but lacked a structured offering around astrology and personalised religious content, two high-intent, high-engagement categories growing rapidly in India's digital market.",
     highlights: [
       "Ran 30+ user interviews across target demographics to validate demand and understand content consumption habits",
       "Mapped the competitive landscape across 10 apps to identify white-space opportunities",
@@ -142,7 +142,7 @@ const projects: ProjectEntry[] = [
     title: "Customer Support Automation for Enterprise CRM",
     subtitle: "Reducing resolution time by 30% through intelligent workflow design",
     description:
-      "Enterprise clients on the Kapture CX platform were experiencing high ticket resolution times due to manual routing, inconsistent SLA tracking, and a lack of first-response automation — leading to customer churn risk.",
+      "Enterprise clients on the Kapture CX platform were experiencing high ticket resolution times due to manual routing, inconsistent SLA tracking, and a lack of first-response automation, leading to customer churn risk.",
     highlights: [
       "Conducted deep-dive sessions with 8 enterprise clients to map existing support workflows and identify friction points",
       "Designed a standardised automation framework covering auto-routing, SLA escalation rules, and first-response templates",
@@ -204,7 +204,7 @@ export default function Experience() {
         </h1>
         <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
           Three years of product experience across consumer apps, B2B SaaS,
-          and early-stage startups — building things that actually ship.
+          and early-stage startups, building things that actually ship.
         </p>
       </div>
 

@@ -36,7 +36,7 @@ export default function Home() {
           </h1>
 
           <p className="mb-10 max-w-xl text-lg leading-relaxed text-zinc-400">
-            Building products that users love — from 0 to 1 and beyond.
+            Building products that users love, from 0 to 1 and beyond.
             Focused on data-informed decisions, user empathy, and scalable
             growth.
           </p>
@@ -79,7 +79,7 @@ export default function Home() {
                 </p>
                 <p>
                   My experience spans B2C consumer apps, enterprise CRM
-                  platforms, and early-stage startups — giving me a broad
+                  platforms, and early-stage startups, giving me a broad
                   perspective on how to build for very different users and
                   constraints.
                 </p>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Abhishek Manikandan",
+  title: "Case Studies | Abhishek Manikandan",
   description:
     "Academic and consulting case studies including the STAHL IIoT rental model feasibility study.",
 };
@@ -53,7 +53,7 @@ export default function CaseStudies() {
           Case Studies
         </h1>
         <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
-          In-depth consulting and analytical projects — covering the problem,
+          In-depth consulting and analytical projects, covering the problem,
           methodology, and outcomes.
         </p>
       </div>

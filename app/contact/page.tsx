@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Abhishek Manikandan",
-  description: "Get in touch with Abhishek Manikandan — Product Manager.",
+  title: "Contact | Abhishek Manikandan",
+  description: "Get in touch with Abhishek Manikandan, Product Manager.",
 };
 
 const contactLinks = [
@@ -75,7 +75,7 @@ export default function Contact() {
         </h1>
         <p className="mt-4 max-w-lg text-zinc-400 leading-relaxed">
           Whether you have a product challenge to discuss, a role to share, or
-          just want to say hi — I&apos;d love to hear from you. I typically
+          just want to say hi, I&apos;d love to hear from you. I typically
           respond within 24 hours.
         </p>
       </div>
@@ -143,7 +143,7 @@ export default function Contact() {
             <p className="mt-1 text-sm text-zinc-400 leading-relaxed">
               I&apos;m currently exploring full-time PM roles and select
               advisory engagements. If you&apos;re building something
-              interesting, reach out — I&apos;d love to learn more.
+              interesting, reach out. I&apos;d love to learn more.
             </p>
           </div>
         </div>
