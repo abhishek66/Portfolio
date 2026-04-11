@@ -231,11 +231,8 @@ export default function CaseStudies() {
   return (
     <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
       <div className="mb-16">
-        <p className="mb-3 text-xs font-semibold tracking-widest text-amber-400 uppercase">
-          Portfolio
-        </p>
         <h1 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
-          Case Studies
+          Academic Case Studies and Projects
         </h1>
         <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
           In-depth consulting and analytical projects, covering the problem,
@@ -251,24 +248,14 @@ export default function CaseStudies() {
           >
             {/* Header */}
             <div className="mb-8">
-              <div className="mb-3 flex flex-wrap items-center gap-2">
-                <span className="rounded-full border border-zinc-600 bg-zinc-800 px-3 py-1 text-xs font-semibold text-zinc-300">
-                  {cs.label}
-                </span>
-                <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400">
-                  {cs.tag}
-                </span>
-              </div>
-
               {"client" in cs && cs.client && (
-                <div className="mb-5 flex items-center gap-3">
+                <div className="mb-4 flex items-center gap-3">
                   {"logo" in cs && cs.logo && (
                     <ClientLogo src={cs.logo} alt={`${cs.client} logo`} />
                   )}
-                  <span className="text-base font-semibold text-zinc-100 tracking-tight">
+                  <span className="text-xl font-bold text-amber-400 tracking-tight">
                     {cs.client}
                   </span>
-                  <span className="text-xs text-zinc-500 font-medium">· Client</span>
                 </div>
               )}
 
