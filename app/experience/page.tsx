@@ -6,15 +6,23 @@ export const metadata: Metadata = {
     "Product management and business analysis experience across Prodsmiths, AppsForBharat, and Kapture CX.",
 };
 
+type ImpactStat = { metric: string; label: string };
+type ModuleBlock = { title: string; items: string[] };
+
 type WorkEntry = {
   type: "work";
   company: string;
   role: string;
   period: string;
   location: string;
-  description: string;
-  highlights: string[];
-  modules?: string[];
+  // Optional enhanced layout fields
+  headline?: string;
+  impact?: ImpactStat[];
+  contributions?: string[];
+  moduleBlocks?: ModuleBlock[];
+  // Standard fields
+  description?: string;
+  highlights?: string[];
   skills: string[];
   accent: string;
 };
@@ -23,42 +31,49 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "Prodsmiths",
-    role: "Product Manager / Business Analyst",
-    period: "October 2023 - January 2025",
-    location: "Remote",
-    description:
-      "Spearheaded India's first digital transformation of the Acquisition Module for ARCIL (Asset Reconstruction Company), revolutionising the industry's traditional processes.",
-    highlights: [
-      "Identified and clarified product objectives and scope across the portfolio",
-      "Executed product and project management across all phases: Initiation, Planning, Design, Execution, Closure and Monitoring",
-      "Architected comprehensive data models and implemented advanced data instrumentation strategies",
-      "Designed and documented complex system features through detailed flow diagrams, wireframing and user stories, enabling seamless collaboration across cross-functional teams",
-      "End-to-end testing of each feature in UAT and Production environments",
-      "Took ownership of the full deployment process across four drops",
-      "Prepared project plans and schedules; tracked capacity utilisation and resource management",
-      "Updated project status for stakeholders; handled project and client meetings",
-      "Preliminary root cause analysis of bugs using front-end and back-end logs",
-      "Monitored change requests and ensured timely delivery",
+    role: "Product Manager · Business Analyst",
+    period: "October 2023 – January 2025",
+    location: "India · Remote",
+    headline:
+      "Built India's first fully digital ARC platform for ARCIL — end-to-end collections and acquisition system serving 50+ institutional lenders.",
+    impact: [
+      { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
+      { metric: "94%", label: "On-time sprint delivery across 6 sprints" },
+      { metric: "50+", label: "Institutional lenders served" },
+      { metric: "2008 → 2024", label: "Excel reporting replaced with real-time SQL forecasting" },
     ],
-    modules: [
-      "Acquisition",
-      "Legal Due Diligence",
-      "Valuation Due Diligence",
-      "Financial Due Diligence",
-      "Acquisition Proposal",
-      "Bid Details",
-      "Acquisition Activities",
+    contributions: [
+      "Owned the full product lifecycle end-to-end: scoping, wireframing in Figma, user story authoring, UAT, and production deployment across 6 sprints",
+      "Designed core data architecture — built SQL-based ER models enabling real-time recovery forecasting, replacing manual Excel reporting in use since 2008",
+      "Cut portfolio onboarding from 14 days to 48 hours by digitising legal, financial, and valuation due diligence workflows",
+      "Managed client relationships: weekly stakeholder updates with C-level sponsors, RCA for production issues, and change request prioritisation under regulatory scope changes",
+      "Maintained 94% on-time delivery across all sprints despite mid-cycle regulatory changes",
+    ],
+    moduleBlocks: [
+      {
+        title: "Acquisition Suite",
+        items: ["Acquisition Module", "Acquisition Proposal", "Bid Details", "Acquisition Activities"],
+      },
+      {
+        title: "Due Diligence Suite",
+        items: ["Legal Due Diligence", "Financial Due Diligence", "Valuation Due Diligence"],
+      },
+      {
+        title: "Operations",
+        items: ["UAT Environment", "Production Deployment", "Change Request Management"],
+      },
     ],
     skills: [
       "Product Management",
-      "Business Analysis",
+      "SQL",
+      "Figma",
+      "Data Architecture",
       "UAT",
-      "Data Modelling",
-      "Wireframing",
-      "User Stories",
       "Stakeholder Management",
       "Agile",
       "RCA",
+      "ER Modelling",
+      "Wireframing",
     ],
     accent: "indigo",
   },
@@ -100,21 +115,37 @@ const workExperiences: WorkEntry[] = [
   },
 ];
 
-const accentMap: Record<string, { badge: string; dot: string; moduleTag: string }> = {
+const accentMap: Record<string, {
+  badge: string;
+  dot: string;
+  metric: string;
+  moduleBlock: string;
+  moduleBlockTitle: string;
+  moduleTag: string;
+}> = {
   indigo: {
     badge: "border-indigo-500/30 bg-indigo-500/10 text-indigo-400",
     dot: "bg-indigo-500 ring-indigo-500/30",
-    moduleTag: "border-indigo-700 bg-indigo-950/60 text-indigo-300",
+    metric: "text-indigo-400",
+    moduleBlock: "border-indigo-500/20 bg-indigo-950/30",
+    moduleBlockTitle: "text-indigo-300",
+    moduleTag: "text-indigo-200",
   },
   violet: {
     badge: "border-violet-500/30 bg-violet-500/10 text-violet-400",
     dot: "bg-violet-500 ring-violet-500/30",
-    moduleTag: "border-violet-700 bg-violet-950/60 text-violet-300",
+    metric: "text-violet-400",
+    moduleBlock: "border-violet-500/20 bg-violet-950/30",
+    moduleBlockTitle: "text-violet-300",
+    moduleTag: "text-violet-200",
   },
   teal: {
     badge: "border-teal-500/30 bg-teal-500/10 text-teal-400",
     dot: "bg-teal-500 ring-teal-500/30",
-    moduleTag: "border-teal-700 bg-teal-950/60 text-teal-300",
+    metric: "text-teal-400",
+    moduleBlock: "border-teal-500/20 bg-teal-950/30",
+    moduleBlockTitle: "text-teal-300",
+    moduleTag: "text-teal-200",
   },
 };
 
@@ -134,30 +165,26 @@ export default function Experience() {
         </p>
       </div>
 
-      {/* Work Timeline */}
       <div className="relative">
         <div className="absolute left-4 top-0 h-full w-px bg-zinc-800 sm:left-6" />
 
         <div className="space-y-16">
           {workExperiences.map((exp, i) => {
             const accent = accentMap[exp.accent];
+            const isEnhanced = !!exp.headline;
+
             return (
               <div key={i} className="relative flex gap-8 sm:gap-12">
-                <div className="relative flex-shrink-0">
-                  <div
-                    className={`mt-1.5 h-3 w-3 rounded-full ring-4 ring-zinc-950 ${accent.dot}`}
-                  />
+                <div className="flex-shrink-0">
+                  <div className={`mt-1.5 h-3 w-3 rounded-full ring-4 ring-zinc-950 ${accent.dot}`} />
                 </div>
 
                 <div className="flex-1 pb-2">
+                  {/* Header row */}
                   <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h2 className="text-xl font-bold text-zinc-50">
-                        {exp.company}
-                      </h2>
-                      <p className="mt-0.5 text-base font-medium text-zinc-300">
-                        {exp.role}
-                      </p>
+                      <h2 className="text-xl font-bold text-zinc-50">{exp.company}</h2>
+                      <p className="mt-0.5 text-base font-medium text-zinc-300">{exp.role}</p>
                     </div>
                     <div className="flex flex-col items-end gap-1 text-right">
                       <span className="text-sm text-zinc-400">{exp.period}</span>
@@ -165,38 +192,104 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <p className="mb-5 text-zinc-400 leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  <ul className="mb-6 space-y-2.5">
-                    {exp.highlights.map((h, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-zinc-400">
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-zinc-600" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {exp.modules && exp.modules.length > 0 && (
-                    <div className="mb-5">
-                      <p className="mb-2 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                        Modules Delivered
+                  {/* ENHANCED LAYOUT (Prodsmiths) */}
+                  {isEnhanced ? (
+                    <div className="space-y-8">
+                      {/* Headline */}
+                      <p className="text-base font-semibold text-zinc-200 leading-relaxed">
+                        {exp.headline}
                       </p>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.modules.map((mod) => (
-                          <span
-                            key={mod}
-                            className={`rounded-full border px-3 py-1 text-xs font-medium ${accent.moduleTag}`}
-                          >
-                            {mod}
-                          </span>
-                        ))}
-                      </div>
+
+                      {/* Impact grid */}
+                      {exp.impact && (
+                        <div>
+                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                            Impact
+                          </p>
+                          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                            {exp.impact.map((stat, j) => (
+                              <div
+                                key={j}
+                                className="rounded-xl border border-zinc-800 bg-zinc-900 p-4"
+                              >
+                                <p className={`text-lg font-bold leading-tight ${accent.metric}`}>
+                                  {stat.metric}
+                                </p>
+                                <p className="mt-1 text-xs leading-snug text-zinc-500">
+                                  {stat.label}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Contributions */}
+                      {exp.contributions && (
+                        <div>
+                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                            My Contributions
+                          </p>
+                          <ul className="space-y-2.5">
+                            {exp.contributions.map((c, j) => (
+                              <li key={j} className="flex gap-3 text-sm text-zinc-400">
+                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-zinc-600" />
+                                {c}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Module blocks */}
+                      {exp.moduleBlocks && (
+                        <div>
+                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+                            Platform Modules
+                          </p>
+                          <div className="grid gap-3 sm:grid-cols-3">
+                            {exp.moduleBlocks.map((block, j) => (
+                              <div
+                                key={j}
+                                className={`rounded-xl border p-4 ${accent.moduleBlock}`}
+                              >
+                                <p className={`mb-2.5 text-xs font-bold tracking-wide uppercase ${accent.moduleBlockTitle}`}>
+                                  {block.title}
+                                </p>
+                                <ul className="space-y-1.5">
+                                  {block.items.map((item) => (
+                                    <li key={item} className={`text-xs ${accent.moduleTag}`}>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
+                  ) : (
+                    /* STANDARD LAYOUT (AppsForBharat, Kapture CX) */
+                    <>
+                      {exp.description && (
+                        <p className="mb-5 text-zinc-400 leading-relaxed">{exp.description}</p>
+                      )}
+                      {exp.highlights && (
+                        <ul className="mb-6 space-y-2.5">
+                          {exp.highlights.map((h, j) => (
+                            <li key={j} className="flex gap-3 text-sm text-zinc-400">
+                              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-zinc-600" />
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
                   )}
 
-                  <div>
+                  {/* Skills — always shown */}
+                  <div className={isEnhanced ? "mt-8" : ""}>
                     <p className="mb-2 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
                       Skills
                     </p>
