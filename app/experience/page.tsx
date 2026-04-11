@@ -35,7 +35,7 @@ const workExperiences: WorkEntry[] = [
     period: "October 2023 – January 2025",
     location: "India · Remote",
     headline:
-      "Built India's first fully digital ARC platform for ARCIL — end-to-end collections and acquisition system serving 50+ institutional lenders.",
+      "Built India's first fully digital ARC platform for ARCIL — end-to-end collections and acquisition system serving multiple institutional lenders.",
     impact: [
       { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
       { metric: "94%", label: "On-time sprint delivery across 6 sprints" },
