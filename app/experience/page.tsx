@@ -20,6 +20,7 @@ type WorkEntry = {
   impact?: ImpactStat[];
   contributions?: string[];
   moduleBlocks?: ModuleBlock[];
+  moduleBlocksLabel?: string;
   // Standard fields
   description?: string;
   highlights?: string[];
@@ -76,6 +77,86 @@ const workExperiences: WorkEntry[] = [
       "Wireframing",
     ],
     accent: "indigo",
+  },
+  {
+    type: "work",
+    company: "AppsForBharat",
+    role: "Product Analyst",
+    period: "December 2022 – November 2023",
+    location: "Bangalore, India",
+    headline:
+      "Consumer devotional-tech platform with 10M+ users. Owned monetisation and retention products across Sri Mandir.",
+    impact: [
+      { metric: "+23%", label: "Average order value on puja products" },
+      { metric: "+58%", label: "Share-to-install ratio via referral redesign" },
+      { metric: "-8% Churn", label: "Q2 2023, driven by CRM automation" },
+      { metric: "120 hrs/wk", label: "Manual effort saved through automated journeys" },
+    ],
+    contributions: [
+      "Built a cross-sell engine with A/B tested pricing bundles for puja products on web (Sri Mandir) — deployed full funnel in 3 weeks, driving +23% average order value",
+      "Redesigned referral sharing flow end-to-end: optimised WhatsApp copy, incentive timing, and placement strategy — lifted share-to-install ratio by 58%",
+      "Architected 15+ automated CRM journeys across IVR, bots, push notifications, and in-app banners — reduced Q2 2023 churn by 8% and saved 120 manual hours per week",
+      "Scoped and shipped background audio feature for Sri Mandir — improved session length by 19% through UX redesign and close technical collaboration with engineering",
+      "Improved Seva section visibility to increase feature discoverability and drive monetisation lift across the app",
+      "Built leadership dashboards in Mixpanel and Metabase tracking retention cohorts, LTV curves, and funnel drop-offs across 5M+ monthly events",
+    ],
+    moduleBlocks: [
+      {
+        title: "Monetisation",
+        items: ["Cross-sell Engine (Puja Web)", "Seva Section Redesign", "Pricing Bundle A/B Tests"],
+      },
+      {
+        title: "Growth & Retention",
+        items: ["Referral Sharing Redesign", "Background Audio", "15+ Automated CRM Journeys"],
+      },
+      {
+        title: "Analytics & CRM",
+        items: ["Mixpanel Dashboards", "Metabase Funnels", "IVR & Bot Flows", "NPS Tracking", "Push & In-App Campaigns"],
+      },
+    ],
+    moduleBlocksLabel: "Features Shipped",
+    skills: [
+      "Product Analytics",
+      "CRM Automation",
+      "A/B Testing",
+      "Mixpanel",
+      "Metabase",
+      "Retention Strategy",
+      "Monetisation",
+      "User Journey Design",
+      "Figma",
+      "Growth",
+    ],
+    accent: "violet",
+  },
+  {
+    type: "work",
+    company: "AppsForBharat",
+    role: "Product Intern",
+    period: "July 2022 – November 2022",
+    location: "Bangalore, India",
+    headline:
+      "Foundation role in data and CRM — built the analytical infrastructure that informed product decisions across the platform.",
+    impact: [
+      { metric: "12%", label: "Retention improvement in CRM pilot cohort" },
+      { metric: "5M+", label: "Monthly events tracked across dashboards" },
+    ],
+    contributions: [
+      "Performed quantitative user segmentation analysis on large datasets to uncover behavioural patterns and surface actionable insights",
+      "Built and maintained interactive dashboards in Mixpanel and Metabase for real-time tracking of key retention and engagement metrics",
+      "Designed and executed CRM campaign strategies — personalised engagement flows that improved retention metrics by 12% in the pilot cohort",
+      "Delivered data visualisations and reports that directly informed strategic planning and leadership decision-making",
+    ],
+    skills: [
+      "Data Analysis",
+      "Mixpanel",
+      "Metabase",
+      "CRM Strategy",
+      "Dashboard Design",
+      "User Segmentation",
+      "Campaign Analytics",
+    ],
+    accent: "violet",
   },
   {
     type: "work",
@@ -245,7 +326,7 @@ export default function Experience() {
                       {exp.moduleBlocks && (
                         <div>
                           <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                            Platform Modules
+                            {exp.moduleBlocksLabel ?? "Platform Modules"}
                           </p>
                           <div className="grid gap-3 sm:grid-cols-3">
                             {exp.moduleBlocks.map((block, j) => (
