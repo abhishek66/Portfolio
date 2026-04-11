@@ -158,6 +158,38 @@ const workExperiences: WorkEntry[] = [
     ],
     accent: "violet",
   },
+  {
+    type: "work",
+    company: "Kapture CX",
+    role: "CRM Specialist",
+    period: "July 2020 – June 2022",
+    location: "Bangalore, India",
+    headline:
+      "Enterprise CRM implementation and optimisation for BFSI and telecom clients — driving adoption, efficiency, and measurable service improvements.",
+    impact: [
+      { metric: "3", label: "Enterprise accounts led end-to-end" },
+      { metric: "+40%", label: "Client adoption rate improvement post-training" },
+      { metric: "-15%", label: "Average handle time reduction" },
+      { metric: "10,000+", label: "Customer interactions analysed" },
+    ],
+    contributions: [
+      "Led end-to-end deployment and optimisation of CRM solutions across 3 enterprise accounts in BFSI and telecom sectors",
+      "Designed and conducted structured training programs for client teams, improving platform adoption rates by 40%",
+      "Analysed 10,000+ customer interactions to identify service gaps and operational inefficiencies",
+      "Recommended and implemented workflow changes that reduced average handle time by 15% across client operations",
+    ],
+    skills: [
+      "CRM Implementation",
+      "Enterprise Client Management",
+      "Training & Adoption",
+      "Workflow Optimisation",
+      "Data Analysis",
+      "BFSI",
+      "Telecom",
+      "Stakeholder Management",
+    ],
+    accent: "teal",
+  },
 ];
 
 const accentMap: Record<string, {
