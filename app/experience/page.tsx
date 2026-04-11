@@ -158,42 +158,6 @@ const workExperiences: WorkEntry[] = [
     ],
     accent: "violet",
   },
-  {
-    type: "work",
-    company: "AppsForBharat",
-    role: "Product Manager",
-    period: "2023 - 2024",
-    location: "Bangalore, India",
-    description:
-      "Led product initiatives for a devotional super-app serving millions of users across India. Owned key surfaces including content discovery, monetisation, and personalisation.",
-    highlights: [
-      "Owned the monetisation roadmap, introducing subscription tiers and in-app purchases that grew revenue by 40%",
-      "Redesigned the content discovery experience, improving D7 retention by 18% through personalised recommendations",
-      "Led the 0-to-1 build of the ARC (Astrology, Religion & Content) platform, a new vertical within the app",
-      "Managed a cross-functional team of 12 across engineering, design, content, and data",
-      "Defined and maintained the product roadmap across two quarterly planning cycles",
-    ],
-    skills: ["SQL", "Figma", "A/B Testing", "Monetisation", "Retention"],
-    accent: "violet",
-  },
-  {
-    type: "work",
-    company: "Kapture CX",
-    role: "CRM Specialist",
-    period: "2022 - 2023",
-    location: "Bangalore, India",
-    description:
-      "Managed enterprise CRM implementations and customer support automation workflows for key accounts. Acted as a bridge between customers and the product team to drive platform improvements.",
-    highlights: [
-      "Configured and deployed CRM workflows for 15+ enterprise clients in retail and BFSI verticals",
-      "Reduced average ticket resolution time by 30% through automation rule optimisation",
-      "Documented and escalated customer pain points into structured product feedback for the engineering team",
-      "Trained client teams on CRM platform usage and best practices",
-      "Collaborated with the product team to surface recurring customer requests into roadmap items",
-    ],
-    skills: ["CRM", "Workflow Automation", "Customer Success", "Jira", "Data Analysis"],
-    accent: "teal",
-  },
 ];
 
 const accentMap: Record<string, {
