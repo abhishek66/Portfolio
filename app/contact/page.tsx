@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const contactLinks = [
   {
     label: "LinkedIn",
-    handle: "linkedin.com/in/abhishek-manikandan-470534125",
+    handle: "linkedin.com/in/abhishek-manikandan",
     href: "https://www.linkedin.com/in/abhishek-manikandan-470534125/",
     description: "Connect with me professionally",
     icon: (
@@ -101,17 +101,17 @@ export default function Contact() {
       </ScrollReveal>
 
       {/* Contact cards */}
-      <div className="mb-20 grid gap-5 sm:grid-cols-2 lg:max-w-2xl">
+      <div className="mb-20 grid grid-cols-2 gap-5 items-stretch lg:max-w-2xl">
         {contactLinks.map((link, i) => {
           const ac = accentMap[link.accent];
           return (
-            <ScrollReveal key={link.label} delay={i * 80}>
+            <ScrollReveal key={link.label} delay={i * 80} className="h-full">
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={[
-                  "group flex flex-col gap-5",
+                  "h-full group flex flex-col gap-5",
                   "rounded-[var(--radius-md)] border bg-[var(--bg-surface)] p-7",
                   "transition-all duration-300",
                   "hover:bg-[var(--bg-elevated)] hover:-translate-y-1",

@@ -21,7 +21,7 @@ const skillGroups = [
     skills: [
       "Product Discovery", "Roadmapping", "User Research", "PRD Writing",
       "User Stories", "Wireframing", "UAT", "Sprint Planning",
-      "Prioritisation", "Go-to-Market",
+      "Prioritisation", "Go-to-Market", "Product Lifecycle", "Deployment",
     ],
   },
   {
@@ -45,7 +45,7 @@ const skillGroups = [
     skills: [
       "Figma", "Jira", "Agile / Scrum", "Excel", "PowerPoint",
       "Stakeholder Reporting", "Change Management",
-      "Deployment Management", "RCA",
+      "Deployment Management", "RCA", "MS Office", "G-Suite",
     ],
   },
 ];
@@ -76,13 +76,12 @@ export default function Home() {
 
               {/* Subtitle — DM Sans 300 */}
               <p className="mb-4 max-w-xl font-ui font-light text-lg leading-relaxed text-[var(--text-secondary)]">
-                Turning complex business problems into clear strategy, measurable
-                outcomes, and products that scale.
+                Product Manager who builds systems that move money.
               </p>
 
               {/* Meta chips — DM Mono */}
               <div className="mb-6 flex flex-wrap gap-2">
-                {["MSc Business Analysis", "University of Strathclyde", "4 yrs Experience"].map((chip) => (
+                {["MSc Business Analysis", "University of Strathclyde", "4+ Years Experience"].map((chip) => (
                   <span
                     key={chip}
                     className="stat-chip inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-1 font-data text-xs text-[var(--text-muted)]"
@@ -157,8 +156,7 @@ export default function Home() {
             <ScrollReveal>
               <SectionLabel className="mb-4">About Me</SectionLabel>
               <h2 className="mb-6 font-display font-normal text-4xl leading-tight text-[var(--text-primary)] sm:text-5xl">
-                Where analysis meets{" "}
-                <span className="text-[var(--text-secondary)]">execution</span>
+                Where analysis meets execution
               </h2>
               <div className="space-y-4 font-ui font-light text-base leading-relaxed text-[var(--text-secondary)]">
                 <p>
@@ -239,11 +237,11 @@ export default function Home() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 items-stretch">
             {skillGroups.map((group, i) => (
-              <ScrollReveal key={group.category} delay={i * 80}>
+              <ScrollReveal key={group.category} delay={i * 80} className="h-full">
                 <div
-                  className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 border-l-2 border-l-gold transition-all duration-300 hover:bg-[var(--bg-elevated)] hover:border-[var(--border-strong)] hover:-translate-y-1"
+                  className="h-full flex flex-col rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 border-l-2 border-l-gold transition-all duration-300 hover:bg-[var(--bg-elevated)] hover:border-[var(--border-strong)] hover:-translate-y-1"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
                   <h3 className="mb-4 font-ui font-medium text-sm uppercase tracking-widest text-[var(--text-muted)] border-l-0">

@@ -18,6 +18,7 @@ type WorkEntry = {
   role: string;
   period: string;
   location: string;
+  promoted?: boolean;
   headline?: string;
   impact?: ImpactStat[];
   contributions?: string[];
@@ -26,6 +27,15 @@ type WorkEntry = {
   description?: string;
   highlights?: string[];
   skills: string[];
+  accent: string;
+};
+
+type EducationEntry = {
+  institution: string;
+  location: string;
+  degree: string;
+  grade?: string;
+  period: string;
   accent: string;
 };
 
@@ -41,7 +51,7 @@ const workExperiences: WorkEntry[] = [
     impact: [
       { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
       { metric: "94%",        label: "On-time sprint delivery across 6 sprints" },
-      { metric: "50+",        label: "Institutional lenders served" },
+      { metric: "10+",        label: "Institutional lenders served" },
       { metric: "2008 → 2024", label: "Excel reporting replaced with real-time SQL forecasting" },
     ],
     contributions: [
@@ -74,8 +84,9 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "AppsForBharat",
-    role: "Product Analyst",
+    role: "Product Analyst → Product Manager",
     period: "December 2022 – November 2023",
+    promoted: true,
     location: "Bangalore, India",
     headline:
       "Consumer devotional-tech platform with 10M+ users. Owned monetisation and retention products across Sri Mandir.",
@@ -142,7 +153,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
-    period: "July 2020 – June 2022",
+    period: "July 2019 – June 2022",
     location: "Bangalore, India",
     headline:
       "Enterprise CRM implementation and optimisation for BFSI and telecom clients, driving adoption, efficiency, and measurable service improvements.",
@@ -157,11 +168,30 @@ const workExperiences: WorkEntry[] = [
       "Designed and conducted structured training programs for client teams, improving platform adoption rates by 40%",
       "Analysed 10,000+ customer interactions to identify service gaps and operational inefficiencies",
       "Recommended and implemented workflow changes that reduced average handle time by 15% across client operations",
+      "Delivered CRM campaign insights that improved retention metrics by 12% in pilot cohort",
     ],
     skills: [
       "CRM Implementation", "Enterprise Client Management", "Training & Adoption",
       "Workflow Optimisation", "Data Analysis", "BFSI", "Telecom", "Stakeholder Management",
     ],
+    accent: "gold-muted",
+  },
+];
+
+const educationEntries: EducationEntry[] = [
+  {
+    institution: "University of Strathclyde",
+    location: "Glasgow, UK",
+    degree: "MSc Business Analysis and Consulting",
+    period: "2025 – 2026",
+    accent: "gold",
+  },
+  {
+    institution: "Akshaya College of Engineering and Technology",
+    location: "Coimbatore, India",
+    degree: "BEng Electronics and Communication",
+    grade: "First Class — 7.7/10",
+    period: "2013 – 2017",
     accent: "gold-muted",
   },
 ];
@@ -257,8 +287,13 @@ export default function Experience() {
                         <h2 className="font-display font-normal text-2xl text-[var(--text-primary)]">
                           {exp.company}
                         </h2>
-                        <p className="mt-0.5 font-ui font-medium text-sm text-[var(--text-secondary)]">
+                        <p className="mt-0.5 flex flex-wrap items-center gap-2 font-ui font-medium text-sm text-[var(--text-secondary)]">
                           {exp.role}
+                          {exp.promoted && (
+                            <span className="inline-flex items-center rounded-full border border-[rgba(14,138,122,0.35)] bg-[rgba(14,138,122,0.08)] px-2 py-0.5 font-data text-xs text-teal-accent">
+                              Promoted ↑
+                            </span>
+                          )}
                         </p>
                       </div>
                       <div className="flex flex-col items-end gap-1 text-right">
@@ -393,6 +428,58 @@ export default function Experience() {
                           </span>
                         ))}
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Education */}
+      <div className="mt-28">
+        <ScrollReveal className="mb-12">
+          <SectionLabel className="mb-4">Education</SectionLabel>
+          <h2 className="font-display font-light text-4xl text-[var(--text-primary)] sm:text-5xl leading-tight">
+            Academic Background
+          </h2>
+        </ScrollReveal>
+
+        <div className="space-y-5">
+          {educationEntries.map((edu, i) => {
+            const accent = accentMap[edu.accent];
+            return (
+              <ScrollReveal key={i} delay={i * 80}>
+                <div
+                  className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)]"
+                  style={{
+                    boxShadow: "var(--shadow-card)",
+                    borderTopWidth: "2px",
+                    borderTopColor: accent.lineColor,
+                  }}
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h3 className="font-display font-normal text-2xl text-[var(--text-primary)]">
+                        {edu.institution}
+                      </h3>
+                      <p className="mt-0.5 font-ui font-medium text-sm text-[var(--text-secondary)]">
+                        {edu.degree}
+                      </p>
+                      {edu.grade && (
+                        <p className="mt-1 font-data text-xs text-[var(--text-muted)]">
+                          {edu.grade}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex flex-col items-end gap-1 text-right">
+                      <span className="font-data text-xs text-[var(--text-muted)]">
+                        {edu.period}
+                      </span>
+                      <span className="font-data text-xs text-[var(--text-muted)] opacity-60">
+                        {edu.location}
+                      </span>
                     </div>
                   </div>
                 </div>
