@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const contactLinks = [
   {
     label: "LinkedIn",
-    handle: "linkedin.com/in/abhishekmanikandan",
-    href: "https://www.linkedin.com/in/abhishekmanikandan",
+    handle: "linkedin.com/in/abhishek-manikandan-470534125",
+    href: "https://www.linkedin.com/in/abhishek-manikandan-470534125/",
     description: "Connect with me professionally",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">

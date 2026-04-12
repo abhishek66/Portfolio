@@ -38,6 +38,10 @@
   --duration-fast:   150ms;
   --duration-normal: 300ms;
   --duration-slow:   600ms;
+
+  /* Nav backgrounds — overridden per theme */
+  --nav-bg:         rgba(8, 12, 20, 0.80);
+  --nav-drawer-bg:  rgba(8, 12, 20, 0.97);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -67,6 +71,7 @@
 ═══════════════════════════════════════════════════════ */
 html {
   scroll-behavior: smooth;
+  transition: background-color 400ms ease, color 300ms ease;
 }
 
 body {
@@ -299,7 +304,67 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════
-   §13  REDUCED MOTION OVERRIDE
+   §13  LIGHT THEME TOKENS
+═══════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  --bg-base:        #F8F5EF;
+  --bg-surface:     #FFFFFF;
+  --bg-elevated:    #F0EDE6;
+
+  --text-primary:   #0D1421;
+  --text-secondary: #4B5563;
+  --text-muted:     #9BA3AF;
+
+  --border-subtle:  rgba(201, 168, 76, 0.2);
+  --border-strong:  rgba(201, 168, 76, 0.5);
+
+  --shadow-card:    0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(201, 168, 76, 0.10);
+  --shadow-glow:    0 0 40px rgba(201, 168, 76, 0.20);
+
+  /* Nav backgrounds */
+  --nav-bg:         rgba(248, 245, 239, 0.85);
+  --nav-drawer-bg:  rgba(248, 245, 239, 0.98);
+}
+
+/* Light mode: softer body gradient */
+[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%,
+      rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,
+      rgba(14, 138, 122, 0.04) 0%, transparent 50%),
+    var(--bg-base);
+}
+
+/* Light mode: reduce grain intensity */
+[data-theme="light"] body::before {
+  opacity: 0.015;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §14  THEME TRANSITION — smooth colour handoff on toggle
+═══════════════════════════════════════════════════════ */
+
+/* Only apply the global colour transition to non-animated elements.
+   Elements with their own explicit transition classes (higher specificity)
+   will override this. .btn::before is excluded so the shine sweep is
+   never disrupted. */
+* {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+
+/* Protect shine animation from the wildcard transition */
+.btn::before,
+.btn::after,
+[data-no-transition],
+[data-no-transition] * {
+  transition: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §15  REDUCED MOTION OVERRIDE
 ═══════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *,

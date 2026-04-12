@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const links = [
   { href: "/",             label: "Home"         },
@@ -13,7 +14,7 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen]         = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function Nav() {
     <nav
       className="sticky top-0 z-50"
       style={{
-        background: "rgba(8, 12, 20, 0.80)",
+        background: "var(--nav-bg)",
         backdropFilter: "blur(20px) saturate(180%)",
         WebkitBackdropFilter: "blur(20px) saturate(180%)",
         borderBottom: scrolled
@@ -36,7 +37,7 @@ export default function Nav() {
           ? "0 1px 24px rgba(201,168,76,0.08)"
           : "none",
         transition:
-          "border-color var(--duration-normal) var(--ease-smooth), box-shadow var(--duration-normal) var(--ease-smooth)",
+          "border-color var(--duration-normal) var(--ease-smooth), box-shadow var(--duration-normal) var(--ease-smooth), background var(--duration-normal) ease",
         animation: "nav-slide-down 0.45s var(--ease-smooth) both",
       }}
     >
@@ -46,17 +47,17 @@ export default function Nav() {
           {/* Logo badge */}
           <Link
             href="/"
-            className="flex h-9 w-9 items-center justify-center rounded-lg ring-1 font-display font-semibold text-sm tracking-tight transition-all duration-200"
+            className="flex h-9 w-9 items-center justify-center rounded-lg font-display font-semibold text-sm tracking-tight transition-all duration-200"
             style={{
               background: "rgba(201,168,76,0.10)",
               color: "var(--accent-gold)",
               boxShadow: "0 0 0 1px var(--border-strong)",
             }}
-            onMouseEnter={e => {
+            onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = "rgba(201,168,76,0.18)";
               (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px var(--border-strong), 0 0 12px rgba(201,168,76,0.2)";
             }}
-            onMouseLeave={e => {
+            onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = "rgba(201,168,76,0.10)";
               (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px var(--border-strong)";
             }}
@@ -64,7 +65,7 @@ export default function Nav() {
             AM
           </Link>
 
-          {/* Desktop links */}
+          {/* Desktop: links + divider + toggle */}
           <div className="hidden sm:flex items-center gap-10">
             {links.map((link) => {
               const isActive = pathname === link.href;
@@ -82,9 +83,18 @@ export default function Nav() {
                 </Link>
               );
             })}
+
+            {/* Vertical divider */}
+            <div
+              className="h-4 w-px flex-shrink-0"
+              style={{ background: "var(--border-subtle)" }}
+              aria-hidden="true"
+            />
+
+            <ThemeToggle />
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile: hamburger only (toggle lives in drawer) */}
           <button
             className="sm:hidden flex flex-col gap-1.5 p-1 transition-colors duration-200"
             style={{ color: open ? "var(--accent-gold)" : "var(--text-muted)" }}
@@ -116,7 +126,7 @@ export default function Nav() {
         <div
           className="sm:hidden px-6 py-6 flex flex-col gap-6"
           style={{
-            background: "rgba(8,12,20,0.96)",
+            background: "var(--nav-drawer-bg)",
             borderTop: "1px solid var(--border-subtle)",
           }}
         >
@@ -137,6 +147,17 @@ export default function Nav() {
               </Link>
             );
           })}
+
+          {/* Theme toggle — centred at bottom of drawer */}
+          <div
+            className="flex flex-col items-center gap-2 pt-4"
+            style={{ borderTop: "1px solid var(--border-subtle)" }}
+          >
+            <p className="font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+              Theme
+            </p>
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>
