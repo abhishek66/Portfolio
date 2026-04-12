@@ -61,7 +61,7 @@ export default function Home() {
             <div className="flex-1">
 
               {/* Eyebrow label — DM Mono with pulsing gold dot */}
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[var(--border-subtle)] bg-[rgba(201,168,76,0.06)] px-4 py-2">
+              <div className="hero-label mb-6 inline-flex items-center gap-2.5 rounded-full border border-[var(--border-subtle)] bg-[rgba(201,168,76,0.06)] px-4 py-2">
                 <span
                   className="h-2 w-2 rounded-full bg-gold flex-shrink-0"
                   style={{ animation: "gold-pulse 2s ease-in-out infinite" }}
@@ -92,7 +92,7 @@ export default function Home() {
                 {["MSc Business Analysis", "University of Strathclyde", "4 yrs Experience"].map((chip) => (
                   <span
                     key={chip}
-                    className="inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-1 font-data text-xs text-[var(--text-muted)]"
+                    className="stat-chip inline-flex items-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-3 py-1 font-data text-xs text-[var(--text-muted)]"
                   >
                     {chip}
                   </span>

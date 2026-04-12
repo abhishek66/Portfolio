@@ -307,30 +307,33 @@ body::before {
    §13  LIGHT THEME TOKENS
 ═══════════════════════════════════════════════════════ */
 [data-theme="light"] {
-  --bg-base:        #F8F5EF;
+  --bg-base:        #F4F0E8;
   --bg-surface:     #FFFFFF;
-  --bg-elevated:    #F0EDE6;
+  --bg-elevated:    #EDE8DE;
 
-  --text-primary:   #0D1421;
-  --text-secondary: #4B5563;
-  --text-muted:     #9BA3AF;
+  --accent-gold:    #8B6914;
+  --accent-gold-lt: #6B4F0E;
 
-  --border-subtle:  rgba(201, 168, 76, 0.2);
-  --border-strong:  rgba(201, 168, 76, 0.5);
+  --text-primary:   #0A0E17;
+  --text-secondary: #1E2735;
+  --text-muted:     #4A5568;
 
-  --shadow-card:    0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(201, 168, 76, 0.10);
-  --shadow-glow:    0 0 40px rgba(201, 168, 76, 0.20);
+  --border-subtle:  rgba(0, 0, 0, 0.10);
+  --border-strong:  rgba(0, 0, 0, 0.20);
+
+  --shadow-card:    0 4px 24px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-glow:    0 0 40px rgba(139, 105, 20, 0.20);
 
   /* Nav backgrounds */
-  --nav-bg:         rgba(248, 245, 239, 0.85);
-  --nav-drawer-bg:  rgba(248, 245, 239, 0.98);
+  --nav-bg:         rgba(244, 240, 232, 0.92);
+  --nav-drawer-bg:  rgba(244, 240, 232, 0.98);
 }
 
 /* Light mode: softer body gradient */
 [data-theme="light"] body {
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%,
-      rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+      rgba(139, 105, 20, 0.06) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 80%,
       rgba(14, 138, 122, 0.04) 0%, transparent 50%),
     var(--bg-base);
@@ -339,6 +342,58 @@ body::before {
 /* Light mode: reduce grain intensity */
 [data-theme="light"] body::before {
   opacity: 0.015;
+}
+
+/* Light mode: hero eyebrow badge */
+[data-theme="light"] .hero-label {
+  background: rgba(139, 105, 20, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Light mode: meta chip pills */
+[data-theme="light"] .stat-chip {
+  background: var(--bg-elevated);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Light mode: skill tags */
+[data-theme="light"] .skill-tag {
+  background: rgba(139, 105, 20, 0.06);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+[data-theme="light"] .skill-tag:hover {
+  background: rgba(139, 105, 20, 0.12);
+  border-color: rgba(0, 0, 0, 0.20);
+}
+
+/* Light mode: ghost button — legible dark border + text */
+[data-theme="light"] .btn-ghost {
+  border-color: rgba(0, 0, 0, 0.25);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .btn-ghost:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(139, 105, 20, 0.06);
+}
+
+/* Light mode: section divider — dark ink rule */
+[data-theme="light"] .section-divider {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.12) 25%,
+    rgba(139, 105, 20, 0.6) 50%,
+    rgba(0, 0, 0, 0.12) 75%,
+    transparent 100%
+  );
+}
+
+/* Light mode: timeline dot ring blends with light bg */
+[data-theme="light"] .timeline-dot {
+  box-shadow: 0 0 0 4px var(--bg-base);
 }
 
 /* ═══════════════════════════════════════════════════════

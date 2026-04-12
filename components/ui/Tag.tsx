@@ -15,7 +15,7 @@ export function Tag({ children, className = "" }: TagProps) {
         "rounded-full",
         "px-4 py-1.5",
         "font-data text-xs font-normal",
-        "bg-[rgba(201,168,76,0.06)] border border-[var(--border-subtle)]",
+        "skill-tag bg-[rgba(201,168,76,0.06)] border border-[var(--border-subtle)]",
         "text-[var(--text-secondary)]",
         "cursor-default",
         "transition-all duration-200",
