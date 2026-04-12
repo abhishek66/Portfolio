@@ -1,22 +1,312 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════
+   §1  DESIGN TOKENS
+═══════════════════════════════════════════════════════ */
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
+  /* Background layers */
+  --bg-base:        #080C14;
+  --bg-surface:     #0D1421;
+  --bg-elevated:    #131C2E;
+
+  /* Brand */
+  --accent-gold:    #C9A84C;
+  --accent-gold-lt: #E2C27A;
+  --accent-teal:    #0E8A7A;
+
+  /* Typography */
+  --text-primary:   #F0EDE6;
+  --text-secondary: #9BA3AF;
+  --text-muted:     #4B5563;
+
+  /* Borders */
+  --border-subtle:  rgba(201, 168, 76, 0.12);
+  --border-strong:  rgba(201, 168, 76, 0.35);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(201, 168, 76, 0.06);
+  --shadow-glow: 0 0 40px rgba(201, 168, 76, 0.15);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Easing */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 300ms;
+  --duration-slow:   600ms;
 }
 
+/* ═══════════════════════════════════════════════════════
+   §2  TAILWIND TOKEN MAP
+═══════════════════════════════════════════════════════ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Custom palette */
+  --color-bg-base:     var(--bg-base);
+  --color-bg-surface:  var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-gold:        var(--accent-gold);
+  --color-gold-lt:     var(--accent-gold-lt);
+  --color-teal-accent: var(--accent-teal);
+
+  /* Override default sans/mono to our new fonts */
+  --font-sans:    var(--font-dm-sans);
+  --font-mono:    var(--font-dm-mono);
+
+  /* Named font utilities */
+  --font-display: var(--font-cormorant);
+  --font-ui:      var(--font-dm-sans);
+  --font-data:    var(--font-dm-mono);
+}
+
+/* ═══════════════════════════════════════════════════════
+   §3  BASE & BACKGROUND
+═══════════════════════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%,
+      rgba(201, 168, 76, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%,
+      rgba(14, 138, 122, 0.05) 0%, transparent 50%),
+    var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  min-height: 100vh;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Grain texture overlay — tactile depth */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §4  FOCUS RING (accessibility — gold)
+═══════════════════════════════════════════════════════ */
+*:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §5  BUTTON SYSTEM
+═══════════════════════════════════════════════════════ */
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform var(--duration-normal) var(--ease-spring),
+    box-shadow var(--duration-normal) var(--ease-smooth),
+    background var(--duration-normal) var(--ease-smooth),
+    border-color var(--duration-normal) var(--ease-smooth),
+    color var(--duration-normal) var(--ease-smooth);
+}
+
+/* Shared shine sweep */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: translateX(-200%) skewX(-15deg);
+  animation: btn-shine 3.5s ease-in-out infinite;
+}
+
+/* Primary — gold gradient */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #A8863A 100%);
+  color: var(--bg-base);
+  border: none;
+}
+
+.btn-primary::before {
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.25) 60%,
+    transparent 80%
+  );
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-gold-lt) 0%, var(--accent-gold) 100%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(201, 168, 76, 0.2);
+}
+
+/* Ghost — transparent with gold border */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+}
+
+.btn-ghost::before {
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(201, 168, 76, 0.08) 40%,
+    rgba(201, 168, 76, 0.15) 50%,
+    rgba(201, 168, 76, 0.08) 60%,
+    transparent 80%
+  );
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(201, 168, 76, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+}
+
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
+@keyframes btn-shine {
+  0%   { transform: translateX(-200%) skewX(-15deg); }
+  30%  { transform: translateX(200%)  skewX(-15deg); }
+  100% { transform: translateX(200%)  skewX(-15deg); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   §6  NAV UNDERLINE (grows from center)
+═══════════════════════════════════════════════════════ */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   §7  SECTION DIVIDER (gradient gold rule)
+═══════════════════════════════════════════════════════ */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-strong) 25%,
+    var(--accent-gold) 50%,
+    var(--border-strong) 75%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §8  TIMELINE DOT HOVER
+═══════════════════════════════════════════════════════ */
+.timeline-dot {
+  transition: width 200ms var(--ease-smooth),
+              height 200ms var(--ease-smooth),
+              margin 200ms var(--ease-smooth);
+}
+
+.timeline-entry:hover .timeline-dot {
+  width:  12px;
+  height: 12px;
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §9  SCROLL REVEAL
+═══════════════════════════════════════════════════════ */
+.reveal-hidden {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   §10  NAVBAR LOAD ANIMATION
+═══════════════════════════════════════════════════════ */
+@keyframes nav-slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   §11  PULSING GOLD DOT
+═══════════════════════════════════════════════════════ */
+@keyframes gold-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   §12  SCROLL INDICATOR BOUNCE
+═══════════════════════════════════════════════════════ */
+@keyframes chevron-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   §13  REDUCED MOTION OVERRIDE
+═══════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

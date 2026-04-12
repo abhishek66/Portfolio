@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import ClientLogo from "@/components/ClientLogo";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Tag } from "@/components/ui/Tag";
+import { Divider } from "@/components/ui/Divider";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Case Studies | Abhishek Manikandan",
@@ -35,14 +39,8 @@ const caseStudies = [
       { metric: "5", label: "Frameworks applied (SWOT, 5 Why's, Fishbone, McKinsey 7S, RACI)" },
     ],
     skills: [
-      "SWOT Analysis",
-      "5 Why's",
-      "Fishbone Diagram",
-      "McKinsey 7S",
-      "RACI Matrix",
-      "Workforce Analytics",
-      "Root Cause Analysis",
-      "MS Excel",
+      "SWOT Analysis", "5 Why's", "Fishbone Diagram", "McKinsey 7S",
+      "RACI Matrix", "Workforce Analytics", "Root Cause Analysis", "MS Excel",
     ],
   },
   // 2. NHS A&E
@@ -72,15 +70,8 @@ const caseStudies = [
       { metric: "36,653", label: "Peak patients waiting 12+ hours (Jan 2026)" },
     ],
     skills: [
-      "Random Forest",
-      "Machine Learning",
-      "MCDA",
-      "Time Series Analysis",
-      "Feature Engineering",
-      "Bottleneck Analysis",
-      "NHS Data Analytics",
-      "Python",
-      "Excel",
+      "Random Forest", "Machine Learning", "MCDA", "Time Series Analysis",
+      "Feature Engineering", "Bottleneck Analysis", "NHS Data Analytics", "Python", "Excel",
     ],
   },
   // 3. WB Alloys
@@ -109,16 +100,9 @@ const caseStudies = [
       { metric: "£25M", label: "Client revenue protected by the framework" },
     ],
     skills: [
-      "ISO 31000:2018",
-      "Enterprise Risk Management",
-      "Risk Register Design",
-      "KRI Monitoring",
-      "Three Lines Model",
-      "PDCA",
-      "ISO 45001",
-      "NCA 3800",
-      "Dashboard Prototyping",
-      "AI Agent Design",
+      "ISO 31000:2018", "Enterprise Risk Management", "Risk Register Design",
+      "KRI Monitoring", "Three Lines Model", "PDCA", "ISO 45001",
+      "NCA 3800", "Dashboard Prototyping", "AI Agent Design",
     ],
   },
   // 4. StormID
@@ -147,13 +131,8 @@ const caseStudies = [
       { metric: "460 hrs", label: "Monthly staff hours saved (Workflow 7)" },
     ],
     skills: [
-      "Lean Six Sigma",
-      "Business Process Analysis",
-      "AI Scoring Framework",
-      "Workflow Modelling",
-      "ROI Analysis",
-      "Stakeholder Mapping",
-      "Process Flowcharting",
+      "Lean Six Sigma", "Business Process Analysis", "AI Scoring Framework",
+      "Workflow Modelling", "ROI Analysis", "Stakeholder Mapping", "Process Flowcharting",
     ],
   },
   // 5. LCA
@@ -181,13 +160,9 @@ const caseStudies = [
       { metric: "9 Months", label: "Phased intervention roadmap duration" },
     ],
     skills: [
-      "Life Cycle Assessment (LCA)",
-      "MCDA",
-      "ICE Database",
-      "Embodied Carbon Analysis",
-      "Sustainability Strategy",
-      "Carbon Hotspot Mapping",
-      "Scenario Analysis",
+      "Life Cycle Assessment (LCA)", "MCDA", "ICE Database",
+      "Embodied Carbon Analysis", "Sustainability Strategy",
+      "Carbon Hotspot Mapping", "Scenario Analysis",
     ],
   },
   // 6. STAHL
@@ -216,13 +191,8 @@ const caseStudies = [
       { metric: "$23M+", label: "Projected revenue by 2030" },
     ],
     skills: [
-      "DCF Analysis",
-      "CATWOE",
-      "Scenario Analysis",
-      "Financial Modelling",
-      "IIoT Strategy",
-      "Stakeholder Mapping",
-      "Excel",
+      "DCF Analysis", "CATWOE", "Scenario Analysis",
+      "Financial Modelling", "IIoT Strategy", "Stakeholder Mapping", "Excel",
     ],
   },
 ];
@@ -230,119 +200,130 @@ const caseStudies = [
 export default function CaseStudies() {
   return (
     <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
-      <div className="mb-16">
-        <h1 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
+
+      {/* Page header */}
+      <ScrollReveal className="mb-20">
+        <SectionLabel className="mb-4">Portfolio</SectionLabel>
+        <h1 className="font-display font-light text-5xl text-[var(--text-primary)] sm:text-6xl leading-tight">
           Academic Case Studies and Projects
         </h1>
-        <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
+        <p className="mt-4 max-w-xl font-ui font-light text-base text-[var(--text-secondary)] leading-relaxed">
           In-depth consulting and analytical projects, covering the problem,
           methodology, and outcomes.
         </p>
-      </div>
+      </ScrollReveal>
 
       <div className="space-y-10">
         {caseStudies.map((cs, i) => (
-          <article
-            key={i}
-            className="rounded-2xl border border-amber-500/20 bg-zinc-900 p-8 transition-colors hover:border-amber-500/40 lg:p-10"
-          >
-            {/* Header */}
-            <div className="mb-8">
-              {"client" in cs && cs.client && (
-                <div className="mb-4 flex items-center gap-3">
-                  {"logo" in cs && cs.logo && (
-                    <ClientLogo src={cs.logo} alt={`${cs.client} logo`} />
-                  )}
-                  <span className="text-xl font-bold text-amber-400 tracking-tight">
-                    {cs.client}
-                  </span>
-                </div>
-              )}
+          <ScrollReveal key={i} delay={Math.min(i * 60, 200)}>
+            <article
+              className="rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)] lg:p-10"
+              style={{
+                boxShadow: "var(--shadow-card)",
+                borderTopWidth: "2px",
+                borderTopColor: "var(--accent-gold)",
+              }}
+            >
+              {/* Header */}
+              <div className="mb-8">
+                {"client" in cs && cs.client && (
+                  <div className="mb-4 flex items-center gap-3">
+                    {"logo" in cs && cs.logo && (
+                      <ClientLogo src={cs.logo} alt={`${cs.client} logo`} />
+                    )}
+                    <span className="font-display font-normal text-xl text-gold tracking-tight">
+                      {cs.client}
+                    </span>
+                  </div>
+                )}
 
-              <h2 className="text-2xl font-bold text-zinc-50 sm:text-3xl">
-                {cs.title}
-              </h2>
-              <p className="mt-2 text-zinc-400">{cs.subtitle}</p>
-
-              <div className="mt-4 flex flex-col gap-1">
-                <p className="text-sm font-semibold text-zinc-200">
-                  {cs.university}
+                <h2 className="font-display font-normal text-2xl text-[var(--text-primary)] sm:text-3xl leading-tight">
+                  {cs.title}
+                </h2>
+                <p className="mt-2 font-ui font-light text-sm text-[var(--text-secondary)]">
+                  {cs.subtitle}
                 </p>
-                <p className="text-xs text-zinc-500">{cs.programme}</p>
-              </div>
-            </div>
 
-            <div className="grid gap-10 lg:grid-cols-2">
-              {/* Left: Overview + Approach */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                    Overview
-                  </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    {cs.description}
+                <div className="mt-4 flex flex-col gap-1">
+                  <p className="font-ui font-medium text-sm text-[var(--text-primary)]">
+                    {cs.university}
                   </p>
-                </div>
-
-                <div>
-                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                    Key Contributions
-                  </h3>
-                  <ul className="space-y-3">
-                    {cs.highlights.map((h, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-zinc-400">
-                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-800 text-[10px] font-bold text-zinc-500">
-                          {j + 1}
-                        </span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="font-data text-xs text-[var(--text-muted)]">{cs.programme}</p>
                 </div>
               </div>
 
-              {/* Right: Metrics + Skills */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="mb-4 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                    Key Metrics
-                  </h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {cs.results.map((r, j) => (
-                      <div
-                        key={j}
-                        className="rounded-xl border border-zinc-800 bg-zinc-950 p-4"
-                      >
-                        <p className="text-2xl font-bold text-amber-400">
-                          {r.metric}
-                        </p>
-                        <p className="mt-1 text-xs leading-snug text-zinc-500">
-                          {r.label}
-                        </p>
-                      </div>
-                    ))}
+              <div className="grid gap-10 lg:grid-cols-2">
+                {/* Left: Overview + Contributions */}
+                <div className="space-y-8">
+                  <div>
+                    <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                      Overview
+                    </p>
+                    <p className="font-ui font-light text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {cs.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                      Key Contributions
+                    </p>
+                    <ul className="space-y-3">
+                      {cs.highlights.map((h, j) => (
+                        <li key={j} className="flex gap-3 font-ui font-light text-sm text-[var(--text-secondary)]">
+                          <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[rgba(201,168,76,0.08)] border border-[var(--border-subtle)] font-data text-[10px] text-gold">
+                            {j + 1}
+                          </span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                    Tools & Methods
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {cs.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-full border border-amber-800 bg-amber-950/50 px-3 py-1 text-xs font-medium text-amber-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                {/* Right: Metrics + Skills */}
+                <div className="space-y-8">
+                  <div>
+                    <p className="mb-4 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                      Key Metrics
+                    </p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {cs.results.map((r, j) => (
+                        <div
+                          key={j}
+                          className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-4"
+                        >
+                          <p className="font-display font-normal text-2xl text-gold leading-none">
+                            {r.metric}
+                          </p>
+                          <p className="mt-1.5 font-data text-xs leading-snug text-[var(--text-muted)]">
+                            {r.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                      Tools &amp; Methods
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {cs.skills.map((skill) => (
+                        <Tag key={skill}>{skill}</Tag>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </ScrollReveal>
         ))}
+      </div>
+
+      {/* Bottom divider */}
+      <div className="mt-20">
+        <Divider />
       </div>
     </div>
   );

@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Divider } from "@/components/ui/Divider";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Experience | Abhishek Manikandan",
@@ -6,7 +9,7 @@ export const metadata: Metadata = {
     "Product management and business analysis experience across Prodsmiths, AppsForBharat, and Kapture CX.",
 };
 
-type ImpactStat = { metric: string; label: string };
+type ImpactStat  = { metric: string; label: string };
 type ModuleBlock = { title: string; items: string[] };
 
 type WorkEntry = {
@@ -15,13 +18,11 @@ type WorkEntry = {
   role: string;
   period: string;
   location: string;
-  // Optional enhanced layout fields
   headline?: string;
   impact?: ImpactStat[];
   contributions?: string[];
   moduleBlocks?: ModuleBlock[];
   moduleBlocksLabel?: string;
-  // Standard fields
   description?: string;
   highlights?: string[];
   skills: string[];
@@ -39,8 +40,8 @@ const workExperiences: WorkEntry[] = [
       "Built India's first fully digital ARC platform for ARCIL, an end-to-end collections and acquisition system serving multiple institutional lenders.",
     impact: [
       { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
-      { metric: "94%", label: "On-time sprint delivery across 6 sprints" },
-      { metric: "50+", label: "Institutional lenders served" },
+      { metric: "94%",        label: "On-time sprint delivery across 6 sprints" },
+      { metric: "50+",        label: "Institutional lenders served" },
       { metric: "2008 → 2024", label: "Excel reporting replaced with real-time SQL forecasting" },
     ],
     contributions: [
@@ -65,18 +66,10 @@ const workExperiences: WorkEntry[] = [
       },
     ],
     skills: [
-      "Product Management",
-      "SQL",
-      "Figma",
-      "Data Architecture",
-      "UAT",
-      "Stakeholder Management",
-      "Agile",
-      "RCA",
-      "ER Modelling",
-      "Wireframing",
+      "Product Management", "SQL", "Figma", "Data Architecture", "UAT",
+      "Stakeholder Management", "Agile", "RCA", "ER Modelling", "Wireframing",
     ],
-    accent: "indigo",
+    accent: "gold",
   },
   {
     type: "work",
@@ -87,8 +80,8 @@ const workExperiences: WorkEntry[] = [
     headline:
       "Consumer devotional-tech platform with 10M+ users. Owned monetisation and retention products across Sri Mandir.",
     impact: [
-      { metric: "+23%", label: "Average order value on puja products" },
-      { metric: "+58%", label: "Share-to-install ratio via referral redesign" },
+      { metric: "+23%",    label: "Average order value on puja products" },
+      { metric: "+58%",    label: "Share-to-install ratio via referral redesign" },
       { metric: "-8% Churn", label: "Q2 2023, driven by CRM automation" },
       { metric: "120 hrs/wk", label: "Manual effort saved through automated journeys" },
     ],
@@ -116,18 +109,10 @@ const workExperiences: WorkEntry[] = [
     ],
     moduleBlocksLabel: "Features Shipped",
     skills: [
-      "Product Analytics",
-      "CRM Automation",
-      "A/B Testing",
-      "Mixpanel",
-      "Metabase",
-      "Retention Strategy",
-      "Monetisation",
-      "User Journey Design",
-      "Figma",
-      "Growth",
+      "Product Analytics", "CRM Automation", "A/B Testing", "Mixpanel", "Metabase",
+      "Retention Strategy", "Monetisation", "User Journey Design", "Figma", "Growth",
     ],
-    accent: "violet",
+    accent: "teal",
   },
   {
     type: "work",
@@ -138,8 +123,8 @@ const workExperiences: WorkEntry[] = [
     headline:
       "Foundation role in data and CRM, building the analytical infrastructure that informed product decisions across the platform.",
     impact: [
-      { metric: "12%", label: "Retention improvement in CRM pilot cohort" },
-      { metric: "5M+", label: "Monthly events tracked across dashboards" },
+      { metric: "12%",   label: "Retention improvement in CRM pilot cohort" },
+      { metric: "5M+",   label: "Monthly events tracked across dashboards" },
     ],
     contributions: [
       "Performed quantitative user segmentation analysis on large datasets to uncover behavioural patterns and surface actionable insights",
@@ -148,15 +133,10 @@ const workExperiences: WorkEntry[] = [
       "Delivered data visualisations and reports that directly informed strategic planning and leadership decision-making",
     ],
     skills: [
-      "Data Analysis",
-      "Mixpanel",
-      "Metabase",
-      "CRM Strategy",
-      "Dashboard Design",
-      "User Segmentation",
-      "Campaign Analytics",
+      "Data Analysis", "Mixpanel", "Metabase", "CRM Strategy",
+      "Dashboard Design", "User Segmentation", "Campaign Analytics",
     ],
-    accent: "violet",
+    accent: "teal",
   },
   {
     type: "work",
@@ -167,9 +147,9 @@ const workExperiences: WorkEntry[] = [
     headline:
       "Enterprise CRM implementation and optimisation for BFSI and telecom clients, driving adoption, efficiency, and measurable service improvements.",
     impact: [
-      { metric: "3", label: "Enterprise accounts led end-to-end" },
-      { metric: "+40%", label: "Client adoption rate improvement post-training" },
-      { metric: "-15%", label: "Average handle time reduction" },
+      { metric: "3",       label: "Enterprise accounts led end-to-end" },
+      { metric: "+40%",    label: "Client adoption rate improvement post-training" },
+      { metric: "-15%",    label: "Average handle time reduction" },
       { metric: "10,000+", label: "Customer interactions analysed" },
     ],
     contributions: [
@@ -179,213 +159,252 @@ const workExperiences: WorkEntry[] = [
       "Recommended and implemented workflow changes that reduced average handle time by 15% across client operations",
     ],
     skills: [
-      "CRM Implementation",
-      "Enterprise Client Management",
-      "Training & Adoption",
-      "Workflow Optimisation",
-      "Data Analysis",
-      "BFSI",
-      "Telecom",
-      "Stakeholder Management",
+      "CRM Implementation", "Enterprise Client Management", "Training & Adoption",
+      "Workflow Optimisation", "Data Analysis", "BFSI", "Telecom", "Stakeholder Management",
     ],
-    accent: "teal",
+    accent: "gold-muted",
   },
 ];
 
+/* ─── Accent colour map ──────────────────────────────────────────────── */
 const accentMap: Record<string, {
-  badge: string;
-  dot: string;
-  metric: string;
-  moduleBlock: string;
+  badge:            string;
+  dot:              string;
+  metric:           string;
+  moduleBlock:      string;
   moduleBlockTitle: string;
-  moduleTag: string;
+  lineColor:        string;
 }> = {
-  indigo: {
-    badge: "border-indigo-500/30 bg-indigo-500/10 text-indigo-400",
-    dot: "bg-indigo-500 ring-indigo-500/30",
-    metric: "text-indigo-400",
-    moduleBlock: "border-indigo-500/20 bg-indigo-950/30",
-    moduleBlockTitle: "text-indigo-300",
-    moduleTag: "text-indigo-200",
-  },
-  violet: {
-    badge: "border-violet-500/30 bg-violet-500/10 text-violet-400",
-    dot: "bg-violet-500 ring-violet-500/30",
-    metric: "text-violet-400",
-    moduleBlock: "border-violet-500/20 bg-violet-950/30",
-    moduleBlockTitle: "text-violet-300",
-    moduleTag: "text-violet-200",
+  gold: {
+    badge:            "border-[var(--border-strong)] bg-[rgba(201,168,76,0.08)] text-gold",
+    dot:              "bg-gold",
+    metric:           "text-gold",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.04)]",
+    moduleBlockTitle: "text-gold-lt",
+    lineColor:        "var(--accent-gold)",
   },
   teal: {
-    badge: "border-teal-500/30 bg-teal-500/10 text-teal-400",
-    dot: "bg-teal-500 ring-teal-500/30",
-    metric: "text-teal-400",
-    moduleBlock: "border-teal-500/20 bg-teal-950/30",
-    moduleBlockTitle: "text-teal-300",
-    moduleTag: "text-teal-200",
+    badge:            "border-[rgba(14,138,122,0.35)] bg-[rgba(14,138,122,0.08)] text-teal-accent",
+    dot:              "bg-teal-accent",
+    metric:           "text-teal-accent",
+    moduleBlock:      "border-[rgba(14,138,122,0.2)] bg-[rgba(14,138,122,0.04)]",
+    moduleBlockTitle: "text-[#3cb8ac]",
+    lineColor:        "var(--accent-teal)",
+  },
+  "gold-muted": {
+    badge:            "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.05)] text-[rgba(201,168,76,0.7)]",
+    dot:              "bg-[rgba(201,168,76,0.55)]",
+    metric:           "text-[rgba(201,168,76,0.75)]",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.03)]",
+    moduleBlockTitle: "text-gold",
+    lineColor:        "rgba(201,168,76,0.45)",
   },
 };
 
 export default function Experience() {
   return (
     <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
-      <div className="mb-16">
-        <p className="mb-3 text-xs font-semibold tracking-widest text-indigo-400 uppercase">
-          Career
-        </p>
-        <h1 className="text-4xl font-bold text-zinc-50 sm:text-5xl">
+
+      {/* Page header */}
+      <ScrollReveal className="mb-20">
+        <SectionLabel className="mb-4">Career</SectionLabel>
+        <h1 className="font-display font-light text-5xl text-[var(--text-primary)] sm:text-6xl leading-tight">
           Work Experience
         </h1>
-        <p className="mt-4 max-w-xl text-zinc-400 leading-relaxed">
+        <p className="mt-4 max-w-xl font-ui font-light text-base text-[var(--text-secondary)] leading-relaxed">
           Product management and business analysis experience across fintech,
           consumer apps, and enterprise SaaS.
         </p>
-      </div>
+      </ScrollReveal>
 
+      {/* Timeline */}
       <div className="relative">
-        <div className="absolute left-4 top-0 h-full w-px bg-zinc-800 sm:left-6" />
+        {/* Vertical spine */}
+        <div
+          className="absolute left-4 top-0 h-full w-px sm:left-5"
+          style={{ background: "var(--border-subtle)" }}
+        />
 
-        <div className="space-y-16">
+        <div className="space-y-20">
           {workExperiences.map((exp, i) => {
-            const accent = accentMap[exp.accent];
+            const accent     = accentMap[exp.accent];
             const isEnhanced = !!exp.headline;
 
             return (
-              <div key={i} className="relative flex gap-8 sm:gap-12">
-                <div className="flex-shrink-0">
-                  <div className={`mt-1.5 h-3 w-3 rounded-full ring-4 ring-zinc-950 ${accent.dot}`} />
-                </div>
+              <ScrollReveal key={i} delay={i * 60}>
+                <div className="timeline-entry relative flex gap-8 sm:gap-12">
 
-                <div className="flex-1 pb-2">
-                  {/* Header row */}
-                  <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <h2 className="text-xl font-bold text-zinc-50">{exp.company}</h2>
-                      <p className="mt-0.5 text-base font-medium text-zinc-300">{exp.role}</p>
-                    </div>
-                    <div className="flex flex-col items-end gap-1 text-right">
-                      <span className="text-sm text-zinc-400">{exp.period}</span>
-                      <span className="text-xs text-zinc-600">{exp.location}</span>
-                    </div>
+                  {/* Timeline dot */}
+                  <div className="flex-shrink-0 pt-1">
+                    <div
+                      className={`timeline-dot h-3 w-3 rounded-full ${accent.dot}`}
+                      style={{ boxShadow: `0 0 0 4px var(--bg-base)` }}
+                    />
                   </div>
 
-                  {/* ENHANCED LAYOUT (Prodsmiths) */}
-                  {isEnhanced ? (
-                    <div className="space-y-8">
-                      {/* Headline */}
-                      <p className="text-base font-semibold text-zinc-200 leading-relaxed">
-                        {exp.headline}
-                      </p>
+                  {/* Card */}
+                  <div
+                    className="flex-1 rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)]"
+                    style={{
+                      boxShadow: "var(--shadow-card)",
+                      borderTopWidth: "2px",
+                      borderTopColor: accent.lineColor,
+                    }}
+                  >
+                    {/* Header */}
+                    <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <h2 className="font-display font-normal text-2xl text-[var(--text-primary)]">
+                          {exp.company}
+                        </h2>
+                        <p className="mt-0.5 font-ui font-medium text-sm text-[var(--text-secondary)]">
+                          {exp.role}
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-end gap-1 text-right">
+                        <span className="font-data text-xs text-[var(--text-muted)]">
+                          {exp.period}
+                        </span>
+                        <span className="font-data text-xs text-[var(--text-muted)] opacity-60">
+                          {exp.location}
+                        </span>
+                      </div>
+                    </div>
 
-                      {/* Impact grid */}
-                      {exp.impact && (
-                        <div>
-                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                            Impact
-                          </p>
-                          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                            {exp.impact.map((stat, j) => (
-                              <div
-                                key={j}
-                                className="rounded-xl border border-zinc-800 bg-zinc-900 p-4"
-                              >
-                                <p className={`text-lg font-bold leading-tight ${accent.metric}`}>
-                                  {stat.metric}
-                                </p>
-                                <p className="mt-1 text-xs leading-snug text-zinc-500">
-                                  {stat.label}
-                                </p>
-                              </div>
-                            ))}
+                    {/* Enhanced layout (headline present) */}
+                    {isEnhanced ? (
+                      <div className="space-y-8">
+                        {/* Headline */}
+                        <p className="font-ui font-light text-base text-[var(--text-primary)] leading-relaxed border-l-2 border-l-[var(--border-strong)] pl-4">
+                          {exp.headline}
+                        </p>
+
+                        {/* Impact grid */}
+                        {exp.impact && (
+                          <div>
+                            <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                              Impact
+                            </p>
+                            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                              {exp.impact.map((stat, j) => (
+                                <div
+                                  key={j}
+                                  className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-4"
+                                >
+                                  <p className={`font-display font-normal text-xl leading-tight ${accent.metric}`}>
+                                    {stat.metric}
+                                  </p>
+                                  <p className="mt-1 font-data text-xs leading-snug text-[var(--text-muted)]">
+                                    {stat.label}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
 
-                      {/* Contributions */}
-                      {exp.contributions && (
-                        <div>
-                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                            My Contributions
+                        {/* Contributions */}
+                        {exp.contributions && (
+                          <div>
+                            <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                              My Contributions
+                            </p>
+                            <ul className="space-y-2.5">
+                              {exp.contributions.map((c, j) => (
+                                <li key={j} className="flex gap-3 font-ui font-light text-sm text-[var(--text-secondary)]">
+                                  <span
+                                    className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                    style={{ background: accent.lineColor }}
+                                  />
+                                  {c}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Module blocks */}
+                        {exp.moduleBlocks && (
+                          <div>
+                            <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                              {exp.moduleBlocksLabel ?? "Platform Modules"}
+                            </p>
+                            <div className="grid gap-3 sm:grid-cols-3">
+                              {exp.moduleBlocks.map((block, j) => (
+                                <div
+                                  key={j}
+                                  className={`rounded-[var(--radius-sm)] border p-4 ${accent.moduleBlock}`}
+                                >
+                                  <p className={`mb-2.5 font-data text-xs font-normal uppercase tracking-widest ${accent.moduleBlockTitle}`}>
+                                    {block.title}
+                                  </p>
+                                  <ul className="space-y-1.5">
+                                    {block.items.map((item) => (
+                                      <li
+                                        key={item}
+                                        className="font-data text-xs text-[var(--text-secondary)]"
+                                      >
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      /* Standard layout */
+                      <>
+                        {exp.description && (
+                          <p className="mb-5 font-ui font-light text-sm text-[var(--text-secondary)] leading-relaxed">
+                            {exp.description}
                           </p>
-                          <ul className="space-y-2.5">
-                            {exp.contributions.map((c, j) => (
-                              <li key={j} className="flex gap-3 text-sm text-zinc-400">
-                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-zinc-600" />
-                                {c}
+                        )}
+                        {exp.highlights && (
+                          <ul className="mb-6 space-y-2.5">
+                            {exp.highlights.map((h, j) => (
+                              <li key={j} className="flex gap-3 font-ui font-light text-sm text-[var(--text-secondary)]">
+                                <span
+                                  className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                  style={{ background: accent.lineColor }}
+                                />
+                                {h}
                               </li>
                             ))}
                           </ul>
-                        </div>
-                      )}
+                        )}
+                      </>
+                    )}
 
-                      {/* Module blocks */}
-                      {exp.moduleBlocks && (
-                        <div>
-                          <p className="mb-3 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                            {exp.moduleBlocksLabel ?? "Platform Modules"}
-                          </p>
-                          <div className="grid gap-3 sm:grid-cols-3">
-                            {exp.moduleBlocks.map((block, j) => (
-                              <div
-                                key={j}
-                                className={`rounded-xl border p-4 ${accent.moduleBlock}`}
-                              >
-                                <p className={`mb-2.5 text-xs font-bold tracking-wide uppercase ${accent.moduleBlockTitle}`}>
-                                  {block.title}
-                                </p>
-                                <ul className="space-y-1.5">
-                                  {block.items.map((item) => (
-                                    <li key={item} className={`text-xs ${accent.moduleTag}`}>
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    /* STANDARD LAYOUT (AppsForBharat, Kapture CX) */
-                    <>
-                      {exp.description && (
-                        <p className="mb-5 text-zinc-400 leading-relaxed">{exp.description}</p>
-                      )}
-                      {exp.highlights && (
-                        <ul className="mb-6 space-y-2.5">
-                          {exp.highlights.map((h, j) => (
-                            <li key={j} className="flex gap-3 text-sm text-zinc-400">
-                              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-zinc-600" />
-                              {h}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  )}
-
-                  {/* Skills - always shown */}
-                  <div className={isEnhanced ? "mt-8" : ""}>
-                    <p className="mb-2 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                      Skills
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className={`rounded-full border px-3 py-1 text-xs font-medium ${accent.badge}`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                    {/* Skills — always shown */}
+                    <div className={isEnhanced ? "mt-8" : ""}>
+                      <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
+                        Skills
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className={`inline-flex items-center rounded-full border px-3 py-1 font-data text-xs ${accent.badge}`}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>
+      </div>
+
+      {/* Bottom divider */}
+      <div className="mt-28">
+        <Divider />
       </div>
     </div>
   );
