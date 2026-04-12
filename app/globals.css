@@ -288,6 +288,19 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════
+   §10b  HERO ROLE LABEL ANIMATIONS
+═══════════════════════════════════════════════════════ */
+@keyframes role-exit {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes role-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════
    §11  PULSING GOLD DOT
 ═══════════════════════════════════════════════════════ */
 @keyframes gold-pulse {
