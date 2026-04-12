@@ -32,12 +32,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-50">
         <Nav />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-zinc-800 py-8">
-          <div className="mx-auto max-w-6xl px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500">
-            <span>© 2026 Abhishek Manikandan</span>
-            <span>Built with Next.js & Tailwind CSS</span>
-          </div>
-        </footer>
       </body>
     </html>
   );

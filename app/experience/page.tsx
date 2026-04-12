@@ -32,11 +32,11 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "Prodsmiths",
-    role: "Product Manager · Business Analyst",
+    role: "Associate Product Manager · Business Analyst",
     period: "October 2023 – January 2025",
     location: "India · Remote",
     headline:
-      "Built India's first fully digital ARC platform for ARCIL — end-to-end collections and acquisition system serving multiple institutional lenders.",
+      "Built India's first fully digital ARC platform for ARCIL, an end-to-end collections and acquisition system serving multiple institutional lenders.",
     impact: [
       { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
       { metric: "94%", label: "On-time sprint delivery across 6 sprints" },
@@ -45,7 +45,7 @@ const workExperiences: WorkEntry[] = [
     ],
     contributions: [
       "Owned the full product lifecycle end-to-end: scoping, wireframing in Figma, user story authoring, UAT, and production deployment across 6 sprints",
-      "Designed core data architecture — built SQL-based ER models enabling real-time recovery forecasting, replacing manual Excel reporting in use since 2008",
+      "Designed core data architecture: built SQL-based ER models enabling real-time recovery forecasting, replacing manual Excel reporting in use since 2008",
       "Cut portfolio onboarding from 14 days to 48 hours by digitising legal, financial, and valuation due diligence workflows",
       "Managed client relationships: weekly stakeholder updates with C-level sponsors, RCA for production issues, and change request prioritisation under regulatory scope changes",
       "Maintained 94% on-time delivery across all sprints despite mid-cycle regulatory changes",
@@ -93,10 +93,10 @@ const workExperiences: WorkEntry[] = [
       { metric: "120 hrs/wk", label: "Manual effort saved through automated journeys" },
     ],
     contributions: [
-      "Built a cross-sell engine with A/B tested pricing bundles for puja products on web (Sri Mandir) — deployed full funnel in 3 weeks, driving +23% average order value",
-      "Redesigned referral sharing flow end-to-end: optimised WhatsApp copy, incentive timing, and placement strategy — lifted share-to-install ratio by 58%",
-      "Architected 15+ automated CRM journeys across IVR, bots, push notifications, and in-app banners — reduced Q2 2023 churn by 8% and saved 120 manual hours per week",
-      "Scoped and shipped background audio feature for Sri Mandir — improved session length by 19% through UX redesign and close technical collaboration with engineering",
+      "Built a cross-sell engine with A/B tested pricing bundles for puja products on web (Sri Mandir), deployed full funnel in 3 weeks, driving +23% average order value",
+      "Redesigned referral sharing flow end-to-end: optimised WhatsApp copy, incentive timing, and placement strategy, lifting share-to-install ratio by 58%",
+      "Architected 15+ automated CRM journeys across IVR, bots, push notifications, and in-app banners, reducing Q2 2023 churn by 8% and saving 120 manual hours per week",
+      "Scoped and shipped background audio feature for Sri Mandir, improving session length by 19% through UX redesign and close technical collaboration with engineering",
       "Improved Seva section visibility to increase feature discoverability and drive monetisation lift across the app",
       "Built leadership dashboards in Mixpanel and Metabase tracking retention cohorts, LTV curves, and funnel drop-offs across 5M+ monthly events",
     ],
@@ -136,7 +136,7 @@ const workExperiences: WorkEntry[] = [
     period: "July 2022 – November 2022",
     location: "Bangalore, India",
     headline:
-      "Foundation role in data and CRM — built the analytical infrastructure that informed product decisions across the platform.",
+      "Foundation role in data and CRM, building the analytical infrastructure that informed product decisions across the platform.",
     impact: [
       { metric: "12%", label: "Retention improvement in CRM pilot cohort" },
       { metric: "5M+", label: "Monthly events tracked across dashboards" },
@@ -144,7 +144,7 @@ const workExperiences: WorkEntry[] = [
     contributions: [
       "Performed quantitative user segmentation analysis on large datasets to uncover behavioural patterns and surface actionable insights",
       "Built and maintained interactive dashboards in Mixpanel and Metabase for real-time tracking of key retention and engagement metrics",
-      "Designed and executed CRM campaign strategies — personalised engagement flows that improved retention metrics by 12% in the pilot cohort",
+      "Designed and executed CRM campaign strategies with personalised engagement flows that improved retention metrics by 12% in the pilot cohort",
       "Delivered data visualisations and reports that directly informed strategic planning and leadership decision-making",
     ],
     skills: [
@@ -165,7 +165,7 @@ const workExperiences: WorkEntry[] = [
     period: "July 2020 – June 2022",
     location: "Bangalore, India",
     headline:
-      "Enterprise CRM implementation and optimisation for BFSI and telecom clients — driving adoption, efficiency, and measurable service improvements.",
+      "Enterprise CRM implementation and optimisation for BFSI and telecom clients, driving adoption, efficiency, and measurable service improvements.",
     impact: [
       { metric: "3", label: "Enterprise accounts led end-to-end" },
       { metric: "+40%", label: "Client adoption rate improvement post-training" },
@@ -365,7 +365,7 @@ export default function Experience() {
                     </>
                   )}
 
-                  {/* Skills — always shown */}
+                  {/* Skills - always shown */}
                   <div className={isEnhanced ? "mt-8" : ""}>
                     <p className="mb-2 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
                       Skills

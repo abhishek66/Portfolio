@@ -53,7 +53,7 @@ const caseStudies = [
     logo: "https://logo.clearbit.com/england.nhs.uk",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2026",
-    title: "NHS England A&E Crisis — Machine Learning Analytics Report",
+    title: "NHS England A&E Crisis: Machine Learning Analytics Report",
     subtitle: "Predictive modelling and strategic intervention analysis for NHS emergency care demand",
     description:
       "Analysed 49 months of Type 1 A&E attendance data across 96 NHS Trusts in the Midlands, London, and North East & Yorkshire to diagnose systemic operational failure. Built a Random Forest forecasting model achieving 96.33% accuracy to project 12-month forward demand, and applied MCDA to prioritise six interventions addressing a crisis where the NHS 5% breach target was missed in every single month analysed.",
@@ -90,7 +90,7 @@ const caseStudies = [
     client: "WB Alloys Group",
     university: "University of Strathclyde",
     programme: "MSc Business Analysis and Consulting · 2026",
-    title: "WB Alloys Group — Enterprise Risk Management Framework",
+    title: "WB Alloys Group: Enterprise Risk Management Framework",
     subtitle: "ISO 31000:2018-aligned ERM framework and digital dashboard for a £25M multi-site SME",
     description:
       "Designed and delivered a consolidated Enterprise Risk Management framework for WB Alloys Group, a £25M welding products manufacturer operating across four UK branches (Glasgow, Aberdeen, Stockton, Tavistock) with international presence in the USA and UAE. The framework addressed a critical blind spot: risk being assessed in silos at branch level with no enterprise-wide visibility, threatening ISO accreditations and NCA 3800 nuclear supply chain certification.",
@@ -167,7 +167,7 @@ const caseStudies = [
     description:
       "Conducted a cradle-to-gate (A1–A3) Life Cycle Assessment of a residential building using material quantities from an Egyptian design as a real-world reference, analysed under UK construction assumptions and ICE Database emission factors. Identified concrete as the primary carbon hotspot and used Multi-Criteria Decision Analysis (MCDA) to recommend a phased low-carbon procurement strategy aligned with UK Net Zero 2050 targets.",
     highlights: [
-      "Calculated embodied carbon emissions for three key materials — concrete (17,374 kgCO₂e), red bricks (7,239 kgCO₂e), and rebar steel (2,353 kgCO₂e) — using ICE Database V4.1",
+      "Calculated embodied carbon emissions for three key materials (concrete: 17,374 kgCO₂e, red bricks: 7,239 kgCO₂e, rebar steel: 2,353 kgCO₂e) using ICE Database V4.1",
       "Identified concrete as the primary emission hotspot despite its lower per-kg intensity, due to its dominant volume (168,684 kg)",
       "Applied MCDA across 6 material options scored on GHG, cost, and feasibility, recommending recycled steel (10/10) and low-carbon concrete (8/10)",
       "Designed a 4-phase, 9-month intervention roadmap from carbon baseline establishment to standardised low-carbon procurement",
