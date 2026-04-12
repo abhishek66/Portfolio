@@ -16,9 +16,9 @@ type WorkEntry = {
   type: "work";
   company: string;
   role: string;
+  roleLines?: string[];
   period: string;
   location: string;
-  promoted?: boolean;
   headline?: string;
   impact?: ImpactStat[];
   contributions?: string[];
@@ -84,15 +84,18 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "AppsForBharat",
-    role: "Product Analyst → Product Manager",
-    period: "December 2022 – November 2023",
-    promoted: true,
+    role: "Product Intern / Product Analyst",
+    roleLines: [
+      "Product Intern (Jul 2022 – Nov 2022)",
+      "Product Analyst (Dec 2022 – Nov 2023)",
+    ],
+    period: "July 2022 – November 2023",
     location: "Bangalore, India",
     headline:
       "Consumer devotional-tech platform with 10M+ users. Owned monetisation and retention products across Sri Mandir.",
     impact: [
-      { metric: "+23%",    label: "Average order value on puja products" },
-      { metric: "+58%",    label: "Share-to-install ratio via referral redesign" },
+      { metric: "+23%",      label: "Average order value on puja products" },
+      { metric: "+58%",      label: "Share-to-install ratio via referral redesign" },
       { metric: "-8% Churn", label: "Q2 2023, driven by CRM automation" },
       { metric: "120 hrs/wk", label: "Manual effort saved through automated journeys" },
     ],
@@ -122,30 +125,6 @@ const workExperiences: WorkEntry[] = [
     skills: [
       "Product Analytics", "CRM Automation", "A/B Testing", "Mixpanel", "Metabase",
       "Retention Strategy", "Monetisation", "User Journey Design", "Figma", "Growth",
-    ],
-    accent: "teal",
-  },
-  {
-    type: "work",
-    company: "AppsForBharat",
-    role: "Product Intern",
-    period: "July 2022 – November 2022",
-    location: "Bangalore, India",
-    headline:
-      "Foundation role in data and CRM, building the analytical infrastructure that informed product decisions across the platform.",
-    impact: [
-      { metric: "12%",   label: "Retention improvement in CRM pilot cohort" },
-      { metric: "5M+",   label: "Monthly events tracked across dashboards" },
-    ],
-    contributions: [
-      "Performed quantitative user segmentation analysis on large datasets to uncover behavioural patterns and surface actionable insights",
-      "Built and maintained interactive dashboards in Mixpanel and Metabase for real-time tracking of key retention and engagement metrics",
-      "Designed and executed CRM campaign strategies with personalised engagement flows that improved retention metrics by 12% in the pilot cohort",
-      "Delivered data visualisations and reports that directly informed strategic planning and leadership decision-making",
-    ],
-    skills: [
-      "Data Analysis", "Mixpanel", "Metabase", "CRM Strategy",
-      "Dashboard Design", "User Segmentation", "Campaign Analytics",
     ],
     accent: "teal",
   },
@@ -287,14 +266,19 @@ export default function Experience() {
                         <h2 className="font-display font-normal text-2xl text-[var(--text-primary)]">
                           {exp.company}
                         </h2>
-                        <p className="mt-0.5 flex flex-wrap items-center gap-2 font-ui font-medium text-sm text-[var(--text-secondary)]">
-                          {exp.role}
-                          {exp.promoted && (
-                            <span className="inline-flex items-center rounded-full border border-[rgba(14,138,122,0.35)] bg-[rgba(14,138,122,0.08)] px-2 py-0.5 font-data text-xs text-teal-accent">
-                              Promoted ↑
-                            </span>
-                          )}
-                        </p>
+                        {exp.roleLines ? (
+                          <div className="mt-0.5 space-y-0.5">
+                            {exp.roleLines.map((line) => (
+                              <p key={line} className="font-ui font-medium text-sm text-[var(--text-secondary)]">
+                                {line}
+                              </p>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="mt-0.5 font-ui font-medium text-sm text-[var(--text-secondary)]">
+                            {exp.role}
+                          </p>
+                        )}
                       </div>
                       <div className="flex flex-col items-end gap-1 text-right">
                         <span className="font-data text-xs text-[var(--text-muted)]">
