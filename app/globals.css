@@ -432,6 +432,14 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════════════
+   §16  CAROUSEL / MARQUEE
+═══════════════════════════════════════════════════════ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════════════════
    §15  REDUCED MOTION OVERRIDE
 ═══════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

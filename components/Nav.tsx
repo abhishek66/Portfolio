@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 const links = [
   { href: "/",             label: "Home"         },
   { href: "/experience",   label: "Experience"   },
+  { href: "/education",    label: "Education"    },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/contact",      label: "Contact"      },
 ];

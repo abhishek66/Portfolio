@@ -61,7 +61,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Nav />
-        <main className="flex-1">{children}</main>
+        <div
+          className="flex-1 w-full mx-auto max-w-[1280px]"
+          style={{ boxShadow: "1px 0 0 0 var(--border-subtle), -1px 0 0 0 var(--border-subtle)" }}
+        >
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

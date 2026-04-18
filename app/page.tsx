@@ -6,6 +6,7 @@ import { Divider } from "@/components/ui/Divider";
 import { Tag } from "@/components/ui/Tag";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { HeroRoleLabel } from "@/components/HeroRoleLabel";
+import { CaseStudiesCarousel } from "@/components/CaseStudiesCarousel";
 
 const skillGroups = [
   {
@@ -64,9 +65,9 @@ export default function Home() {
               {/* Eyebrow label — cycling roles */}
               <HeroRoleLabel />
 
-              {/* Name — Cormorant Garamond 300 */}
+              {/* Name — Cormorant Garamond 400 */}
               <h1
-                className="mb-6 font-display font-light leading-[1.05] tracking-tight text-[var(--text-primary)]"
+                className="mb-6 font-display font-normal leading-[1.05] tracking-tight text-[var(--text-primary)]"
                 style={{ fontSize: "clamp(52px, 8vw, 96px)" }}
               >
                 Abhishek
@@ -95,6 +96,28 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Button href="/experience" variant="primary">View My Work</Button>
                 <Button href="/contact" variant="ghost">Get in Touch</Button>
+              </div>
+
+              {/* Anchor nav */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
+                {[
+                  { label: "About",        href: "#about" },
+                  { label: "Skills",       href: "#skills" },
+                  { label: "Experience",   href: "/experience" },
+                  { label: "Case Studies", href: "/case-studies" },
+                ].map((item, i, arr) => (
+                  <span key={item.href} className="flex items-center gap-5">
+                    <a
+                      href={item.href}
+                      className="font-data text-xs uppercase tracking-widest text-[var(--text-muted)] transition-colors duration-200 hover:text-gold"
+                    >
+                      {item.label}
+                    </a>
+                    {i < arr.length - 1 && (
+                      <span className="text-[var(--border-strong)] select-none">·</span>
+                    )}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -150,12 +173,12 @@ export default function Home() {
       </div>
 
       {/* ─── About ───────────────────────────────────────── */}
-      <section id="about" className="py-28">
+      <section id="about" className="py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <ScrollReveal>
               <SectionLabel className="mb-4">About Me</SectionLabel>
-              <h2 className="mb-6 font-display font-normal text-4xl leading-tight text-[var(--text-primary)] sm:text-5xl">
+              <h2 className="mb-6 font-display font-semibold text-4xl leading-tight text-[var(--text-primary)] sm:text-5xl">
                 Where analysis meets execution
               </h2>
               <div className="space-y-4 font-ui font-light text-base leading-relaxed text-[var(--text-secondary)]">
@@ -228,11 +251,11 @@ export default function Home() {
       </div>
 
       {/* ─── Skills ──────────────────────────────────────── */}
-      <section id="skills" className="py-28">
+      <section id="skills" className="py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <ScrollReveal>
             <SectionLabel className="mb-4">Skills &amp; Tools</SectionLabel>
-            <h2 className="mb-14 font-display font-normal text-4xl leading-tight text-[var(--text-primary)] sm:text-5xl">
+            <h2 className="mb-14 font-display font-semibold text-4xl leading-tight text-[var(--text-primary)] sm:text-5xl">
               What I bring to the table
             </h2>
           </ScrollReveal>
@@ -264,11 +287,26 @@ export default function Home() {
         <Divider />
       </div>
 
+      {/* ─── Case Studies Carousel ───────────────────────── */}
+      <section className="py-16 overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8 mb-8">
+          <ScrollReveal>
+            <SectionLabel>Consulting Work</SectionLabel>
+          </ScrollReveal>
+        </div>
+        <CaseStudiesCarousel />
+      </section>
+
+      {/* ─── Divider ─────────────────────────────────────── */}
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <Divider />
+      </div>
+
       {/* ─── CTA ─────────────────────────────────────────── */}
-      <section className="py-28">
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="mb-4 font-display font-normal text-4xl text-[var(--text-primary)] sm:text-5xl">
+            <h2 className="mb-4 font-display font-semibold text-4xl text-[var(--text-primary)] sm:text-5xl">
               Let&apos;s solve something together
             </h2>
             <p className="mb-10 font-ui font-light text-base text-[var(--text-secondary)] max-w-md mx-auto leading-relaxed">
