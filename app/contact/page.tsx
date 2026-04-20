@@ -101,7 +101,7 @@ export default function Contact() {
       </ScrollReveal>
 
       {/* Contact cards */}
-      <div className="mb-20 grid grid-cols-2 gap-5 items-stretch lg:max-w-2xl">
+      <div className="mb-20 grid grid-cols-1 gap-5 items-stretch sm:grid-cols-2 lg:max-w-2xl">
         {contactLinks.map((link, i) => {
           const ac = accentMap[link.accent];
           return (
@@ -170,6 +170,37 @@ export default function Contact() {
           );
         })}
       </div>
+
+      {/* CV Download CTA */}
+      <ScrollReveal className="mb-20">
+        <div
+          className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          style={{ boxShadow: "var(--shadow-card)", borderTopWidth: "2px", borderTopColor: "var(--accent-gold)" }}
+        >
+          <div>
+            <p className="font-display font-normal text-2xl text-[var(--text-primary)]">
+              Want the full picture?
+            </p>
+            <p className="mt-1 font-ui font-light text-sm text-[var(--text-secondary)]">
+              Download my CV for a complete overview of experience, education, and skills.
+            </p>
+          </div>
+          {/* Replace /resume.pdf with actual CV file */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost flex-shrink-0 inline-flex items-center gap-2"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </ScrollReveal>
 
       {/* Bottom divider */}
       <Divider />

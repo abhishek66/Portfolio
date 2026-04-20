@@ -93,9 +93,23 @@ export default function Home() {
               </div>
 
               {/* CTA buttons */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button href="/experience" variant="primary">View My Work</Button>
                 <Button href="/contact" variant="ghost">Get in Touch</Button>
+                {/* Replace /resume.pdf with actual CV file */}
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost inline-flex items-center gap-2"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download CV
+                </a>
               </div>
 
               {/* Anchor nav */}
@@ -173,7 +187,7 @@ export default function Home() {
       </div>
 
       {/* ─── About ───────────────────────────────────────── */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-16" style={{ background: "var(--bg-surface)" }}>
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <ScrollReveal>
@@ -251,7 +265,7 @@ export default function Home() {
       </div>
 
       {/* ─── Skills ──────────────────────────────────────── */}
-      <section id="skills" className="py-20">
+      <section id="skills" className="py-16">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <ScrollReveal>
             <SectionLabel className="mb-4">Skills &amp; Tools</SectionLabel>
@@ -288,7 +302,7 @@ export default function Home() {
       </div>
 
       {/* ─── Case Studies Carousel ───────────────────────── */}
-      <section className="py-16 overflow-hidden">
+      <section className="py-12 overflow-hidden" style={{ background: "var(--bg-surface)" }}>
         <div className="mx-auto max-w-6xl px-6 lg:px-8 mb-8">
           <ScrollReveal>
             <SectionLabel>Consulting Work</SectionLabel>
@@ -303,7 +317,7 @@ export default function Home() {
       </div>
 
       {/* ─── CTA ─────────────────────────────────────────── */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="mb-4 font-display font-semibold text-4xl text-[var(--text-primary)] sm:text-5xl">

@@ -19,7 +19,7 @@ export function CaseStudiesCarousel() {
 
   return (
     <div
-      className="overflow-hidden"
+      className="overflow-hidden w-full"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

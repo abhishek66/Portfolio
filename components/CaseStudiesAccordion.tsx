@@ -13,7 +13,8 @@ type CaseStudy = {
   programme: string;
   title: string;
   subtitle: string;
-  description: string;
+  problem: string;
+  solution: string;
   highlights: string[];
   results: { metric: string; label: string }[];
   skills: string[];
@@ -31,8 +32,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "Improving Workforce Strategy for a Modern Police Force",
     subtitle: "Root cause analysis and strategic recommendations for a Regional Police Force",
-    description:
-      "Analysed staffing data and qualitative insights from exit trends and recruitment feedback to diagnose critical workforce shortages across Eastern, Western, and Northern divisions of a Regional Police Force. Applied multiple root cause frameworks to identify systemic structural failures and delivered seven actionable strategic recommendations to build a future-ready digital police workforce.",
+    problem: "A Regional Police Force faced critical staffing shortages across Eastern, Western, and Northern divisions — Sergeants, P1 officers, and digital specialists — with no root cause analysis to explain the pattern or guide intervention.",
+    solution: "Applied SWOT, 5 Why's, Fishbone Diagram, McKinsey 7S, and RACI Matrix frameworks to diagnose structural failures. Recommended four targeted solutions: admin automation (20–30% workload reduction), accelerated leadership pathways, modernised recruitment, and digital upskilling. Identified Western Force's flexible working model as replicable best practice.",
     highlights: [
       "Conducted quantitative staffing gap analysis across three regional forces identifying critical shortages in Sergeants, P1 officers, and digital specialists",
       "Applied SWOT, 5 Why's, Fishbone Diagram, and McKinsey 7S frameworks to identify root causes",
@@ -62,8 +63,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2026",
     title: "NHS England A&E Crisis: Machine Learning Analytics Report",
     subtitle: "Predictive modelling and strategic intervention analysis for NHS emergency care demand",
-    description:
-      "Analysed 49 months of Type 1 A&E attendance data across 96 NHS Trusts in the Midlands, London, and North East & Yorkshire to diagnose systemic operational failure. Built a Random Forest forecasting model achieving 96.33% accuracy to project 12-month forward demand, and applied MCDA to prioritise six interventions addressing a crisis where the NHS 5% breach target was missed in every single month analysed.",
+    problem: "NHS England missed its 5% A&E breach target every single month across 49 months of Type 1 data, with demand surging +21.8%, no predictive forecasting in place, and stark regional performance inequality across 96 Trusts.",
+    solution: "Built a Random Forest forecasting model (96.33% accuracy, MAPE 3.67%) using 17 engineered features across 5 categories. Developed a season-adjusted Composite Pressure Index and ran MCDA across 4 weighted criteria to rank 6 interventions — recommending Seasonal Resourcing (score 21.31) deployed ahead of the predictable Oct–Feb crisis window.",
     highlights: [
       "Identified 5 critical bottlenecks: demand surge (+21.8%), performance crisis (46.16% breach), wait time escalation, regional inequality, and predictable seasonal pressure",
       "Decoupled wait times into two non-overlapping root causes: manageable 4-12hr A&E friction (peak 300,047 patients) vs critical 12hr+ hospital bed failure (peak 36,653 patients)",
@@ -92,8 +93,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2026",
     title: "WB Alloys Group: Enterprise Risk Management Framework",
     subtitle: "ISO 31000:2018-aligned ERM framework and digital dashboard for a £25M multi-site SME",
-    description:
-      "Designed and delivered a consolidated Enterprise Risk Management framework for WB Alloys Group, a £25M welding products manufacturer operating across four UK branches (Glasgow, Aberdeen, Stockton, Tavistock) with international presence in the USA and UAE. The framework addressed a critical blind spot: risk being assessed in silos at branch level with no enterprise-wide visibility, threatening ISO accreditations and NCA 3800 nuclear supply chain certification.",
+    problem: "WB Alloys Group, a £25M multi-site SME, managed risk in branch-level silos with no enterprise-wide visibility — threatening ISO 9001, ISO 14001, ISO 45001 accreditations and NCA 3800 nuclear supply chain certification.",
+    solution: "Audited 21 existing branch risk documents, consolidated 134 risks into a unified 5×5 Likelihood × Impact register, and designed a 6-tier escalation protocol. Built a 12-tab digital ERM dashboard with real-time KRI monitoring and defined a 4-level Risk Appetite Framework with 12 automated Key Risk Indicators.",
     highlights: [
       "Forensic audit of 21 existing branch risk documents to extract, normalise, and consolidate 134 risks into a unified 5x5 Likelihood x Impact register, enabling enterprise comparison for the first time",
       "Designed a 6-tier escalation protocol with automated IF/Then triggers and a 3-tier governance structure (Board, Executive Team, Branch Managers)",
@@ -123,8 +124,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "StormID – AI Workflow Optimisation for a Scottish Local Authority",
     subtitle: "Evaluating how AI can improve service delivery across 10 council workflows",
-    description:
-      "Assessed 10 operational workflows for a Scottish Local Authority to identify where AI integration would deliver the highest ROI and efficiency gains. Using Lean Six Sigma and Business Process Analysis, the team ranked all workflows via a weighted AI Scoring Framework (scored across 6 criteria, out of 50), and recommended a phased 9-month implementation plan focused on the two highest-value targets.",
+    problem: "A Scottish Local Authority needed to identify which of its 10 operational workflows would deliver the highest ROI from AI integration, but had no scoring methodology or prioritisation framework to guide the decision.",
+    solution: "Developed a custom AI Scoring Framework across 6 weighted criteria, ranked all 10 workflows, and mapped AI components (Convert, Classify, Generate, Validate, Summarise) to the two highest-priority targets. Designed a phased 9-month implementation roadmap with PoC on Workflow 8 followed by parallel Workflow 7 rollout.",
     highlights: [
       "Developed a custom AI Scoring Framework across 6 weighted criteria applied to all 10 workflows",
       "Identified Workflow 7 (Freedom of Information Requests) as top priority, weighted score 40/50",
@@ -152,8 +153,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2026",
     title: "Cradle-to-Gate Life Cycle Assessment of a Residential Building",
     subtitle: "Embodied carbon analysis and low-carbon procurement strategy for a residential build",
-    description:
-      "Conducted a cradle-to-gate (A1–A3) Life Cycle Assessment of a residential building using material quantities from an Egyptian design as a real-world reference, analysed under UK construction assumptions and ICE Database emission factors. Identified concrete as the primary carbon hotspot and used Multi-Criteria Decision Analysis (MCDA) to recommend a phased low-carbon procurement strategy aligned with UK Net Zero 2050 targets.",
+    problem: "A residential building project lacked a carbon baseline or low-carbon procurement strategy, with no data identifying which materials drove the highest embodied carbon emissions across the construction supply chain.",
+    solution: "Conducted a cradle-to-gate (A1–A3) Life Cycle Assessment using ICE Database V4.1, calculated embodied carbon for concrete (17,374 kgCO₂e), steel (2,353 kgCO₂e), and brick (7,239 kgCO₂e). Applied MCDA across 6 material alternatives and designed a 4-phase, 9-month intervention roadmap aligned with UK Net Zero 2050 targets.",
     highlights: [
       "Calculated embodied carbon emissions for three key materials (concrete: 17,374 kgCO₂e, red bricks: 7,239 kgCO₂e, rebar steel: 2,353 kgCO₂e) using ICE Database V4.1",
       "Identified concrete as the primary emission hotspot despite its lower per-kg intensity, due to its dominant volume (168,684 kg)",
@@ -183,8 +184,8 @@ const caseStudies: CaseStudy[] = [
     programme: "MSc Business Analysis and Consulting · 2025",
     title: "STAHL – IIoT Rental Model Feasibility Study",
     subtitle: "10-year financial and strategic feasibility study for an IIoT-enabled rental transition",
-    description:
-      "Led a 10-year financial and strategic feasibility study for STAHL, a heavy equipment manufacturer evaluating a transition from traditional sales to an IIoT-enabled rental model. Delivered a full consulting report and executive presentation covering financial modelling, stakeholder analysis, and a 5-phase transformation roadmap.",
+    problem: "STAHL, a heavy equipment manufacturer, needed to evaluate whether transitioning from traditional product sales to an IIoT-enabled rental model was financially and strategically viable over a 10-year horizon.",
+    solution: "Built a DCF financial model across small, medium, and large fleet scenarios, applied CATWOE to map stakeholders and transformation boundaries, and delivered a 5-phase transformation roadmap with phased CapEx deployment (40/30/20/10% across 5 years). Modelled IIoT-driven predictive maintenance reducing downtime by up to 15%.",
     highlights: [
       "Built a DCF financial model across small, medium, and large fleet scenarios",
       "Applied CATWOE framework to map stakeholders and transformation boundaries",
@@ -290,77 +291,44 @@ export function CaseStudiesAccordion() {
             </button>
 
             {/* Expandable content */}
-            <div
-              style={{
-                overflow: "hidden",
-                maxHeight: isOpen ? "2000px" : "0px",
-                opacity: isOpen ? 1 : 0,
-                transition: "max-height 400ms ease, opacity 300ms ease",
-              }}
-            >
-              <div className="px-7 pb-7">
-                <div className="grid gap-10 lg:grid-cols-2">
-                  {/* Left: Overview + Contributions */}
-                  <div className="space-y-8">
-                    <div>
-                      <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
-                        Overview
-                      </p>
-                      <p className="font-ui font-light text-sm text-[var(--text-secondary)] leading-relaxed">
-                        {cs.description}
-                      </p>
-                    </div>
+            <div style={{ overflow: "hidden", maxHeight: isOpen ? "3000px" : "0px", opacity: isOpen ? 1 : 0, transition: "max-height 500ms ease, opacity 300ms ease" }}>
+              <div className="px-7 pb-7 space-y-6">
 
-                    <div>
-                      <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
-                        Key Contributions
-                      </p>
-                      <ul className="space-y-3">
-                        {cs.highlights.map((h, j) => (
-                          <li key={j} className="flex gap-3 font-ui font-light text-sm text-[var(--text-secondary)]">
-                            <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[rgba(201,168,76,0.08)] border border-[var(--border-subtle)] font-data text-[10px] text-gold">
-                              {j + 1}
-                            </span>
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Four structured blocks */}
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {/* THE PROBLEM */}
+                  <div className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-5">
+                    <p className="mb-2 font-data text-[10px] uppercase tracking-widest text-gold">The Problem</p>
+                    <p className="font-ui font-light text-sm text-[var(--text-secondary)] leading-relaxed">{cs.problem}</p>
                   </div>
 
-                  {/* Right: Metrics + Skills */}
-                  <div className="space-y-8">
-                    <div>
-                      <p className="mb-4 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
-                        Key Metrics
-                      </p>
-                      <div className="grid grid-cols-2 gap-3">
-                        {cs.results.map((r, j) => (
-                          <div
-                            key={j}
-                            className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-4"
-                          >
-                            <p className="font-display font-normal text-2xl text-gold leading-none">
-                              {r.metric}
-                            </p>
-                            <p className="mt-1.5 font-data text-xs leading-snug text-[var(--text-muted)]">
-                              {r.label}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  {/* THE SOLUTION */}
+                  <div className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-5">
+                    <p className="mb-2 font-data text-[10px] uppercase tracking-widest text-gold">The Solution</p>
+                    <p className="font-ui font-light text-sm text-[var(--text-secondary)] leading-relaxed">{cs.solution}</p>
+                  </div>
+                </div>
 
-                    <div>
-                      <p className="mb-3 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">
-                        Tools &amp; Methods
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {cs.skills.map((skill) => (
-                          <Tag key={skill}>{skill}</Tag>
-                        ))}
+                {/* THE OUTCOME — metrics grid */}
+                <div>
+                  <p className="mb-3 font-data text-[10px] uppercase tracking-widest text-gold">The Outcome</p>
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {cs.results.map((r, j) => (
+                      <div key={j} className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-base)] p-4">
+                        <p className="font-display font-normal text-2xl text-gold leading-none">{r.metric}</p>
+                        <p className="mt-1.5 font-data text-xs leading-snug text-[var(--text-muted)]">{r.label}</p>
                       </div>
-                    </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* TOOLS & METHODS */}
+                <div>
+                  <p className="mb-3 font-data text-[10px] uppercase tracking-widest text-gold">Tools &amp; Methods</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cs.skills.map((skill) => (
+                      <Tag key={skill}>{skill}</Tag>
+                    ))}
                   </div>
                 </div>
               </div>
