@@ -118,7 +118,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
-    period: "July 2019 – June 2022",
+    period: "January 2022 – July 2022",
     location: "Bangalore, India",
     headline:
       "Enterprise CRM implementation and optimisation for BFSI and telecom clients, driving adoption, efficiency, and measurable service improvements.",
