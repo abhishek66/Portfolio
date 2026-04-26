@@ -25,9 +25,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhishek Manikandan | Product Manager",
+  title: "Abhishek Manikandan | Business Analyst & Consultant",
   description:
-    "Product Manager with experience in SaaS, B2C apps, and enterprise platforms. Specialising in 0-to-1 builds, data-driven growth, and user-centred design.",
+    "Business Analyst & Consultant with experience in regulated financial services, SaaS, and enterprise platforms. Specialising in requirements analysis, data-driven delivery, and stakeholder management.",
 };
 
 export default function RootLayout({
@@ -46,7 +46,6 @@ export default function RootLayout({
         <Nav />
         <div
           className="flex-1 w-full mx-auto max-w-[1280px]"
-          style={{ boxShadow: "1px 0 0 0 var(--border-subtle), -1px 0 0 0 var(--border-subtle)" }}
         >
           <main>{children}</main>
         </div>

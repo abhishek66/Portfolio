@@ -12,8 +12,8 @@ export function SectionLabel({ children, className = "" }: SectionLabelProps) {
   return (
     <p
       className={[
-        "font-data text-xs font-normal uppercase tracking-widest",
-        "text-[var(--text-muted)]",
+        "font-data text-base font-bold uppercase tracking-widest",
+        "text-[var(--text-primary)]",
         "pl-3 border-l-2 border-l-gold",
         className,
       ]

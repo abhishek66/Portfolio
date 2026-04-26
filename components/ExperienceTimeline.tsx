@@ -153,28 +153,28 @@ const accentMap: Record<string, {
   lineColor:        string;
 }> = {
   gold: {
-    badge:            "border-[var(--border-strong)] bg-[rgba(201,168,76,0.08)] text-gold",
+    badge:            "border-[var(--border-strong)] bg-[rgba(245,197,24,0.08)] text-gold",
     dot:              "bg-gold",
     metric:           "text-gold",
-    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.04)]",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.05)]",
     moduleBlockTitle: "text-gold-lt",
     lineColor:        "var(--accent-gold)",
   },
   teal: {
-    badge:            "border-[rgba(14,138,122,0.35)] bg-[rgba(14,138,122,0.08)] text-teal-accent",
-    dot:              "bg-teal-accent",
-    metric:           "text-teal-accent",
-    moduleBlock:      "border-[rgba(14,138,122,0.2)] bg-[rgba(14,138,122,0.04)]",
-    moduleBlockTitle: "text-[#3cb8ac]",
-    lineColor:        "var(--accent-teal)",
+    badge:            "border-[rgba(245,197,24,0.35)] bg-[rgba(245,197,24,0.08)] text-gold",
+    dot:              "bg-gold",
+    metric:           "text-gold",
+    moduleBlock:      "border-[rgba(245,197,24,0.20)] bg-[rgba(245,197,24,0.05)]",
+    moduleBlockTitle: "text-gold-lt",
+    lineColor:        "var(--accent-gold)",
   },
   "gold-muted": {
-    badge:            "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.05)] text-[rgba(201,168,76,0.7)]",
-    dot:              "bg-[rgba(201,168,76,0.55)]",
-    metric:           "text-[rgba(201,168,76,0.75)]",
-    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(201,168,76,0.03)]",
+    badge:            "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.06)] text-[rgba(255,255,255,0.70)]",
+    dot:              "bg-[rgba(245,197,24,0.55)]",
+    metric:           "text-[rgba(255,255,255,0.70)]",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.04)]",
     moduleBlockTitle: "text-gold",
-    lineColor:        "rgba(201,168,76,0.45)",
+    lineColor:        "rgba(245,197,24,0.40)",
   },
 };
 

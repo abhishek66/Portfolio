@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Contact | Abhishek Manikandan",
-  description: "Get in touch with Abhishek Manikandan, Product Manager.",
+  description: "Get in touch with Abhishek Manikandan, Business Analyst & Consultant.",
 };
 
 const contactLinks = [
@@ -64,20 +64,20 @@ const accentMap: Record<string, {
   glow:   string;
 }> = {
   gold: {
-    icon:   "text-gold   bg-[rgba(201,168,76,0.10)]",
-    border: "border-[var(--border-subtle)] hover:border-[var(--border-strong)]",
+    icon:   "text-gold bg-[rgba(245,197,24,0.10)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
     label:  "text-gold",
     glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },
   teal: {
-    icon:   "text-teal-accent bg-[rgba(14,138,122,0.10)]",
-    border: "border-[rgba(14,138,122,0.15)] hover:border-[rgba(14,138,122,0.45)]",
-    label:  "text-teal-accent",
-    glow:   "hover:shadow-[var(--shadow-card),0_0_40px_rgba(14,138,122,0.12)]",
+    icon:   "text-gold bg-[rgba(245,197,24,0.10)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
+    label:  "text-gold",
+    glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },
   "gold-lt": {
-    icon:   "text-gold-lt bg-[rgba(226,194,122,0.10)]",
-    border: "border-[var(--border-subtle)] hover:border-[var(--border-strong)]",
+    icon:   "text-gold-lt bg-[rgba(245,197,24,0.07)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
     label:  "text-gold-lt",
     glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },

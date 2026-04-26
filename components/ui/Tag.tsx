@@ -15,11 +15,11 @@ export function Tag({ children, className = "" }: TagProps) {
         "rounded-full",
         "px-4 py-1.5",
         "font-data text-xs font-normal",
-        "skill-tag bg-[rgba(201,168,76,0.06)] border border-[var(--border-subtle)]",
-        "text-[var(--text-secondary)]",
+        "skill-tag bg-[rgba(245,197,24,0.15)] border border-[rgba(245,197,24,0.50)]",
+        "text-white",
         "cursor-default",
         "transition-all duration-200",
-        "hover:bg-[rgba(201,168,76,0.12)] hover:border-[var(--border-strong)] hover:text-gold",
+        "hover:bg-[rgba(245,197,24,0.22)] hover:border-[rgba(245,197,24,0.70)]",
         className,
       ]
         .filter(Boolean)
