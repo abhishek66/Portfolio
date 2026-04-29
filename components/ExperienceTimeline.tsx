@@ -22,6 +22,7 @@ type WorkEntry = {
   highlights?: string[];
   skills: string[];
   accent: string;
+  compact?: boolean;
 };
 
 /* ─── Data ───────────────────────────────────────────────────────────── */
@@ -141,6 +142,51 @@ const workExperiences: WorkEntry[] = [
     ],
     accent: "gold-muted",
   },
+  {
+    type: "work",
+    company: "NoBroker",
+    role: "CRM Specialist",
+    period: "February 2020 – January 2022",
+    location: "India",
+    contributions: [
+      "Managed CRM operations and customer engagement workflows for India's largest proptech platform",
+      "Designed and executed targeted communication campaigns to improve lead conversion and retention",
+      "Analysed customer interaction data to optimise journey touchpoints and reduce drop-off",
+    ],
+    skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
+    accent: "gold-muted",
+    compact: true,
+  },
+  {
+    type: "work",
+    company: "Sky UK",
+    role: "Technical Analyst · First Source Solutions",
+    period: "February 2018 – January 2020",
+    location: "India",
+    contributions: [
+      "Provided technical support and analysis for Sky UK customer operations, resolving complex queries efficiently",
+      "Tracked and reported on technical performance metrics to support operational decision-making",
+      "Worked within a large BPO environment serving a major UK telecommunications and media client",
+    ],
+    skills: ["Technical Support", "Data Reporting", "Telecoms", "CRM"],
+    accent: "gold-muted",
+    compact: true,
+  },
+  {
+    type: "work",
+    company: "Amazon",
+    role: "Quality Analyst",
+    period: "June 2017 – February 2018",
+    location: "India",
+    contributions: [
+      "Conducted quality audits and process evaluations to ensure operational standards were consistently met",
+      "Identified process gaps and flagged improvement opportunities across workflows",
+      "Collaborated with operations teams to implement corrective actions",
+    ],
+    skills: ["Quality Assurance", "Process Auditing", "Operations"],
+    accent: "gold-muted",
+    compact: true,
+  },
 ];
 
 /* ─── Accent colour map ──────────────────────────────────────────────── */
@@ -222,6 +268,8 @@ export function ExperienceTimeline() {
         {workExperiences.map((exp, i) => {
           const accent  = accentMap[exp.accent];
           const isOpen  = openIndex === i;
+          const pad     = exp.compact ? "p-5" : "p-7";
+          const padBody = exp.compact ? "px-5 pb-5" : "px-7 pb-7";
 
           return (
             <div key={i} className="timeline-entry relative flex gap-8 sm:gap-12">
@@ -247,7 +295,7 @@ export function ExperienceTimeline() {
                 <button
                   type="button"
                   onClick={() => toggle(i)}
-                  className="w-full text-left p-7 transition-colors duration-200"
+                  className={`w-full text-left ${pad} transition-colors duration-200`}
                   style={{
                     background: isOpen ? "var(--bg-elevated)" : "transparent",
                   }}
@@ -255,7 +303,7 @@ export function ExperienceTimeline() {
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
-                      <h2 className="font-display font-normal text-2xl text-[var(--text-primary)]">
+                      <h2 className={`font-display font-normal text-[var(--text-primary)] ${exp.compact ? "text-xl" : "text-2xl"}`}>
                         {exp.company}
                       </h2>
                       {exp.roleLines ? (
@@ -304,7 +352,7 @@ export function ExperienceTimeline() {
                     transition: "max-height 400ms ease, opacity 300ms ease",
                   }}
                 >
-                  <div className="px-7 pb-7 space-y-8">
+                  <div className={`${padBody} space-y-6`}>
 
                     {/* Impact grid */}
                     {exp.impact && (
