@@ -41,7 +41,7 @@ export default function Home() {
                 {["MSc Business Analysis", "University of Strathclyde", "4+ Years Experience"].map((chip) => (
                   <span
                     key={chip}
-                    className="skill-tag inline-flex items-center rounded-full border border-[rgba(99,102,241,0.40)] bg-[rgba(99,102,241,0.12)] px-3 py-1 font-data text-xs"
+                    className="skill-tag inline-flex items-center rounded-full border border-[rgba(16,185,129,0.40)] bg-[rgba(16,185,129,0.12)] px-3 py-1 font-data text-xs"
                   >
                     {chip}
                   </span>
@@ -55,7 +55,7 @@ export default function Home() {
               <div
                 className="relative rounded-[var(--radius-lg)] overflow-hidden"
                 style={{
-                  boxShadow: "0 0 0 1px rgba(99,102,241,0.20), var(--shadow-glow)",
+                  boxShadow: "0 0 0 1px rgba(16,185,129,0.20), var(--shadow-glow)",
                 }}
               >
                 <Image
@@ -69,7 +69,7 @@ export default function Home() {
                 <div
                   className="absolute inset-0 rounded-[var(--radius-lg)] pointer-events-none"
                   style={{
-                    background: "linear-gradient(160deg, rgba(99,102,241,0.10) 0%, transparent 60%)",
+                    background: "linear-gradient(160deg, rgba(16,185,129,0.10) 0%, transparent 60%)",
                   }}
                 />
               </div>

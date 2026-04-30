@@ -5,14 +5,14 @@
 ═══════════════════════════════════════════════════════ */
 :root {
   /* Background layers */
-  --bg-base:        #0D1117;
-  --bg-surface:     #161C2D;
-  --bg-elevated:    #1E2540;
+  --bg-base:        #0D1512;
+  --bg-surface:     #141D19;
+  --bg-elevated:    #1C2922;
 
-  /* Brand — Electric Indigo */
-  --accent-gold:    #6366F1;
-  --accent-gold-lt: #818CF8;
-  --accent-teal:    #6366F1;
+  /* Brand — Emerald */
+  --accent-gold:    #10B981;
+  --accent-gold-lt: #34D399;
+  --accent-teal:    #10B981;
 
   /* Typography */
   --text-primary:   #FFFFFF;
@@ -20,12 +20,12 @@
   --text-muted:     rgba(255, 255, 255, 0.60);
 
   /* Borders */
-  --border-subtle:  rgba(99, 102, 241, 0.15);
-  --border-strong:  rgba(99, 102, 241, 0.35);
+  --border-subtle:  rgba(16, 185, 129, 0.15);
+  --border-strong:  rgba(16, 185, 129, 0.35);
 
   /* Shadows */
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.20);
-  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.45);
+  --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.40);
 
   /* Radii */
   --radius-sm: 6px;
@@ -40,20 +40,20 @@
   --duration-slow:   600ms;
 
   /* Nav */
-  --nav-bg:         rgba(13, 17, 23, 0.92);
-  --nav-drawer-bg:  rgba(13, 17, 23, 0.98);
+  --nav-bg:         rgba(13, 21, 18, 0.92);
+  --nav-drawer-bg:  rgba(13, 21, 18, 0.98);
 }
 
 /* ═══════════════════════════════════════════════════════
    §2  TAILWIND TOKEN MAP
 ═══════════════════════════════════════════════════════ */
 @theme inline {
-  --color-bg-base:     #0D1117;
-  --color-bg-surface:  #161C2D;
-  --color-bg-elevated: #1E2540;
-  --color-gold:        #6366F1;
-  --color-gold-lt:     #818CF8;
-  --color-teal-accent: #6366F1;
+  --color-bg-base:     #0D1512;
+  --color-bg-surface:  #141D19;
+  --color-bg-elevated: #1C2922;
+  --color-gold:        #10B981;
+  --color-gold-lt:     #34D399;
+  --color-teal-accent: #10B981;
 
   --font-sans:    var(--font-dm-sans);
   --font-mono:    var(--font-dm-mono);
@@ -73,9 +73,9 @@ html {
 body {
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%,
-      rgba(99, 102, 241, 0.10) 0%, transparent 60%),
+      rgba(16, 185, 129, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 80%,
-      rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+      rgba(16, 185, 129, 0.04) 0%, transparent 50%),
     var(--bg-base);
   color: var(--text-primary);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
@@ -141,11 +141,11 @@ body::before {
   animation: btn-shine 3.5s ease-in-out infinite;
 }
 
-/* Primary — electric indigo */
+/* Primary — emerald */
 .btn-primary {
-  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
-  color: #FFFFFF;
-  border: 1.5px solid #6366F1;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #0D1512;
+  border: 1.5px solid #10B981;
   text-shadow: none;
   font-weight: 700;
 }
@@ -162,17 +162,17 @@ body::before {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #818CF8 0%, #6366F1 100%);
-  border-color: #818CF8;
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+  border-color: #34D399;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 28px rgba(99, 102, 241, 0.55), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.55), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* Ghost — indigo border + text */
+/* Ghost — emerald border + text */
 .btn-ghost {
   background: transparent;
   border: 1.5px solid var(--accent-gold);
@@ -183,19 +183,19 @@ body::before {
   background: linear-gradient(
     105deg,
     transparent 20%,
-    rgba(99, 102, 241, 0.08) 40%,
-    rgba(99, 102, 241, 0.15) 50%,
-    rgba(99, 102, 241, 0.08) 60%,
+    rgba(16, 185, 129, 0.08) 40%,
+    rgba(16, 185, 129, 0.15) 50%,
+    rgba(16, 185, 129, 0.08) 60%,
     transparent 80%
   );
 }
 
 .btn-ghost:hover {
-  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
-  border-color: #6366F1;
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border-color: #10B981;
+  color: #0D1512;
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(99, 102, 241, 0.40), 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.40), 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-ghost:active {
@@ -244,9 +244,9 @@ body::before {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(99, 102, 241, 0.10) 25%,
-    rgba(99, 102, 241, 0.55) 50%,
-    rgba(99, 102, 241, 0.10) 75%,
+    rgba(16, 185, 129, 0.10) 25%,
+    rgba(16, 185, 129, 0.55) 50%,
+    rgba(16, 185, 129, 0.10) 75%,
     transparent 100%
   );
   margin: 0;
@@ -314,25 +314,25 @@ body::before {
    §11  COMPONENT TOKENS
 ═══════════════════════════════════════════════════════ */
 .hero-label {
-  background: rgba(99, 102, 241, 0.10);
-  border-color: rgba(99, 102, 241, 0.30);
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.30);
 }
 
 .stat-chip {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.40);
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.40);
   color: #FFFFFF;
 }
 
 .skill-tag {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: rgba(99, 102, 241, 0.40);
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.40);
   color: #FFFFFF;
 }
 
 .skill-tag:hover {
-  background: rgba(99, 102, 241, 0.22);
-  border-color: rgba(99, 102, 241, 0.65);
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(16, 185, 129, 0.65);
 }
 
 /* ═══════════════════════════════════════════════════════
