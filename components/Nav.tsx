@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 
 const shimmerStyle = `
 @keyframes bubble-shimmer {
@@ -39,18 +39,33 @@ export default function Nav() {
   const [visible, setVisible]     = useState(true);
   const [dlHover, setDlHover]     = useState(false);
   const lastY = useRef(0);
-  const linksRef = useRef<HTMLDivElement>(null);
-  const [bubble, setBubble] = useState<{ left: number; width: number; ready: boolean }>({ left: 0, width: 0, ready: false });
+  const linksRef  = useRef<HTMLDivElement>(null);
+  const bubbleRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  const measureBubble = () => {
     const container = linksRef.current;
-    if (!container) return;
+    const el        = bubbleRef.current;
+    if (!container || !el) return;
     const active = container.querySelector<HTMLAnchorElement>("[data-active='true']");
     if (!active) return;
     const cr = container.getBoundingClientRect();
     const ar = active.getBoundingClientRect();
-    setBubble({ left: ar.left - cr.left, width: ar.width, ready: true });
+    el.style.left    = `${ar.left - cr.left}px`;
+    el.style.width   = `${ar.width}px`;
+    el.style.opacity = "1";
+  };
+
+  useLayoutEffect(() => {
+    measureBubble();
   }, [pathname]);
+
+  useEffect(() => {
+    const container = linksRef.current;
+    if (!container) return;
+    const ro = new ResizeObserver(measureBubble);
+    ro.observe(container);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const handler = () => {
@@ -106,34 +121,34 @@ export default function Nav() {
         {/* Center links — desktop, equally spaced */}
         <div ref={linksRef} className="hidden sm:flex relative flex-1 items-center justify-evenly px-8">
           {/* Sliding bubble indicator */}
-          {bubble.ready && (
+          <span
+            ref={bubbleRef}
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-50%)",
+              left: 0,
+              width: 0,
+              opacity: 0,
+              height: "32px",
+              borderRadius: "9999px",
+              background: "rgba(245,197,24,0.12)",
+              boxShadow: "0 0 0 1px rgba(245,197,24,0.55), 0 0 10px rgba(245,197,24,0.20)",
+              transition: "left 180ms cubic-bezier(0.25,0.1,0.25,1), width 180ms cubic-bezier(0.25,0.1,0.25,1)",
+              overflow: "hidden",
+              pointerEvents: "none",
+            }}
+          >
             <span
-              aria-hidden="true"
+              className="nav-bubble-shimmer"
               style={{
                 position: "absolute",
-                top: "50%",
-                transform: "translateY(-50%)",
-                left: bubble.left,
-                width: bubble.width,
-                height: "32px",
-                borderRadius: "9999px",
-                background: "rgba(245,197,24,0.12)",
-                boxShadow: "0 0 0 1px rgba(245,197,24,0.55), 0 0 10px rgba(245,197,24,0.20)",
-                transition: "left 280ms cubic-bezier(0.4,0,0.2,1), width 280ms cubic-bezier(0.4,0,0.2,1)",
-                overflow: "hidden",
-                pointerEvents: "none",
+                inset: 0,
+                background: "linear-gradient(105deg, transparent 20%, rgba(245,197,24,0.18) 40%, rgba(245,197,24,0.32) 50%, rgba(245,197,24,0.18) 60%, transparent 80%)",
               }}
-            >
-              <span
-                className="nav-bubble-shimmer"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(105deg, transparent 20%, rgba(245,197,24,0.18) 40%, rgba(245,197,24,0.32) 50%, rgba(245,197,24,0.18) 60%, transparent 80%)",
-                }}
-              />
-            </span>
-          )}
+            />
+          </span>
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
