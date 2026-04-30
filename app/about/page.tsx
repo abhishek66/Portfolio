@@ -4,6 +4,8 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
 import { Tag } from "@/components/ui/Tag";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { AnimatedStatGrid } from "@/components/AnimatedStatGrid";
+import { ProcessFlow } from "@/components/ProcessFlow";
 
 export const metadata: Metadata = {
   title: "About | Abhishek Manikandan",
@@ -97,33 +99,16 @@ export default function About() {
             </div>
           </ScrollReveal>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { label: "Years of Experience",     value: "4+"   },
-              { label: "Consulting Case Studies",  value: "6"    },
-              { label: "Users Impacted",           value: "10M+" },
-              { label: "Industry Clients",         value: "4"    },
-            ].map((stat, i) => (
-              <ScrollReveal key={stat.label} delay={i * 80}>
-                <div
-                  className="rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)] hover:-translate-y-1"
-                  style={{ boxShadow: "var(--shadow-card)" }}
-                >
-                  <p className="font-display font-light text-4xl text-gold leading-none">{stat.value}</p>
-                  <p className="mt-2 font-data text-xs uppercase tracking-widest text-[var(--text-muted)]">{stat.label}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          {/* Animated stat grid */}
+          <AnimatedStatGrid />
         </div>
 
         {/* Centred chevron */}
         <div className="mt-12 flex flex-col items-center gap-2">
-          <span className="font-data text-[10px] uppercase tracking-widest text-[var(--text-muted)]">Skills &amp; Tools</span>
+          <span className="font-data text-[10px] uppercase tracking-widest text-[var(--text-muted)]">How I Work</span>
           <a
-            href="#skills"
-            aria-label="Scroll to Skills & Tools"
+            href="#process"
+            aria-label="Scroll to How I Work"
             className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
             style={{
               background: "rgba(16,185,129,0.10)",
@@ -137,6 +122,17 @@ export default function About() {
             </svg>
           </a>
         </div>
+      </section>
+
+      <div className="mb-20">
+        <Divider />
+      </div>
+
+      {/* ─── Process Flow ──────────────────────────────── */}
+      <section id="process" className="mb-20">
+        <ScrollReveal>
+          <ProcessFlow />
+        </ScrollReveal>
       </section>
 
       <div className="mb-20">
