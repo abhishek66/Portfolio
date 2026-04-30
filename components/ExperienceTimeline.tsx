@@ -199,28 +199,28 @@ const accentMap: Record<string, {
   lineColor:        string;
 }> = {
   gold: {
-    badge:            "border-[var(--border-strong)] bg-[rgba(245,197,24,0.08)] text-gold",
+    badge:            "border-[var(--border-strong)] bg-[rgba(99,102,241,0.08)] text-gold",
     dot:              "bg-gold",
     metric:           "text-gold",
-    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.05)]",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(99,102,241,0.05)]",
     moduleBlockTitle: "text-gold-lt",
     lineColor:        "var(--accent-gold)",
   },
   teal: {
-    badge:            "border-[rgba(245,197,24,0.35)] bg-[rgba(245,197,24,0.08)] text-gold",
+    badge:            "border-[rgba(99,102,241,0.35)] bg-[rgba(99,102,241,0.08)] text-gold",
     dot:              "bg-gold",
     metric:           "text-gold",
-    moduleBlock:      "border-[rgba(245,197,24,0.20)] bg-[rgba(245,197,24,0.05)]",
+    moduleBlock:      "border-[rgba(99,102,241,0.20)] bg-[rgba(99,102,241,0.05)]",
     moduleBlockTitle: "text-gold-lt",
     lineColor:        "var(--accent-gold)",
   },
   "gold-muted": {
-    badge:            "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.06)] text-[rgba(255,255,255,0.70)]",
-    dot:              "bg-[rgba(245,197,24,0.55)]",
+    badge:            "border-[var(--border-subtle)] bg-[rgba(99,102,241,0.06)] text-[rgba(255,255,255,0.70)]",
+    dot:              "bg-[rgba(99,102,241,0.55)]",
     metric:           "text-[rgba(255,255,255,0.70)]",
-    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(245,197,24,0.04)]",
+    moduleBlock:      "border-[var(--border-subtle)] bg-[rgba(99,102,241,0.04)]",
     moduleBlockTitle: "text-gold",
-    lineColor:        "rgba(245,197,24,0.40)",
+    lineColor:        "rgba(99,102,241,0.40)",
   },
 };
 

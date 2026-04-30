@@ -64,20 +64,20 @@ const accentMap: Record<string, {
   glow:   string;
 }> = {
   gold: {
-    icon:   "text-gold bg-[rgba(245,197,24,0.10)]",
-    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
+    icon:   "text-gold bg-[rgba(99,102,241,0.10)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(99,102,241,0.45)]",
     label:  "text-gold",
     glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },
   teal: {
-    icon:   "text-gold bg-[rgba(245,197,24,0.10)]",
-    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
+    icon:   "text-gold bg-[rgba(99,102,241,0.10)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(99,102,241,0.45)]",
     label:  "text-gold",
     glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },
   "gold-lt": {
-    icon:   "text-gold-lt bg-[rgba(245,197,24,0.07)]",
-    border: "border-[var(--border-subtle)] hover:border-[rgba(245,197,24,0.45)]",
+    icon:   "text-gold-lt bg-[rgba(99,102,241,0.07)]",
+    border: "border-[var(--border-subtle)] hover:border-[rgba(99,102,241,0.45)]",
     label:  "text-gold-lt",
     glow:   "hover:shadow-[var(--shadow-card),var(--shadow-glow)]",
   },

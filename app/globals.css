@@ -5,14 +5,14 @@
 ═══════════════════════════════════════════════════════ */
 :root {
   /* Background layers */
-  --bg-base:        #1a1625;
-  --bg-surface:     #221e30;
-  --bg-elevated:    #2a2535;
+  --bg-base:        #0D1117;
+  --bg-surface:     #161C2D;
+  --bg-elevated:    #1E2540;
 
-  /* Brand — Royal gold */
-  --accent-gold:    #F5C518;
-  --accent-gold-lt: #D4A800;
-  --accent-teal:    #F5C518;
+  /* Brand — Electric Indigo */
+  --accent-gold:    #6366F1;
+  --accent-gold-lt: #818CF8;
+  --accent-teal:    #6366F1;
 
   /* Typography */
   --text-primary:   #FFFFFF;
@@ -20,12 +20,12 @@
   --text-muted:     rgba(255, 255, 255, 0.60);
 
   /* Borders */
-  --border-subtle:  rgba(245, 197, 24, 0.12);
-  --border-strong:  rgba(245, 197, 24, 0.30);
+  --border-subtle:  rgba(99, 102, 241, 0.15);
+  --border-strong:  rgba(99, 102, 241, 0.35);
 
   /* Shadows */
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.20);
-  --shadow-glow: 0 0 40px rgba(245, 197, 24, 0.45);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.45);
 
   /* Radii */
   --radius-sm: 6px;
@@ -40,20 +40,20 @@
   --duration-slow:   600ms;
 
   /* Nav */
-  --nav-bg:         rgba(26, 22, 37, 0.92);
-  --nav-drawer-bg:  rgba(26, 22, 37, 0.98);
+  --nav-bg:         rgba(13, 17, 23, 0.92);
+  --nav-drawer-bg:  rgba(13, 17, 23, 0.98);
 }
 
 /* ═══════════════════════════════════════════════════════
    §2  TAILWIND TOKEN MAP
 ═══════════════════════════════════════════════════════ */
 @theme inline {
-  --color-bg-base:     #1a1625;
-  --color-bg-surface:  #221e30;
-  --color-bg-elevated: #2a2535;
-  --color-gold:        #F5C518;
-  --color-gold-lt:     #D4A800;
-  --color-teal-accent: #F5C518;
+  --color-bg-base:     #0D1117;
+  --color-bg-surface:  #161C2D;
+  --color-bg-elevated: #1E2540;
+  --color-gold:        #6366F1;
+  --color-gold-lt:     #818CF8;
+  --color-teal-accent: #6366F1;
 
   --font-sans:    var(--font-dm-sans);
   --font-mono:    var(--font-dm-mono);
@@ -73,9 +73,9 @@ html {
 body {
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%,
-      rgba(245, 197, 24, 0.08) 0%, transparent 60%),
+      rgba(99, 102, 241, 0.10) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 80%,
-      rgba(245, 197, 24, 0.04) 0%, transparent 50%),
+      rgba(99, 102, 241, 0.05) 0%, transparent 50%),
     var(--bg-base);
   color: var(--text-primary);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
@@ -141,11 +141,11 @@ body::before {
   animation: btn-shine 3.5s ease-in-out infinite;
 }
 
-/* Primary — royal gold */
+/* Primary — electric indigo */
 .btn-primary {
-  background: linear-gradient(135deg, #F5C518 0%, #D4A800 100%);
-  color: #1a1625;
-  border: 1.5px solid #F5C518;
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  color: #FFFFFF;
+  border: 1.5px solid #6366F1;
   text-shadow: none;
   font-weight: 700;
 }
@@ -154,25 +154,25 @@ body::before {
   background: linear-gradient(
     105deg,
     transparent 20%,
-    rgba(255, 255, 255, 0.30) 40%,
-    rgba(255, 255, 255, 0.50) 50%,
-    rgba(255, 255, 255, 0.30) 60%,
+    rgba(255, 255, 255, 0.20) 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.20) 60%,
     transparent 80%
   );
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #FFD740 0%, #F5C518 100%);
-  border-color: #F5C518;
+  background: linear-gradient(135deg, #818CF8 0%, #6366F1 100%);
+  border-color: #818CF8;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 28px rgba(245, 197, 24, 0.55), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 28px rgba(99, 102, 241, 0.55), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* Ghost — gold border + text */
+/* Ghost — indigo border + text */
 .btn-ghost {
   background: transparent;
   border: 1.5px solid var(--accent-gold);
@@ -183,19 +183,19 @@ body::before {
   background: linear-gradient(
     105deg,
     transparent 20%,
-    rgba(245, 197, 24, 0.08) 40%,
-    rgba(245, 197, 24, 0.15) 50%,
-    rgba(245, 197, 24, 0.08) 60%,
+    rgba(99, 102, 241, 0.08) 40%,
+    rgba(99, 102, 241, 0.15) 50%,
+    rgba(99, 102, 241, 0.08) 60%,
     transparent 80%
   );
 }
 
 .btn-ghost:hover {
-  background: linear-gradient(135deg, #F5C518 0%, #D4A800 100%);
-  border-color: #F5C518;
-  color: #1a1625;
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  border-color: #6366F1;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(245, 197, 24, 0.40), 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.40), 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-ghost:active {
@@ -244,9 +244,9 @@ body::before {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(245, 197, 24, 0.08) 25%,
-    rgba(245, 197, 24, 0.55) 50%,
-    rgba(245, 197, 24, 0.08) 75%,
+    rgba(99, 102, 241, 0.10) 25%,
+    rgba(99, 102, 241, 0.55) 50%,
+    rgba(99, 102, 241, 0.10) 75%,
     transparent 100%
   );
   margin: 0;
@@ -314,25 +314,25 @@ body::before {
    §11  COMPONENT TOKENS
 ═══════════════════════════════════════════════════════ */
 .hero-label {
-  background: rgba(245, 197, 24, 0.10);
-  border-color: rgba(245, 197, 24, 0.30);
+  background: rgba(99, 102, 241, 0.10);
+  border-color: rgba(99, 102, 241, 0.30);
 }
 
 .stat-chip {
-  background: rgba(245, 197, 24, 0.12);
-  border-color: rgba(245, 197, 24, 0.40);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.40);
   color: #FFFFFF;
 }
 
 .skill-tag {
-  background: rgba(245, 197, 24, 0.12);
-  border-color: rgba(245, 197, 24, 0.40);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.40);
   color: #FFFFFF;
 }
 
 .skill-tag:hover {
-  background: rgba(245, 197, 24, 0.20);
-  border-color: rgba(245, 197, 24, 0.60);
+  background: rgba(99, 102, 241, 0.22);
+  border-color: rgba(99, 102, 241, 0.65);
 }
 
 /* ═══════════════════════════════════════════════════════

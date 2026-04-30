@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sleep 1 npm run dev -- --port 3001)",
+      "Read(//private/tmp/**)",
+      "Bash(git stash *)",
+      "Bash(grep -rn \"rgba\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\" /Users/abhishekm/Documents/portfolio/app/education/page.tsx /Users/abhishekm/Documents/portfolio/app/case-studies/page.tsx /Users/abhishekm/Documents/portfolio/app/experience/page.tsx /Users/abhishekm/Documents/portfolio/app/about/page.tsx)",
+      "Bash(grep -rn \"FF4B\\\\|FF6B\\\\|FF3D\\\\|E63A\\\\|255,75,43\\\\|255, 75, 43\\\\|c0392\\\\|crimson\\\\|#[Ee][0-4][0-9a-f]\\\\{4\\\\}\" /Users/abhishekm/Documents/portfolio/app /Users/abhishekm/Documents/portfolio/components --include=\"*.tsx\" --include=\"*.css\")",
+      "Bash(grep -rn \"rgba\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\" /Users/abhishekm/Documents/portfolio/app /Users/abhishekm/Documents/portfolio/components --include=\"*.tsx\" --include=\"*.css\")",
+      "Bash(grep -rn \"rgba\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\" /Users/abhishekm/Documents/portfolio/app/education /Users/abhishekm/Documents/portfolio/app/experience /Users/abhishekm/Documents/portfolio/app/case-studies /Users/abhishekm/Documents/portfolio/components/CaseStudiesAccordion.tsx)",
+      "Bash(grep -n \"rgba\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\\\\|color\\\\|background\\\\|border\" /Users/abhishekm/Documents/portfolio/app/education/page.tsx)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

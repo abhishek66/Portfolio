@@ -126,9 +126,9 @@ export default function About() {
             aria-label="Scroll to Skills & Tools"
             className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
             style={{
-              background: "rgba(245,197,24,0.10)",
-              border: "1px solid rgba(245,197,24,0.35)",
-              color: "#F5C518",
+              background: "rgba(99,102,241,0.10)",
+              border: "1px solid rgba(99,102,241,0.35)",
+              color: "#6366F1",
               animation: "chevron-bounce 1.8s ease-in-out infinite",
             }}
           >

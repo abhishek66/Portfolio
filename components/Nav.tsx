@@ -95,24 +95,24 @@ export default function Nav() {
       <div
         className="pointer-events-auto w-full max-w-6xl flex items-center justify-between h-16 px-6 lg:px-8 rounded-full"
         style={{
-          background: "rgba(26,22,37,0.88)",
+          background: "rgba(13,17,23,0.88)",
           backdropFilter: "blur(24px) saturate(160%)",
           WebkitBackdropFilter: "blur(24px) saturate(160%)",
-          boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 8px 32px rgba(0,0,0,0.40), 0 0 18px rgba(245,197,24,0.20)",
+          boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 8px 32px rgba(0,0,0,0.40), 0 0 18px rgba(99,102,241,0.20)",
         }}
       >
         {/* Logo */}
         <Link
           href="/"
           className="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-lg font-display font-semibold text-sm tracking-tight transition-all duration-200"
-          style={{ background: "rgba(245,197,24,0.15)", color: "#F5C518", boxShadow: "0 0 0 1px rgba(245,197,24,0.35)" }}
+          style={{ background: "rgba(99,102,241,0.15)", color: "#6366F1", boxShadow: "0 0 0 1px rgba(99,102,241,0.35)" }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "rgba(245,197,24,0.25)";
-            (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px rgba(245,197,24,0.55), 0 0 10px rgba(245,197,24,0.30)";
+            (e.currentTarget as HTMLElement).style.background = "rgba(99,102,241,0.25)";
+            (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px rgba(99,102,241,0.55), 0 0 10px rgba(99,102,241,0.30)";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "rgba(245,197,24,0.15)";
-            (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px rgba(245,197,24,0.35)";
+            (e.currentTarget as HTMLElement).style.background = "rgba(99,102,241,0.15)";
+            (e.currentTarget as HTMLElement).style.boxShadow  = "0 0 0 1px rgba(99,102,241,0.35)";
           }}
         >
           AM
@@ -133,8 +133,8 @@ export default function Nav() {
               opacity: 0,
               height: "32px",
               borderRadius: "9999px",
-              background: "rgba(245,197,24,0.12)",
-              boxShadow: "0 0 0 1px rgba(245,197,24,0.55), 0 0 10px rgba(245,197,24,0.20)",
+              background: "rgba(99,102,241,0.12)",
+              boxShadow: "0 0 0 1px rgba(99,102,241,0.55), 0 0 10px rgba(99,102,241,0.20)",
               transition: "left 180ms cubic-bezier(0.25,0.1,0.25,1), width 180ms cubic-bezier(0.25,0.1,0.25,1)",
               overflow: "hidden",
               pointerEvents: "none",
@@ -145,7 +145,7 @@ export default function Nav() {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(105deg, transparent 20%, rgba(245,197,24,0.18) 40%, rgba(245,197,24,0.32) 50%, rgba(245,197,24,0.18) 60%, transparent 80%)",
+                background: "linear-gradient(105deg, transparent 20%, rgba(99,102,241,0.18) 40%, rgba(99,102,241,0.32) 50%, rgba(99,102,241,0.18) 60%, transparent 80%)",
               }}
             />
           </span>
@@ -158,7 +158,7 @@ export default function Nav() {
                 data-active={isActive ? "true" : undefined}
                 className="font-ui text-[15px] font-normal tracking-wide outline-none focus:outline-none rounded-full px-3 py-1 relative z-10"
                 style={{
-                  color:     isActive ? "#F5C518" : "rgba(245,197,24,0.55)",
+                  color:     isActive ? "#6366F1" : "rgba(99,102,241,0.55)",
                   transition: "color 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1)",
                 }}
                 onMouseEnter={(e) => {
@@ -182,9 +182,9 @@ export default function Nav() {
           aria-label="Download Resume"
           className="hidden sm:inline-flex flex-shrink-0 items-center justify-center rounded-full overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #F5C518 0%, #D4A800 100%)",
-            color: "#1a1625",
-            boxShadow: dlHover ? "0 0 14px rgba(245,197,24,0.55), 0 0 0 1px rgba(245,197,24,0.60)" : "0 0 0 1px rgba(245,197,24,0.40)",
+            background: "linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)",
+            color: "#FFFFFF",
+            boxShadow: dlHover ? "0 0 14px rgba(99,102,241,0.55), 0 0 0 1px rgba(99,102,241,0.60)" : "0 0 0 1px rgba(99,102,241,0.40)",
             transform: dlHover ? "translateY(-1px)" : "translateY(0)",
             padding: dlHover ? "8px 12px" : "8px",
             gap: dlHover ? "6px" : "0px",
@@ -210,7 +210,7 @@ export default function Nav() {
         {/* Hamburger — mobile */}
         <button
           className="sm:hidden flex flex-col justify-center gap-[5px] p-1 transition-colors duration-200"
-          style={{ color: open ? "#F5C518" : "rgba(255,255,255,0.65)" }}
+          style={{ color: open ? "#6366F1" : "rgba(255,255,255,0.65)" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -226,7 +226,7 @@ export default function Nav() {
         <div
           className="pointer-events-auto sm:hidden w-full px-8 pt-4 pb-6 flex flex-col gap-5"
           style={{
-            background: "rgba(26,22,37,0.97)",
+            background: "rgba(13,17,23,0.97)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             boxShadow: "0 8px 32px rgba(0,0,0,0.45)",
@@ -240,7 +240,7 @@ export default function Nav() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="font-ui text-base font-normal transition-colors duration-200"
-                style={{ color: isActive ? "#F5C518" : "rgba(245,197,24,0.55)" }}
+                style={{ color: isActive ? "#6366F1" : "rgba(99,102,241,0.55)" }}
               >
                 {link.label}
               </Link>
@@ -253,7 +253,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             aria-label="Download CV"
             className="mt-1 self-start inline-flex items-center justify-center rounded-full p-2"
-            style={{ background: "linear-gradient(135deg, #F5C518 0%, #D4A800 100%)", color: "#1a1625" }}
+            style={{ background: "linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)", color: "#FFFFFF" }}
           >
             {downloadIcon}
           </a>
