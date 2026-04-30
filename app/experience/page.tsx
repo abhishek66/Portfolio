@@ -22,7 +22,7 @@ export default function Experience() {
             Work Experience
           </h1>
           <p className="mt-4 max-w-xl font-ui font-light text-base text-[var(--text-secondary)] leading-relaxed">
-            Scroll to climb through 8 years of career progression.
+            Eight years of career progression — scroll to explore each role.
           </p>
         </ScrollReveal>
       </div>
