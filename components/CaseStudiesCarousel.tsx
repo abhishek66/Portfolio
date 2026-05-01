@@ -65,7 +65,7 @@ export function CaseStudiesCarousel() {
             <button
               key={i}
               type="button"
-              onClick={() => setSelected(i % caseStudies.length)}
+              onClick={() => setSelected(i % featured.length)}
               className="w-[360px] flex-shrink-0 rounded-[var(--radius-md)] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 flex flex-col gap-4 cursor-pointer text-left transition-all duration-200 hover:border-[var(--border-strong)] hover:bg-[var(--bg-elevated)] hover:-translate-y-1"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
