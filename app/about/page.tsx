@@ -68,7 +68,7 @@ export default function About() {
             Where analysis meets execution
           </h1>
           <p className="mt-3 font-ui font-light text-base text-[var(--text-secondary)]">
-            A repeatable cycle — from problem to improvement.
+            A structured process from brief to outcome.
           </p>
         </ScrollReveal>
 

@@ -1,28 +1,121 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
-/* ─── Geometry ─── */
-const CX = 240;
-const CY = 240;
-const R  = 130;
-const R_LABEL = 188;
-const CIRCUMFERENCE = 2 * Math.PI * R; // ≈ 816.8
-
-function toRad(deg: number) { return (deg * Math.PI) / 180; }
-
-/* Stages clockwise from top */
 const STAGES = [
-  { label: "Plan",     angle: -90 },
-  { label: "Gather",   angle: -30 },
-  { label: "Analyze",  angle:  30 },
-  { label: "Design",   angle:  90 },
-  { label: "Evaluate", angle: 150 },
-  { label: "Improve",  angle: 210 },
+  {
+    label: "Plan",
+    description: "Define the problem, set objectives, and align stakeholders on scope and success criteria.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="12" cy="12" r="3" />
+        <line x1="12" y1="2" x2="12" y2="5" />
+        <line x1="12" y1="19" x2="12" y2="22" />
+        <line x1="2"  y1="12" x2="5"  y2="12" />
+        <line x1="19" y1="12" x2="22" y2="12" />
+      </svg>
+    ),
+  },
+  {
+    label: "Gather",
+    description: "Collect requirements through interviews, workshops, and data review.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="8" y="2" width="8" height="4" rx="1" />
+        <rect x="5" y="4" width="14" height="17" rx="2" />
+        <line x1="9" y1="11" x2="15" y2="11" />
+        <line x1="9" y1="14" x2="13" y2="14" />
+      </svg>
+    ),
+  },
+  {
+    label: "Analyze",
+    description: "Identify root causes, map processes, and surface gaps and opportunities.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3"  y="14" width="3" height="7" rx="0.5" fill="rgba(255,255,255,0.80)" stroke="none" />
+        <rect x="8"  y="10" width="3" height="11" rx="0.5" fill="rgba(255,255,255,0.80)" stroke="none" />
+        <rect x="13" y="6"  width="3" height="15" rx="0.5" fill="rgba(255,255,255,0.80)" stroke="none" />
+        <circle cx="19.5" cy="5.5" r="3" />
+        <line x1="21.7" y1="7.7" x2="23.5" y2="9.5" />
+      </svg>
+    ),
+  },
+  {
+    label: "Design",
+    description: "Shape solutions through wireframes, user stories, and data models.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Evaluate",
+    description: "Validate through UAT, stakeholder review, and measurable outcome checks.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9 11 12 14 22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+  },
+  {
+    label: "Improve",
+    description: "Close the loop with retrospectives, metrics review, and iterative refinement.",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.90)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23 4 23 10 17 10" />
+        <polyline points="1 20 1 14 7 14" />
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+      </svg>
+    ),
+  },
 ];
 
-/* Arrowhead midpoints between each adjacent pair */
-const ARROW_MIDS = [-60, 0, 60, 120, 180, 240];
+/* Connector between two stages */
+function Connector({ visible, delay }: { visible: boolean; delay: number }) {
+  return (
+    <div
+      style={{
+        flexShrink: 0,
+        width: 36,
+        paddingTop: 96, // align with circle centre: label(48) + gap(8) + half-circle(44) - half-dot(2) ≈ 98
+        alignSelf: "flex-start",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {/* Left dot */}
+      <div style={{
+        width: 5, height: 5, borderRadius: "50%",
+        background: "rgba(16,185,129,0.60)",
+        flexShrink: 0,
+        opacity: visible ? 1 : 0,
+        transition: `opacity 200ms ease ${delay}ms`,
+      }} />
+      {/* Dashed line */}
+      <div style={{
+        flex: 1,
+        height: 1.5,
+        background: "repeating-linear-gradient(90deg, rgba(16,185,129,0.45) 0, rgba(16,185,129,0.45) 4px, transparent 4px, transparent 9px)",
+        transformOrigin: "left",
+        transform: visible ? "scaleX(1)" : "scaleX(0)",
+        transition: `transform 350ms ease ${delay + 60}ms`,
+      }} />
+      {/* Arrowhead */}
+      <svg width="7" height="10" viewBox="0 0 7 10" style={{ flexShrink: 0 }}>
+        <path
+          d="M 0 0 L 7 5 L 0 10 Z"
+          fill="rgba(16,185,129,0.65)"
+          opacity={visible ? 1 : 0}
+          style={{ transition: `opacity 150ms ease ${delay + 380}ms` }}
+        />
+      </svg>
+    </div>
+  );
+}
 
 export function ProcessFlow() {
   const [visible, setVisible] = useState(false);
@@ -40,146 +133,81 @@ export function ProcessFlow() {
   }, []);
 
   return (
-    <div ref={ref} className="flex justify-center">
-      <svg
-        viewBox="0 0 480 480"
-        style={{ width: "min(100%, 460px)" }}
-        aria-label="Process cycle: Plan, Gather, Analyze, Design, Evaluate, Improve"
-      >
-        {/* Dim background ring */}
-        <circle
-          cx={CX} cy={CY} r={R}
-          fill="none"
-          stroke="rgba(16,185,129,0.12)"
-          strokeWidth={2}
-        />
+    <div ref={ref}>
+      <style>{`
+        @media (max-width: 640px) {
+          .pf-row { overflow-x: auto; padding-bottom: 1rem; }
+          .pf-stage { min-width: 110px; }
+        }
+      `}</style>
 
-        {/* Animated ring — rotate -90° so it starts at Plan (top) and draws clockwise */}
-        <circle
-          cx={CX} cy={CY} r={R}
-          fill="none"
-          stroke="rgba(16,185,129,0.50)"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeDasharray={CIRCUMFERENCE}
-          strokeDashoffset={visible ? 0 : CIRCUMFERENCE}
-          transform={`rotate(-90 ${CX} ${CY})`}
-          style={{
-            transition: "stroke-dashoffset 1200ms cubic-bezier(0.16,1,0.3,1) 300ms",
-          }}
-        />
+      <div className="pf-row" style={{ display: "flex", alignItems: "flex-start" }}>
+        {STAGES.map((stage, i) => (
+          <React.Fragment key={stage.label}>
 
-        {/* Clockwise arrowheads at arc midpoints */}
-        {ARROW_MIDS.map((deg, i) => {
-          const rad = toRad(deg);
-          const x = CX + R * Math.cos(rad);
-          const y = CY + R * Math.sin(rad);
-          return (
-            <path
-              key={i}
-              d="M 0 -5 L 4.5 4 L -4.5 4 Z"
-              fill="#10B981"
-              transform={`translate(${x} ${y}) rotate(${deg + 180})`}
-              opacity={visible ? 0.70 : 0}
-              style={{ transition: `opacity 180ms ease ${1380 + i * 20}ms` }}
-            />
-          );
-        })}
-
-        {/* Stage nodes + labels */}
-        {STAGES.map((stage, i) => {
-          const rad = toRad(stage.angle);
-          const nx  = CX + R * Math.cos(rad);
-          const ny  = CY + R * Math.sin(rad);
-          const lx  = CX + R_LABEL * Math.cos(rad);
-          const ly  = CY + R_LABEL * Math.sin(rad);
-
-          /* Text alignment by horizontal position */
-          const anchor =
-            nx > CX + 15 ? "start" :
-            nx < CX - 15 ? "end"   : "middle";
-
-          /* Node appears as the ring arc reaches it */
-          const nodeDelay = 300 + i * 200;
-
-          return (
-            <g key={stage.label}>
-              {/* Glow halo */}
-              <circle
-                cx={nx} cy={ny} r={26}
-                fill="rgba(16,185,129,0.07)"
-                opacity={visible ? 1 : 0}
-                style={{ transition: `opacity 300ms ease ${nodeDelay}ms` }}
-              />
-              {/* Node circle */}
-              <circle
-                cx={nx} cy={ny} r={20}
-                fill="#1C2922"
-                stroke="#10B981"
-                strokeWidth={1.5}
-                opacity={visible ? 1 : 0}
-                style={{ transition: `opacity 300ms ease ${nodeDelay}ms` }}
-              />
-              {/* Step number */}
-              <text
-                x={nx} y={ny}
-                textAnchor="middle"
-                dominantBaseline="central"
-                fontSize={10}
-                fontFamily="monospace"
-                letterSpacing="0.08em"
-                fill="#10B981"
-                opacity={visible ? 0.85 : 0}
-                style={{ transition: `opacity 250ms ease ${nodeDelay + 80}ms` }}
-              >
-                {`0${i + 1}`}
-              </text>
-              {/* Stage label */}
-              <text
-                x={lx} y={ly}
-                textAnchor={anchor}
-                dominantBaseline="central"
-                fontSize={15}
-                fontFamily="'Cormorant Garamond', Georgia, serif"
-                fontWeight={500}
-                fill="rgba(255,255,255,0.90)"
-                opacity={visible ? 1 : 0}
-                style={{ transition: `opacity 350ms ease ${nodeDelay + 150}ms` }}
+            {/* ── Stage column ── */}
+            <div
+              className="pf-stage"
+              style={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                opacity: visible ? 1 : 0,
+                transform: visible ? "none" : "translateY(14px)",
+                transition: `opacity 440ms ease ${i * 110}ms, transform 440ms ease ${i * 110}ms`,
+              }}
+            >
+              {/* Label — fixed-height area so circles stay aligned */}
+              <p
+                className="font-ui font-semibold text-sm text-[var(--text-primary)]"
+                style={{ height: 48, display: "flex", alignItems: "flex-end", paddingBottom: 8 }}
               >
                 {stage.label}
-              </text>
-            </g>
-          );
-        })}
+              </p>
 
-        {/* Subtle center label */}
-        <text
-          x={CX} y={CY - 9}
-          textAnchor="middle"
-          dominantBaseline="central"
-          fontSize={10}
-          fontFamily="monospace"
-          letterSpacing="0.14em"
-          fill="rgba(16,185,129,0.30)"
-          opacity={visible ? 1 : 0}
-          style={{ transition: "opacity 500ms ease 1600ms" }}
-        >
-          HOW I
-        </text>
-        <text
-          x={CX} y={CY + 9}
-          textAnchor="middle"
-          dominantBaseline="central"
-          fontSize={10}
-          fontFamily="monospace"
-          letterSpacing="0.14em"
-          fill="rgba(16,185,129,0.30)"
-          opacity={visible ? 1 : 0}
-          style={{ transition: "opacity 500ms ease 1700ms" }}
-        >
-          WORK
-        </text>
-      </svg>
+              {/* Circle */}
+              <div style={{ position: "relative", width: 88, height: 88 }}>
+                {/* Outer dashed ring */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  borderRadius: "50%",
+                  border: "1.5px dashed rgba(16,185,129,0.35)",
+                }} />
+                {/* Inner solid circle */}
+                <div style={{
+                  position: "absolute", inset: 9,
+                  borderRadius: "50%",
+                  background: "#142820",
+                  border: "1.5px solid #10B981",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: visible ? "0 0 22px rgba(16,185,129,0.22)" : "none",
+                  transition: `box-shadow 600ms ease ${i * 110 + 200}ms`,
+                }}>
+                  {stage.icon}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p
+                className="font-ui font-light text-xs text-[var(--text-secondary)] leading-relaxed"
+                style={{ marginTop: 14, padding: "0 4px", maxWidth: 120 }}
+              >
+                {stage.description}
+              </p>
+            </div>
+
+            {/* ── Connector ── */}
+            {i < STAGES.length - 1 && (
+              <Connector visible={visible} delay={i * 110 + 300} />
+            )}
+
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 }
