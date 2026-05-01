@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
 import { Tag } from "@/components/ui/Tag";
@@ -59,16 +58,31 @@ export default function About() {
   return (
     <div className="mx-auto max-w-6xl px-6 lg:px-8 py-8">
 
-      {/* ─── About ─────────────────────────────────────── */}
+      {/* ─── About + Process Cycle ─────────────────────── */}
       <section id="about" className="mb-20">
-        <ScrollReveal>
+
+        {/* Header */}
+        <ScrollReveal className="mb-10">
           <SectionLabel className="mb-4">About Me</SectionLabel>
-          <h1 className="mb-6 font-display font-semibold text-5xl leading-tight text-[var(--text-primary)] sm:text-6xl">
+          <h1 className="font-display font-semibold text-5xl leading-tight text-[var(--text-primary)] sm:text-6xl">
             Where analysis meets execution
           </h1>
+          <p className="mt-3 font-ui font-light text-base text-[var(--text-secondary)]">
+            A repeatable cycle — from problem to improvement.
+          </p>
         </ScrollReveal>
 
-        <div className="mt-12 grid gap-16 lg:grid-cols-2 lg:items-center">
+        {/* Process cycle — top of the section */}
+        <ScrollReveal className="mb-14">
+          <ProcessFlow />
+        </ScrollReveal>
+
+        <div className="mb-14">
+          <Divider />
+        </div>
+
+        {/* Bio + stats */}
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <ScrollReveal>
             <div className="space-y-4 font-ui font-light text-base leading-relaxed text-[var(--text-secondary)]">
               <p>
@@ -99,16 +113,15 @@ export default function About() {
             </div>
           </ScrollReveal>
 
-          {/* Animated stat grid */}
           <AnimatedStatGrid />
         </div>
 
-        {/* Centred chevron */}
-        <div className="mt-12 flex flex-col items-center gap-2">
-          <span className="font-data text-[10px] uppercase tracking-widest text-[var(--text-muted)]">How I Work</span>
+        {/* Chevron → Skills */}
+        <div className="mt-14 flex flex-col items-center gap-2">
+          <span className="font-data text-[10px] uppercase tracking-widest text-[var(--text-muted)]">Skills &amp; Tools</span>
           <a
-            href="#process"
-            aria-label="Scroll to How I Work"
+            href="#skills"
+            aria-label="Scroll to Skills & Tools"
             className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
             style={{
               background: "rgba(16,185,129,0.10)",
@@ -122,17 +135,6 @@ export default function About() {
             </svg>
           </a>
         </div>
-      </section>
-
-      <div className="mb-20">
-        <Divider />
-      </div>
-
-      {/* ─── Process Flow ──────────────────────────────── */}
-      <section id="process" className="mb-20">
-        <ScrollReveal>
-          <ProcessFlow />
-        </ScrollReveal>
       </section>
 
       <div className="mb-20">
