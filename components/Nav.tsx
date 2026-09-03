@@ -181,7 +181,7 @@ export default function Nav() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Download Resume"
+          aria-label="Download CV"
           className="hidden sm:inline-flex flex-shrink-0 items-center justify-center rounded-full overflow-hidden"
           style={{
             background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
@@ -205,7 +205,7 @@ export default function Nav() {
               overflow: "hidden",
             }}
           >
-            Download Resume
+            Download CV
           </span>
         </a>
 
