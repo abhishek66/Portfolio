@@ -5,7 +5,7 @@ import { Tag } from "@/components/ui/Tag";
 
 /* ─── Timeline bounds ─── */
 const TSTART = 2017 + 5 / 12; // Jun 2017
-const TEND   = 2025 + 1 / 12; // a hair past Jan 2025 so the last bar has breathing room
+const TEND   = 2025 + 1 / 12; // a hair past Dec 2024 so the last bar has breathing room
 const TSPAN  = TEND - TSTART;
 const YEAR_TICKS = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
 
@@ -29,14 +29,14 @@ const ENTRIES: {
   {
     company: "Prodsmiths",
     role: "Associate PM · Business Analyst",
-    period: "Oct 2023 – Jan 2025",
-    start: 2023 + 9 / 12,
-    end: 2025,
+    period: "Nov 2023 – Dec 2024",
+    start: 2023 + 10 / 12,
+    end: 2024 + 11 / 12,
     skills: ["Product Management", "SQL", "Figma", "Data Architecture", "ER Modelling", "UAT", "Agile", "RCA"],
     metrics: [
-      { value: 94, suffix: "%",       label: "on-time delivery"    },
-      { value: 48, suffix: "h",       label: "onboarding (was 14d)" },
-      { value: 6,  suffix: " sprints", label: "delivered"           },
+      { value: 92, suffix: "%",        label: "committed scope delivered" },
+      { value: 48, suffix: "h",        label: "onboarding (was 14d)"      },
+      { value: 24, suffix: " sprints", label: "delivered"                 },
     ],
     tagline: "",
   },
@@ -55,11 +55,21 @@ const ENTRIES: {
     tagline: "",
   },
   {
+    company: "NoBroker",
+    role: "Relationship Manager",
+    period: "Oct 2021 – Jun 2022",
+    start: 2021 + 9 / 12,
+    end: 2022 + 5 / 12,
+    skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
+    metrics: null,
+    tagline: "Managed property owner and tenant relationships end-to-end for India's largest proptech platform",
+  },
+  {
     company: "Kapture CX",
     role: "CRM Specialist",
-    period: "Jan 2022 – Jul 2022",
-    start: 2022,
-    end: 2022 + 6 / 12,
+    period: "Jul 2021 – Sep 2021",
+    start: 2021 + 6 / 12,
+    end: 2021 + 8 / 12,
     skills: ["CRM Implementation", "Enterprise Client Management", "Training & Adoption", "BFSI", "Telecom"],
     metrics: [
       { value: 40, suffix: "%", label: "adoption increase" },
@@ -67,16 +77,6 @@ const ENTRIES: {
       { value: 12, suffix: "%", label: "retention lift"    },
     ],
     tagline: "",
-  },
-  {
-    company: "NoBroker",
-    role: "CRM Specialist",
-    period: "Feb 2020 – Jan 2022",
-    start: 2020 + 1 / 12,
-    end: 2022,
-    skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
-    metrics: null,
-    tagline: "CRM ops and engagement campaigns for India's largest proptech platform",
   },
   {
     company: "Sky UK · First Source",

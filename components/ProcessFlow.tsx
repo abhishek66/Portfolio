@@ -179,12 +179,12 @@ export function ProcessFlow() {
                 <div style={{
                   position: "absolute", inset: 9,
                   borderRadius: "50%",
-                  background: "#142820",
-                  border: "1.5px solid #10B981",
+                  background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+                  border: "1.5px solid #059669",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: visible ? "0 0 22px rgba(16,185,129,0.22)" : "none",
+                  boxShadow: visible ? "0 4px 18px rgba(5,150,105,0.35)" : "none",
                   transition: `box-shadow 600ms ease ${i * 110 + 200}ms`,
                 }}>
                   {stage.icon}

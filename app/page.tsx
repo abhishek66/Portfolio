@@ -32,7 +32,7 @@ export default function Home() {
               </h1>
 
               {/* Subtitle — DM Sans 300 */}
-              <p className="mb-4 max-w-xl font-ui font-light text-lg leading-relaxed text-white">
+              <p className="mb-4 max-w-xl font-ui font-light text-lg leading-relaxed text-[var(--text-secondary)]">
                 Business Analyst turning complex problems into delivered solutions across regulated financial services.
               </p>
 

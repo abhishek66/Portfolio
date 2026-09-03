@@ -95,10 +95,10 @@ export default function Nav() {
       <div
         className="pointer-events-auto w-full max-w-6xl flex items-center justify-between h-16 px-6 lg:px-8 rounded-full"
         style={{
-          background: "rgba(13,21,18,0.88)",
+          background: "rgba(255,255,255,0.80)",
           backdropFilter: "blur(24px) saturate(160%)",
           WebkitBackdropFilter: "blur(24px) saturate(160%)",
-          boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 8px 32px rgba(0,0,0,0.40), 0 0 18px rgba(16,185,129,0.20)",
+          boxShadow: "0 0 0 1px rgba(20,35,28,0.06), 0 8px 32px rgba(20,35,28,0.10), 0 0 18px rgba(16,185,129,0.10)",
         }}
       >
         {/* Logo */}
@@ -158,7 +158,7 @@ export default function Nav() {
                 data-active={isActive ? "true" : undefined}
                 className="font-ui text-[15px] font-normal tracking-wide outline-none focus:outline-none rounded-full px-3 py-1 relative z-10"
                 style={{
-                  color:     isActive ? "#10B981" : "rgba(16,185,129,0.55)",
+                  color:     isActive ? "#059669" : "rgba(20,35,28,0.60)",
                   transform: isActive ? "scale(1.10)" : "scale(1)",
                   fontWeight: isActive ? 600 : 400,
                   transition: "color 200ms ease, transform 200ms cubic-bezier(0.34,1.56,0.64,1), font-weight 200ms ease",
@@ -212,7 +212,7 @@ export default function Nav() {
         {/* Hamburger — mobile */}
         <button
           className="sm:hidden flex flex-col justify-center gap-[5px] p-1 transition-colors duration-200"
-          style={{ color: open ? "#10B981" : "rgba(255,255,255,0.65)" }}
+          style={{ color: open ? "#059669" : "rgba(20,35,28,0.65)" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -228,10 +228,10 @@ export default function Nav() {
         <div
           className="pointer-events-auto sm:hidden w-full px-8 pt-4 pb-6 flex flex-col gap-5"
           style={{
-            background: "rgba(13,21,18,0.97)",
+            background: "rgba(255,255,255,0.97)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.45)",
+            boxShadow: "0 8px 32px rgba(20,35,28,0.15)",
           }}
         >
           {links.map((link) => {
@@ -242,7 +242,7 @@ export default function Nav() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="font-ui text-base font-normal transition-colors duration-200"
-                style={{ color: isActive ? "#10B981" : "rgba(16,185,129,0.55)" }}
+                style={{ color: isActive ? "#059669" : "rgba(20,35,28,0.60)" }}
               >
                 {link.label}
               </Link>

@@ -31,22 +31,22 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Prodsmiths",
     role: "Associate Product Manager · Business Analyst",
-    period: "November 2023 – December 2025",
+    period: "November 2023 – December 2024",
     location: "India · Remote",
     headline:
       "Built India's first fully digital ARC platform for ARCIL, an end-to-end collections and acquisition system serving multiple institutional lenders.",
     impact: [
       { metric: "14d → 48hr", label: "Portfolio onboarding time reduced" },
-      { metric: "94%",        label: "On-time sprint delivery across 6 sprints" },
+      { metric: "92%",        label: "Committed scope delivered across 24 sprints" },
       { metric: "10+",        label: "Institutional lenders served" },
       { metric: "2008 → 2024", label: "Excel reporting replaced with real-time SQL forecasting" },
     ],
     contributions: [
-      "Owned the full product lifecycle end-to-end: scoping, wireframing in Figma, user story authoring, UAT, and production deployment across 6 sprints",
+      "Owned the full product lifecycle end-to-end: scoping, wireframing in Figma, user story authoring, UAT, and production deployment across 24 sprints",
       "Designed core data architecture: built SQL-based ER models enabling real-time recovery forecasting, replacing manual Excel reporting in use since 2008",
       "Cut portfolio onboarding from 14 days to 48 hours by digitising legal, financial, and valuation due diligence workflows",
       "Managed client relationships: weekly stakeholder updates with C-level sponsors, RCA for production issues, and change request prioritisation under regulatory scope changes",
-      "Maintained 94% on-time delivery across all sprints despite mid-cycle regulatory changes",
+      "Sustained 92% of committed scope across 24 sprints despite mid-cycle regulatory changes",
     ],
     moduleBlocks: [
       {
@@ -117,6 +117,21 @@ const workExperiences: WorkEntry[] = [
   },
   {
     type: "work",
+    company: "NoBroker",
+    role: "Relationship Manager",
+    period: "October 2021 – June 2022",
+    location: "India",
+    contributions: [
+      "Managed a portfolio of property owner and tenant relationships end-to-end, from requirement capture and shortlisting through closure, working to monthly conversion targets",
+      "Maintained accurate pipeline and interaction records in the internal CRM, using stage level tracking to prioritise leads and forecast conversion",
+      "Handled escalations and documentation issues across the customer lifecycle, coordinating with operations, legal, and field teams to resolve blockers",
+    ],
+    skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
+    accent: "gold-muted",
+    compact: true,
+  },
+  {
+    type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
     period: "July 2021 – September 2021",
@@ -141,21 +156,6 @@ const workExperiences: WorkEntry[] = [
       "Workflow Optimisation", "Data Analysis", "BFSI", "Telecom", "Stakeholder Management",
     ],
     accent: "gold-muted",
-  },
-  {
-    type: "work",
-    company: "NoBroker",
-    role: "Relationship Manager",
-    period: "October 2021 – June 2022",
-    location: "India",
-    contributions: [
-      "Managed a portfolio of property owner and tenant relationships end-to-end, from requirement capture and shortlisting through closure, working to monthly conversion targets",
-      "Maintained accurate pipeline and interaction records in the internal CRM, using stage level tracking to prioritise leads and forecast conversion",
-      "Handled escalations and documentation issues across the customer lifecycle, coordinating with operations, legal, and field teams to resolve blockers",
-    ],
-    skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
-    accent: "gold-muted",
-    compact: true,
   },
   {
     type: "work",

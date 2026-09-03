@@ -5,27 +5,27 @@
 ═══════════════════════════════════════════════════════ */
 :root {
   /* Background layers */
-  --bg-base:        #0D1512;
-  --bg-surface:     #141D19;
-  --bg-elevated:    #1C2922;
+  --bg-base:        #FAF9F4;
+  --bg-surface:     #FFFFFF;
+  --bg-elevated:    #F1F4EE;
 
   /* Brand — Emerald */
-  --accent-gold:    #10B981;
-  --accent-gold-lt: #34D399;
-  --accent-teal:    #10B981;
+  --accent-gold:    #059669;
+  --accent-gold-lt: #10B981;
+  --accent-teal:    #059669;
 
   /* Typography */
-  --text-primary:   #FFFFFF;
-  --text-secondary: #FFFFFF;
-  --text-muted:     rgba(255, 255, 255, 0.60);
+  --text-primary:   #14231C;
+  --text-secondary: #3A4A42;
+  --text-muted:     rgba(20, 35, 28, 0.58);
 
   /* Borders */
-  --border-subtle:  rgba(16, 185, 129, 0.15);
-  --border-strong:  rgba(16, 185, 129, 0.35);
+  --border-subtle:  rgba(5, 150, 105, 0.16);
+  --border-strong:  rgba(5, 150, 105, 0.40);
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.20);
-  --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.40);
+  --shadow-card: 0 4px 20px rgba(20, 35, 28, 0.07), 0 1px 3px rgba(20, 35, 28, 0.05);
+  --shadow-glow: 0 0 36px rgba(16, 185, 129, 0.25);
 
   /* Radii */
   --radius-sm: 6px;
@@ -40,20 +40,20 @@
   --duration-slow:   600ms;
 
   /* Nav */
-  --nav-bg:         rgba(13, 21, 18, 0.92);
-  --nav-drawer-bg:  rgba(13, 21, 18, 0.98);
+  --nav-bg:         rgba(255, 255, 255, 0.85);
+  --nav-drawer-bg:  rgba(255, 255, 255, 0.97);
 }
 
 /* ═══════════════════════════════════════════════════════
    §2  TAILWIND TOKEN MAP
 ═══════════════════════════════════════════════════════ */
 @theme inline {
-  --color-bg-base:     #0D1512;
-  --color-bg-surface:  #141D19;
-  --color-bg-elevated: #1C2922;
-  --color-gold:        #10B981;
-  --color-gold-lt:     #34D399;
-  --color-teal-accent: #10B981;
+  --color-bg-base:     #FAF9F4;
+  --color-bg-surface:  #FFFFFF;
+  --color-bg-elevated: #F1F4EE;
+  --color-gold:        #059669;
+  --color-gold-lt:     #10B981;
+  --color-teal-accent: #059669;
 
   --font-sans:    var(--font-dm-sans);
   --font-mono:    var(--font-dm-mono);
@@ -68,14 +68,15 @@
 html {
   scroll-behavior: smooth;
   background: var(--bg-base);
+  color-scheme: light;
 }
 
 body {
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%,
-      rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+      rgba(16, 185, 129, 0.07) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 80%,
-      rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+      rgba(16, 185, 129, 0.05) 0%, transparent 50%),
     var(--bg-base);
   color: var(--text-primary);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
@@ -89,7 +90,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;
+  opacity: 0.018;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
@@ -319,19 +320,19 @@ body::before {
 }
 
 .stat-chip {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.10);
   border-color: rgba(16, 185, 129, 0.40);
-  color: #FFFFFF;
+  color: #065F46;
 }
 
 .skill-tag {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.10);
   border-color: rgba(16, 185, 129, 0.40);
-  color: #FFFFFF;
+  color: #065F46;
 }
 
 .skill-tag:hover {
-  background: rgba(16, 185, 129, 0.22);
+  background: rgba(16, 185, 129, 0.18);
   border-color: rgba(16, 185, 129, 0.65);
 }
 
