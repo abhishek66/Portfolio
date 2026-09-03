@@ -31,7 +31,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Prodsmiths",
     role: "Associate Product Manager · Business Analyst",
-    period: "October 2023 – January 2025",
+    period: "November 2023 – December 2025",
     location: "India · Remote",
     headline:
       "Built India's first fully digital ARC platform for ARCIL, an end-to-end collections and acquisition system serving multiple institutional lenders.",
@@ -119,7 +119,7 @@ const workExperiences: WorkEntry[] = [
     type: "work",
     company: "Kapture CX",
     role: "CRM Specialist",
-    period: "January 2022 – July 2022",
+    period: "July 2021 – September 2021",
     location: "Bangalore, India",
     headline:
       "Enterprise CRM implementation and optimisation for BFSI and telecom clients, driving adoption, efficiency, and measurable service improvements.",
@@ -145,13 +145,13 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "NoBroker",
-    role: "CRM Specialist",
-    period: "February 2020 – January 2022",
+    role: "Relationship Manager",
+    period: "October 2021 – June 2022",
     location: "India",
     contributions: [
-      "Managed CRM operations and customer engagement workflows for India's largest proptech platform",
-      "Designed and executed targeted communication campaigns to improve lead conversion and retention",
-      "Analysed customer interaction data to optimise journey touchpoints and reduce drop-off",
+      "Managed a portfolio of property owner and tenant relationships end-to-end, from requirement capture and shortlisting through closure, working to monthly conversion targets",
+      "Maintained accurate pipeline and interaction records in the internal CRM, using stage level tracking to prioritise leads and forecast conversion",
+      "Handled escalations and documentation issues across the customer lifecycle, coordinating with operations, legal, and field teams to resolve blockers",
     ],
     skills: ["CRM", "Customer Engagement", "Proptech", "Campaign Management", "Data Analysis"],
     accent: "gold-muted",
