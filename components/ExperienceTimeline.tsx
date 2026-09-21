@@ -133,7 +133,7 @@ const workExperiences: WorkEntry[] = [
   {
     type: "work",
     company: "Kapture CX",
-    role: "CRM Specialist",
+    role: "CRM Executive",
     period: "July 2021 – September 2021",
     location: "Bangalore, India",
     headline:

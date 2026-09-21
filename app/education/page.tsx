@@ -13,27 +13,33 @@ export const metadata: Metadata = {
 const consultingProjects = [
   {
     client: "Deloitte",
-    title: "AI Workflow Optimisation",
-    outcome: "Modelled a 68% reduction in staff processing time through AI-assisted audit workflows, benchmarked against Deloitte's internal automation targets.",
-    skills: ["AI & ML", "Process Mapping", "Financial Modelling"],
+    title: "Workforce Strategy for a Regional Police Force",
+    outcome: "Root cause analysis, McKinsey 7S and RACI applied to workforce strategy; admin automation projected to cut workload by 20–30%.",
+    skills: ["Root Cause Analysis", "McKinsey 7S", "RACI", "Process Automation"],
   },
   {
     client: "NHS England",
-    title: "Risk Management Framework",
-    outcome: "Designed a £25M Enterprise Risk Management (ERM) framework using ISO 31000 and MCDA, prioritising resource allocation across 12 service units.",
-    skills: ["ISO 31000", "MCDA", "Risk Management", "Stakeholder Mapping"],
+    title: "A&E Demand Forecasting",
+    outcome: "Random Forest model with 96.33% accuracy; six interventions ranked by multi-criteria decision analysis.",
+    skills: ["Random Forest", "MCDA", "Python", "Data Analytics"],
   },
   {
     client: "StormID",
-    title: "Machine Learning Analytics",
-    outcome: "Built a Random Forest classifier achieving 96.33% accuracy on client behavioural data, with Lean Six Sigma process recommendations to reduce churn.",
-    skills: ["Random Forest", "Lean Six Sigma", "Python", "Data Analytics"],
+    title: "AI Workflow Optimisation for a Scottish Local Authority",
+    outcome: "10 council workflows scored; projected staff time savings of 68% and 57%.",
+    skills: ["AI Workflow Optimisation", "Lean Six Sigma", "Process Mapping", "ROI Analysis"],
   },
   {
     client: "WB Alloys Group",
-    title: "Sustainability & LCA Consulting",
-    outcome: "Conducted a full Life Cycle Assessment and SWOT analysis, identifying carbon reduction levers and aligning operations with ESG reporting standards.",
-    skills: ["Life Cycle Assessment", "SWOT", "Sustainability", "ESG"],
+    title: "Enterprise Risk Management Framework",
+    outcome: "ISO 31000 framework for a £25M manufacturer: 134 risks identified and 12 key risk indicators defined.",
+    skills: ["ISO 31000", "Risk Management", "KRIs"],
+  },
+  {
+    client: "University of Strathclyde",
+    title: "Life Cycle Assessment of a Residential Building",
+    outcome: "Cradle-to-gate (A1–A3) embodied carbon analysis of a residential building, with MCDA on material alternatives and a low-carbon procurement roadmap.",
+    skills: ["Life Cycle Assessment", "MCDA", "Sustainability"],
   },
 ];
 
@@ -169,7 +175,7 @@ export default function Education() {
                   BEng Electronics and Communication Engineering
                 </p>
                 <p className="mt-1 font-data text-xs text-[var(--text-muted)]">
-                  First Class — 7.7 / 10 CGPA
+                  First Class — 7.1 / 10 CGPA
                 </p>
               </div>
               <div className="flex flex-col items-end gap-1 text-right">

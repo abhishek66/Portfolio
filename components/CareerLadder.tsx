@@ -66,7 +66,7 @@ const ENTRIES: {
   },
   {
     company: "Kapture CX",
-    role: "CRM Specialist",
+    role: "CRM Executive",
     period: "Jul 2021 – Sep 2021",
     start: 2021 + 6 / 12,
     end: 2021 + 8 / 12,
