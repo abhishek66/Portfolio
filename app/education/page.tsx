@@ -10,39 +10,6 @@ export const metadata: Metadata = {
     "Academic background including MSc Business Analysis and Consulting at the University of Strathclyde and BEng Electronics and Communication Engineering.",
 };
 
-const consultingProjects = [
-  {
-    client: "Deloitte",
-    title: "Workforce Strategy for a Regional Police Force",
-    outcome: "Root cause analysis, McKinsey 7S and RACI applied to workforce strategy; admin automation projected to cut workload by 20–30%.",
-    skills: ["Root Cause Analysis", "McKinsey 7S", "RACI", "Process Automation"],
-  },
-  {
-    client: "NHS England",
-    title: "A&E Demand Forecasting",
-    outcome: "Random Forest model with 96.33% accuracy; six interventions ranked by multi-criteria decision analysis.",
-    skills: ["Random Forest", "MCDA", "Python", "Data Analytics"],
-  },
-  {
-    client: "StormID",
-    title: "AI Workflow Optimisation for a Scottish Local Authority",
-    outcome: "10 council workflows scored; projected staff time savings of 68% and 57%.",
-    skills: ["AI Workflow Optimisation", "Lean Six Sigma", "Process Mapping", "ROI Analysis"],
-  },
-  {
-    client: "WB Alloys Group",
-    title: "Enterprise Risk Management Framework",
-    outcome: "ISO 31000 framework for a £25M manufacturer: 134 risks identified and 12 key risk indicators defined.",
-    skills: ["ISO 31000", "Risk Management", "KRIs"],
-  },
-  {
-    client: "University of Strathclyde",
-    title: "Life Cycle Assessment of a Residential Building",
-    outcome: "Cradle-to-gate (A1–A3) embodied carbon analysis of a residential building, with MCDA on material alternatives and a low-carbon procurement roadmap.",
-    skills: ["Life Cycle Assessment", "MCDA", "Sustainability"],
-  },
-];
-
 const modules = [
   "Business Analysis",
   "Financial Modelling",
@@ -107,39 +74,6 @@ export default function Education() {
                 engagements. Applied tools including ISO 31000, MCDA, Lean Six Sigma, DCF modelling, and
                 machine learning across real client briefs from Deloitte, NHS England, StormID, and WB Alloys Group.
               </p>
-            </div>
-
-            {/* Consulting Projects */}
-            <div className="p-8 border-b border-[var(--border-subtle)]">
-              <p className="font-data text-xs uppercase tracking-widest mb-5 text-[var(--text-muted)]">
-                Consulting Projects
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {consultingProjects.map((proj) => (
-                  <div
-                    key={proj.client}
-                    className="rounded-[var(--radius-sm)] border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-5 transition-all duration-200 hover:border-[var(--border-strong)] hover:-translate-y-0.5"
-                    style={{ boxShadow: "var(--shadow-card)" }}
-                  >
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <p className="font-data text-xs uppercase tracking-widest" style={{ color: "#10B981" }}>
-                        {proj.client}
-                      </p>
-                    </div>
-                    <p className="font-ui font-medium text-sm text-[var(--text-primary)] mb-2 leading-snug">
-                      {proj.title}
-                    </p>
-                    <p className="font-ui font-light text-xs leading-relaxed text-[var(--text-secondary)] mb-3">
-                      {proj.outcome}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {proj.skills.map((s) => (
-                        <Tag key={s}>{s}</Tag>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Modules */}
